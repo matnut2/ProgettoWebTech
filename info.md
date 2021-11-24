@@ -28,3 +28,4 @@
   * Commentare i Commit con ciò che si è fatto
   * Charset esclusivo UTF-8
   * Parole straniere dentro uno span con classe e poi nel CSS le rendiamo scritte in corsivo
+  * Relazione in Word e poi PDF
