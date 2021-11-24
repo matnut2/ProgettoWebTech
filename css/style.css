@@ -1,0 +1,88 @@
+/* GENERALE */
+*
+{
+    padding: 0;
+    margin: 0;
+}
+
+html, body
+{
+    font-size: 100%;
+    margin: auto;
+    max-width: 1024px;
+}
+
+body
+{
+    border: 1px solid #000;
+}
+
+header
+{
+    text-align: center;
+    padding: 2em;
+    padding-top: 0.6em
+}
+
+/* BREABCRUMB */
+#breadcrumb
+{
+    border: 1px solid #000;
+}
+
+
+/* SEARCH BAR*/
+#SearchBar
+{
+    margin-bottom: 0.7em;
+    width: 100%
+}
+
+
+/* MENU */
+#menu
+{
+    float: left;
+    width: 15%;
+    font-size: 1.3em;
+    padding: 0.5em;
+}
+
+#menu ul li
+{
+    list-style-type: none;
+    overflow: hidden;
+    padding: 0.3em;
+}
+
+ul{
+    border: 0 solid #000;
+    border-width: 0 0 1px 1px;
+}
+
+li{
+    border: 0 solid #000;
+    border-width: 1px 1px 0 0;
+}
+
+/* CONTENT */
+#content
+{
+    border-left: 1px solid #000;
+    margin-left: 25%;
+    padding-left: 3.5em;
+    padding-bottom: 0.5em;
+    padding-top: 0.5em;
+}
+
+
+/* FOOTER */
+footer
+{
+    clear: both;
+    border-top: 1px solid #000;
+    text-align: center;
+    font-size: 0.8em;
+    padding: 0.5em;
+    background-color: darkgray;
+}
