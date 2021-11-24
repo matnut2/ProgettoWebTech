@@ -22,7 +22,7 @@
   
   
 # Convenzioni da Seguire
-  * Preferiamo HTML5 a XHTML
+  * Preferiamo HTML5 a XHTML (e se fosse XHTML5?)
   * Dimensione tag h relativa alla pagina e non al div (Gerarchia Assoluta)
   * Una cartella per ogni tipo di file (HTML, CSS, PHP, JS)
   * Commentare i Commit con ciò che si è fatto
