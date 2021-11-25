@@ -17,72 +17,62 @@ body
     border: 1px solid #000;
 }
 
-header
-{
-    text-align: center;
-    padding: 2em;
-    padding-top: 0.6em
-}
-
-/* BREABCRUMB */
-#breadcrumb
-{
+/* SEZIONE HEADER */
+header{
+    background-color: orange;
     border: 1px solid #000;
 }
 
+#logoTopNav{
+    width:9%;
+    border: 1px solid #000;
+    display: inline-block;
+}
 
-/* SEARCH BAR*/
-#SearchBar
+#SearchBar{
+    width: 30%;
+    border: 1px solid #000;
+    vertical-align: middle;
+    display: inline-block;
+}
+
+#accesso{
+    width: 10%;
+    border: 1px solid #000;
+    display: inline-block;
+}
+
+#SearchBar form input{
+    width:70%
+}
+
+#SearchBar form button{
+    width: auto;
+}
+
+/* SEZIONE BREADCRUMB */
+#breadcrumb
 {
-    margin-bottom: 0.7em;
-    width: 100%
+    background-color: #0E1E38;
+    color: #F3C428;
+    font-size: 1.1em;
+    padding: 0.5em 0em 0.5em 1.0em
 }
 
-
-/* MENU */
-#menu
+#breadcrumb a:link
 {
-    float: left;
-    width: 15%;
-    font-size: 1.3em;
-    padding: 0.5em;
+    color: #D8D8D8;
 }
 
-#menu ul li
+#breadcrumb a:visited
 {
-    list-style-type: none;
-    overflow: hidden;
-    padding: 0.3em;
+    color: #F2F5A9;
 }
 
-ul{
-    border: 0 solid #000;
-    border-width: 0 0 1px 1px;
-}
-
-li{
-    border: 0 solid #000;
-    border-width: 1px 1px 0 0;
-}
-
-/* CONTENT */
-#content
-{
-    border-left: 1px solid #000;
-    margin-left: 25%;
-    padding-left: 3.5em;
-    padding-bottom: 0.5em;
-    padding-top: 0.5em;
-}
-
-
-/* FOOTER */
-footer
-{
-    clear: both;
-    border-top: 1px solid #000;
+/* SEZIONE FOOTER */
+footer{
     text-align: center;
-    font-size: 0.8em;
-    padding: 0.5em;
-    background-color: darkgray;
+    background-color: lightgrey;
+    border-top: 2px solid #000;
 }
+
