@@ -24,7 +24,7 @@ header{
 }
 
 #LogoHeader{
-    width: 10%;
+    width: 8%;
     border-right: 1px solid #000;
     vertical-align: middle;
     padding: 0.3em
@@ -40,9 +40,10 @@ header{
     width:30%;
     display: inline-block;
     text-align: center;
-    border-left: 1px solid #000;
-    padding-top: 4%;
-    padding-bottom:4%;
+    border-left: 1px dotted #000;
+    padding-top: 3%;
+    padding-bottom:3%;
+    float: right;
 
 }
 
@@ -75,14 +76,16 @@ header{
 
 /* SEZIONE MENU"*/
 #menu{
+    width:10%;
     background-color: orange;
-    float:left;
-    width:15%;
     border-right: 1px solid #000;
+    position: fixed;
 }
 
 #menu ul {
     list-style-type: none;
+    margin: 0;
+    padding: 0;
 }
 
 #menu ul li{
@@ -97,13 +100,12 @@ header{
 #content{
     margin-left:15%;
     padding:1.0em;
-    padding-top: 2.0em;
-    padding-left:3.5em;
+    padding-top: 1.0em;
+    padding-left: 0.5em;
 }
 
 /* SEZIONE FOOTER */
 footer{
-    clear: both;
     text-align: center;
     background-color: lightgrey;
     border-top: 2px solid #000;
