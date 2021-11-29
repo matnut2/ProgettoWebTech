@@ -25,41 +25,70 @@ header{
 
 #LogoHeader{
     width: 10%;
-    border-right: 1px solid #000;
+    /*border: 1px solid #000;*/
     vertical-align: middle;
-    padding: 0.3em
 }
 
-#SearchBar{
-    width:55%;
+#SearchBar {
+    width: 58%;
     display: inline-block;
     text-align: center;
+   /* border: 1px solid #000;*/
+    background-color: orange;
+
 }
+
+#SearchBar form {
+
+    width: 75%;
+    display: inline-block;
+    text-align: center;
+    border: 1px solid black;
+    color: black;
+
+}
+
+#SearchBar form input{
+    background-color: orange;
+    border:transparent;
+    font-size: 21px;
+}
+#SearchBar form button {
+    width: 20%;
+    background-color: orange;
+    border: transparent;
+    font-size: 20px;
+    color: black;
+    cursor: pointer;
+    outline: 0;
+}
+
 
 #accesso{
     width:30%;
     display: inline-block;
     text-align: center;
-    border-left: 1px solid #000;
-    padding-top: 4%;
-    padding-bottom:4%;
-
+    border: 1px solid #000;
+    font-size: 21px;
 }
 
-#SearchBar form input{
+/*#SearchBar form input{
     width: 70%
+    background-color: orange;
 }
-
-#SearchBar form button{
+*/
+/*#SearchBar form button{
     width: 25%;
+    background-color: orange;
+    colour: orange;
 }
-
+*/
 /* SEZIONE BREADCRUMB */
 #breadcrumb
 {
     background-color: #0E1E38;
     color: orange;
-    font-size: 1.05em;
+    font-size: 0.95em;
     padding: 0.5em 0em 0.5em 1.0em;
 }
 
@@ -78,6 +107,7 @@ header{
     background-color: orange;
     float:left;
     width:15%;
+    display:block;
     border-right: 1px solid #000;
 }
 

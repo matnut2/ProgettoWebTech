@@ -2,8 +2,9 @@
 <html lang="it">
     <head>
         <link rel="icon" type="image/x-icon" href="../img/2061866.png"/>
-        <title>Pagina Principale - Auto Asta</title>
-        <link rel="stylesheet" type="text/css" href="../css/styleAlternative.css"/>
+        <title>Homepage - Auto Asta</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" type="text/css" href="../css/style.css"/>
         <meta charset="UTF-8"/>
         <meta name="description" content="Homepage di Auto Asta"/>
         <meta name="keywords" content="auto, asta, homepage"/>
@@ -13,9 +14,9 @@
         <header>
                 <img id="LogoHeader" src="../img/LogoAutoasta.png" alt="AUTO ASTA"/>
                 <div id="SearchBar">
-                    <form>
-                        <input type="text" tabindex="1" placeholder="Digita qui quello che vuoi cercare"/>
-                        <button id="SearchButton" type="submit">Cerca</button>
+                    <form action="cerca">
+                        <input type="text" placeholder="Cerca..." name="search">
+                        <button type="submit"><i class="fa fa-search"></i></button>
                     </form>
                 </div>
                 <div id="accesso">
@@ -24,21 +25,21 @@
         </header>
                     
         <nav id="breadcrumb">
-            <p>Ti Trovi in: <span lang="en">Home</span></p>
+            <p>Ti Trovi in: Home</p>
         </nav>
         
-        <nav id="menu">
+        <div id="menu">
             <ul>
-                <li lang='en' id="active">Home</li>
+                <li>Home</li>
                 <li><a href="eventi.html">Eventi</a></li>
                 <li><a href="veicoli.html">Veicoli</a></li>
                 <li><a href="chisiamo.html">Chi Siamo</a></li>
             </ul>
-        </nav>
+        </div>
         
         <div id="content">
-            <p>Lorem Ipsum  </p>
-            <p>Lorem Ipsum  </p>
+            <p> <img src="../img/alina-tyutyunnikova-dKUGgIi7C-c-unsplash.jpg" width="500px" height="400px"  alt="test immagine"/></p>
+            <p><h2>Auto Asta - la fiera itinerante dell'auto</h2>  </p>
             <p>Lorem Ipsum  </p>
             <p>Lorem Ipsum  </p>
             <p>Lorem Ipsum  </p>
@@ -61,7 +62,7 @@
             <address>
                 AUTO ASTA<br/>
                 Carlesso Niccol&ograve;, Pillon Matteo, Sold&agrave; Matteo, Veronese Andrea<br/>
-                Universit&agrave; degli Studi di Padova - Dipartimento di Matematica               
+                Universit&agrave; degli Studi di Padova<br/>               
             </address>
         </footer>
     </body>
