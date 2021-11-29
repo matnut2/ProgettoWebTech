@@ -72,17 +72,17 @@ header{
     font-size: 21px;
 }
 
-/*#SearchBar form input{
+#SearchBar form input{
     width: 70%
     background-color: orange;
 }
-*/
-/*#SearchBar form button{
+
+#SearchBar form button{
     width: 25%;
     background-color: orange;
-    colour: orange;
+    color: orange;
 }
-*/
+
 /* SEZIONE BREADCRUMB */
 #breadcrumb
 {
