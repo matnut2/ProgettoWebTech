@@ -13,33 +13,40 @@
         <meta name="author" content="Carlesso Niccolò, Pillon Matteo, Soldà Matteo, Veronese Andrea"/>       
     </head>
     <body>
-        <header>
-                <img id="LogoHeader" src="../img/LogoAutoasta.png" alt="AUTO ASTA"/>
-                <div id="SearchBar">
-                    <form action="cerca">
-                        <input type="text" placeholder="Digita qui quello che cerchi" name="search" tabindex="1">
-                        <button type="submit" tabindex="2"><img src="../img/71403.png" alt="Cerca"></button>
-                    </form>
+    <div class="globalDiv">
+        <div class="headContainer">
+            <header>
+                <!--<img id="LogoHeader" src="../img/LogoAutoasta.png" alt="AUTO ASTA"/>-->
+                <h1>AUTO ASTE</h1>
+            </header>
+
+            <nav id="topNav">
+                <form action="cerca" id="searchForm">
+                    <input type="text" placeholder="Digita qui quello che cerchi" name="search" tabindex="1">
+                    <button id="btnSearchForm" type="submit" form="searchForm">CERCA</button>    
+                </form>
+                
+                <div id="accesso" tabindex="3">
+                    <a href="" >Accedi / Registrati</a>
                 </div>
-                <div id="accesso">
-                    <p tabindex="4">Accedi / Registrati</p>
-                </div>
-        </header>
+            </nav>
+        </div>
+        
                     
-        <nav id="breadcrumb" tabindex="5">
+        <nav id="breadcrumb" tabindex="4">
             <p>Ti Trovi in: Home</p>
         </nav>
         
         <div id="menu">
             <ul>
                 <li>Home</li>
-                <li><a href="eventi.html" tabindex="6">Eventi</a></li>
-                <li><a href="veicoli.html" tabindex="7">Veicoli</a></li>
-                <li><a href="chisiamo.html" tabindex="8">Chi Siamo</a></li>
+                <li><a href="eventi.html" tabindex="5">Eventi</a></li>
+                <li><a href="veicoli.html" tabindex="6">Veicoli</a></li>
+                <li><a href="chisiamo.html" tabindex="7">Chi Siamo</a></li>
             </ul>
         </div>
         
-        <div id="content" tabindex="9">
+        <div id="content" tabindex="8">
             <p>Lorem Ipsum  </p>
             <p>Lorem Ipsum  </p>
             <p>Lorem Ipsum  </p>
@@ -65,5 +72,7 @@
                 Universit&agrave; degli Studi di Padova - Dipartimento di Matematica               
             </address>
         </footer>
+    </div>
+        
     </body>
 </html>
