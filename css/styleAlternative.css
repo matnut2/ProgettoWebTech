@@ -20,19 +20,13 @@ body
 .globalDiv{
     background-color: orange;
 }
-body a:hover{
-    background-color: #FFF;
-}
 
-.headContainer{
-    background-color: orange;
-    display: flex;
-    flex-flow: row wrap;
-}
 
 header{
     background-color: orange;
-    flex: 1;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
 }
 
 /* SEZIONE HEADER */
@@ -42,34 +36,38 @@ header h1{
     background-size: contain;
     background-repeat: no-repeat;
     font-size: 5em;
-}
-
-#topNav{
-    background-color: orange;
-    flex: 2;
-    display: flex;
-    flex-flow: row wrap;
-    align-items: center;
+    flex: 1;
 }
 
 #searchForm{
     flex: 2;
+    background-color: #fff;
+    border: 1px solid #000;
+    border-radius: 10px;
 }
 
 #searchForm input{
     font-size: 1.3em;
-    width: 80%;
-    border: 1px solid #000;
+    width: 70%;
+    background-color: transparent;
+    border-color: transparent;
+    border:none;
+}
+
+::placeholder{
 }
 
 #searchForm button {
     background-image: url("../img/71403.png");
+    background-color: transparent;
     background-repeat: no-repeat;
     background-size: contain;
-    text-indent: -9999em;
     background-position: center;
-    width: 15%;
     cursor: pointer;
+    font-size: 2em;
+    outline-color: transparent;
+    border: none;
+    border-left: 1px solid #000;
 }
 
 #accesso{
@@ -77,8 +75,7 @@ header h1{
     text-align: center;
     border: 1px solid #000;
     font-size: 1.2em;
-    margin: 1em;
-    float: right;
+    margin: 0 0.5em;
 }
 
 /* SEZIONE BREADCRUMB */
@@ -107,19 +104,24 @@ header h1{
     font-size: 1.2em;
     background-color: orange;
     float: left;
+    padding-top: 2em;
 }
 
 #menu ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
+    height: 100%;
+}
+
+#menu ul li a:hover{
+    background-color: #fff;
 }
 
 #menu ul li{
     padding: 0.5em;
     vertical-align: middle;
     padding-left: 1em;
-    border-bottom: 1px solid #000;
 }
 
 #content{
@@ -129,8 +131,13 @@ header h1{
     background-color: #fff;
 }
 
+#content h2 {
+    text-align: center;
+}
+
 /* SEZIONE FOOTER */
 footer{
+    clear: both;
     text-align: center;
     background-color: lightgrey;
     border-top: 2px solid #000;
