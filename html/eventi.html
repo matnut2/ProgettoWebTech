@@ -4,68 +4,93 @@
         <link rel="icon" type="image/x-icon" href="../img/2061866.png"/>
         <title>Eventi - Auto Asta</title>
         <link rel="stylesheet" type="text/css" href="../css/styleAlternative.css"/>
-        <!--
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        -->
         <meta charset="UTF-8"/>
         <meta name="description" content="Eventi di Auto Asta"/>
         <meta name="keywords" content="auto, asta, eventi"/>
         <meta name="author" content="Carlesso Niccolò, Pillon Matteo, Soldà Matteo, Veronese Andrea"/>       
     </head>
     <body>
-        <header>
-                <img id="LogoHeader" src="../img/LogoAutoasta.png" alt="AUTO ASTA"/>
-                <div id="SearchBar">
-                    <form action="cerca">
-                        <input type="text" placeholder="Digita qui quello che cerchi" name="search">
-                        <button type="submit"><img src="../img/71403.png" alt="Cerca"></button>
-                    </form>
+        <div class="globalDiv">
+            <header>
+                <h1>AUTO ASTE</h1>
+
+                <form action="cerca" id="searchForm">
+                    <input type="text" placeholder="Digita qui quello che cerchi" name="search" tabindex="1" autocomplete="off">
+                    <button id="btnSearchForm" type="submit" form="searchForm" tabindex="2" > CERCA
+                        <!--<img alt="CERCA" src="../img/71403.png"> DA CAPIRE SE E' DI CONTENUTO O PRESENTAZIONE -->
+                    </button>    
+                </form>
+                
+                <div id="accesso" >
+                    <a href="" alt="AREA UTENTI" tabindex="3">
+                        <!--<img src="../img/user.png"> DA CAPIRE SE E' DI CONTENUTO O PRESENTAZIONE-->
+                        AREA UTENTI
+                    </a>
                 </div>
-                <div id="accesso">
-                    <p>Accedi / Registrati</p>
-                </div>
-        </header>
-                    
-        <nav id="breadcrumb">
-            <p>Ti Trovi in: <a href="index.html">Home</a> &gt; Veicoli</p>
-        </nav>
-        
-        <nav id="menu">
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li>Eventi</li>
-                <li><a href="veicoli.html">Veicoli</a></li>
-                <li><a href="chisiamo.html">Chi Siamo</a></li>
-            </ul>
-        </nav>
-        
-        <div id="content">
-            <p>Lorem Ipsum  </p>
-            <p>Lorem Ipsum  </p>
-            <p>Lorem Ipsum  </p>
-            <p>Lorem Ipsum  </p>
-            <p>Lorem Ipsum  </p>
-            <p>Lorem Ipsum  </p>
-            <p>Lorem Ipsum  </p>
-            <p>Lorem Ipsum  </p>
-            <p>Lorem Ipsum  </p>
-            <p>Lorem Ipsum  </p>
-            <p>Lorem Ipsum  </p>
-            <p>Lorem Ipsum  </p>
-            <p>Lorem Ipsum  </p>
-            <p>Lorem Ipsum  </p>
-            <p>Lorem Ipsum  </p>
-            <p>Lorem Ipsum  </p>
-            <p>Lorem Ipsum  </p>
-                  
+
+            </header>  
+                        
+            <nav id="breadcrumb" tabindex="4">
+                <p>Ti Trovi in: 
+                    <a href="index.html" lang="en">Home </a>
+                    &gt; &gt; Eventi
+                </p>
+            </nav>
+            
+            <div id="menu">
+                <ul>
+                    <li><a href="index.html" tabindex="5" lang="en">Home</a></li>
+                    <li>Eventi</li>
+                    <li><a href="veicoli.html" tabindex="6">Veicoli</a></li>
+                    <li><a href="chisiamo.html" tabindex="7">Chi Siamo</a></li>
+                </ul>
+            </div>
+            
+            <div id="content" tabindex="8">
+                <h2> I NOSTRI EVENTI </h2>
+                <dl id="eventList">
+                    <dt>
+                        PADOVA - MARZO 2022
+                    </dt>
+                    <dd>
+                        <img src="../img/furgoncinoGiallo.jpg" alt="Foto della citt&agrave; di Padova">
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos consectetur, quo at, dolor deserunt recusandae quasi sint similique porro, ea laboriosam. Sapiente nesciunt cumque a animi earum tenetur nemo aliquam! 
+                        </p>
+                        <a href="" tabindex="9">COMPRA BIGLIETTI </a>
+                    </dd>
+
+                    <dt>
+                        BOLOGNA - APRILE 2022
+                    </dt>
+                    <dd>
+                        <img src="../img/furgoncinoGiallo.jpg" alt="Foto della citt&agrave; di Padova">
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos consectetur, quo at, dolor deserunt recusandae quasi sint similique porro, ea laboriosam. Sapiente nesciunt cumque a animi earum tenetur nemo aliquam! 
+                        </p>
+                        <a href="" tabindex="10">COMPRA BIGLIETTI </a>
+                    </dd>
+
+                    <dt>
+                        DUBAI - GIUGNO 2022
+                    </dt>
+                    <dd>
+                        <img src="../img/furgoncinoGiallo.jpg" alt="Foto della citt&agrave; di Padova">
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos consectetur, quo at, dolor deserunt recusandae quasi sint similique porro, ea laboriosam. Sapiente nesciunt cumque a animi earum tenetur nemo aliquam! 
+                        </p>
+                        <a href="" tabindex="10">COMPRA BIGLIETTI </a>
+                    </dd>
+                </dl>
+            </div>
+            
+            <footer>
+                <address>
+                    AUTO ASTA<br/>
+                    Carlesso Niccol&ograve;, Pillon Matteo, Sold&agrave; Matteo, Veronese Andrea<br/>
+                    Universit&agrave; degli Studi di Padova - Dipartimento di Matematica               
+                </address>
+            </footer>
         </div>
-        
-        <footer>
-            <address>
-                AUTO ASTA<br/>
-                Carlesso Niccol&ograve;, Pillon Matteo, Sold&agrave; Matteo, Veronese Andrea<br/>
-                Universit&agrave; degli Studi di Padova - Dipartimento di Matematica               
-            </address>
-        </footer>
     </body>
 </html>
