@@ -27,12 +27,11 @@ header{
 }
 
 header h1{
-    background-size: contain;
     background-position: center;
 }
 
 #searchForm button {  
-    cursor: none;
+    /*cursor: none;*/
     font-size: 1.3em;
     background-color: #fff;
     border:none;
@@ -44,6 +43,7 @@ header h1{
 #accesso{
     font-size: 1.3em;
     order: 2;
+    margin-bottom: 1em;
 }
 
 /*
@@ -64,6 +64,10 @@ DA CAPIRE SE CONTENUTO O PRESENTAZIONE
 #breadcrumb a:visited
 {
     color: #F2F5A9;
+}
+
+#breadcrumb{
+    text-align: center;
 }
 
 #menu{
@@ -92,7 +96,7 @@ footer{
     text-align: center;
     background-color: lightgrey;
     border-top: 2px solid #000;
-    font-size: 1.3em;
+    font-size: 1.1em;
 }
 
 /* LINK */
