@@ -27,7 +27,9 @@ header{
 }
 
 header h1{
+    margin-top: 0.2em;
     background-position: center;
+    width: 10em
 }
 
 #searchForm button {  
