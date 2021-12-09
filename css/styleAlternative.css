@@ -214,6 +214,50 @@ footer{
 }
 
 /*SEZIONE AUTO*/
+
+#autoList{
+    text-align: center;
+}
+
+#autoList dt{
+    font-size: 1.4em;
+    padding: 0.3em;
+    background-color: #FFA500;
+    font-weight: bold;
+    border: 1px solid #000;
+    border-top-right-radius: 2em;
+    border-top-left-radius: 2em;
+}
+
+#autoList dd{
+    border: 1px solid #000;
+    background-color: #000;
+    color: #FFF;
+    margin-bottom: 1.5em;
+    min-height: 125px;
+    padding: 0.5em;
+    padding-bottom: 1.3em;
+    border-bottom-right-radius: 2em;
+    border-bottom-left-radius: 2em;
+}
+
+#autoList dd .imgListaAuto{
+    max-width: 100%;
+}
+
+#autoList dd a{
+    background-color: #FFA500;
+    border-radius: 5px;
+    padding: .5em;
+}
+
+#autoList dd p{
+    padding-top: 0.5em;
+    margin-bottom: 1em;
+}
+
+/* VERSIONE TABELLARE*/
+/*
 #auto{
 
 }
@@ -246,7 +290,7 @@ footer{
 }
 
 #auto td p{
-    /*padding: 1em;*/
+    padding: 1em;
 }
 
 #auto td a {
