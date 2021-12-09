@@ -186,3 +186,16 @@ footer{
     border-radius: 5px;
     border: 1px solid #fff;
 }
+
+.columnAboutUs{
+    display: block;
+    width: 95%;
+    border: 1px solid #000;
+}
+
+.columnAboutUs img{
+}
+
+.rowAboutUs{
+    border: none;
+}
