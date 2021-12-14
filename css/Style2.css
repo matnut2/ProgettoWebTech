@@ -72,7 +72,7 @@ input:focus::placeholder{
     color:transparent;
 }
 
-#searchForm button {  
+#searchForm button {
     cursor: pointer;
     font-size: 1.5em;
     background-color: #fff;
@@ -157,17 +157,12 @@ DA CAPIRE SE CONTENUTO O PRESENTAZIONE
 #content h2 {
     text-align: center;
     font-size: 2em;
-    padding-bottom: 1em;
 }
 
 /* SEZIONE FOOTER */
 footer{
     clear: both;
     text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
     background-color: lightgrey;
     border-top: 2px solid #000;
 }
@@ -176,6 +171,10 @@ footer{
 
 
 /* SEZIONE EVENTI */
+#eventList{
+
+}
+
 
 #eventList dt{
     background-color: #FFA500;
@@ -191,7 +190,7 @@ footer{
     float: left;
     padding: 0.5em;
     max-width: 80%;
-    
+
 }
 #eventList dd {
     background-color: #000;
@@ -213,123 +212,79 @@ footer{
     border: 1px solid #fff;
 }
 
-/*SEZIONE AUTO*/
-
-#autoList{
-    text-align: center;
-    width: 45%;
-    display: inline-block;
-    margin-left: 1.5em;
-}
-
-#autoList dt{
-    font-size: 1.4em;
-    padding: 0.3em;
-    background-color: #FFA500;
-    font-weight: bold;
-    border: 1px solid #000;
-    border-top-right-radius: 1em;
-    border-top-left-radius: 1em;
-    box-shadow: 5px 10px #DFE0DF;
-}
-
-#autoList dd{
-    border: 1px solid #000;
-    background-color: #000;
-    color: #FFF;
-    margin-bottom: 1.5em;
-    min-height: 125px;
-    padding: 0.5em;
-    padding-bottom: 1.3em;
-    border-bottom-right-radius: 1em;
-    border-bottom-left-radius: 1em;
-    box-shadow: 5px 10px #DFE0DF;
-}
-
-#autoList dd .imgListaAuto{
-    max-width: 100%;
-}
-
-#autoList dd a{
-    background-color: #FFA500;
-    border-radius: 5px;
-    padding: .5em;
-}
-
-#autoList dd p{
-    padding-top: 0.5em;
-    margin-bottom: 1em;
-}
-
-/* VERSIONE TABELLARE*/
-/*
-#auto{
-
-}
-
-
-#auto th{
-    background-color: #FFA500;
-    font-size: 1.3em;
-    padding: 0.3em;
-    margin-top: 1.5em;
-    border-left: 10px solid white;
+#content{
+    display:grid;
+    grid-column-gap: 15px;
+    grid-row-gap: 10px;
+    border: 1px solid black;
 
 
 }
-
-#auto td img {
-    float: left;
-    padding: 0.5em;
-    max-width: 45%;
-
-
-}
-#auto td {
-    background-color: #000;
-    color: #fff;
-    min-height: 200px;
-    padding-bottom: 1em;
-    border-bottom: 15px solid white;
-    border-left: 10px solid white;
-}
-
-#auto td p{
-    padding: 1em;
-}
-
-#auto td a {
-    float: bottom;
-    background-color: #FFA500;
-    border-radius: 5px;
-    border: 1px solid #fff;
+.grid-item1{
+    grid-column-start: 1;
+    grid-column-end: 1;
+    grid-row-start:1;
+    grid-row-end:1;
+    background-color: lightgrey;
+    text-align: left;
 
 }
-
-/*SEZIONE CHI SIAMO*/
-.AboutUs{
-    display: flex;
-    justify-content:center;
-    align-items: stretch;
-    flex-wrap: wrap;
-    margin-top: 1em;
+.grid.item2 img{
     width: 100%;
+    height: 100%;
+    object-fit: fill;
+}
+.grid-item2 {
+    grid-column-start: 2;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 1;
+    background-color: lightgray;
+    text-align: left;
+
 }
 
-.cardAboutUs{
-    border: 1px solid #000;
-    display: block;
-    max-width: 15em;
-    width: 15em;
-    text-align: center;
+
+.grid-item3{
+    grid-column-start: 3;
+    grid-column-end: 3;
+    grid-row-start:1;
+    grid-row-end:1;
+    background-color: lightgray;
+    text-align: left;
 
 }
 
-.cardAboutUs img{
-    max-width: 15em;
-    vertical-align: middle;
+.grid-item4{
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start:2;
+    grid-row-end:2;
+    background-color: lightgray;
+    text-align: left;
+
+}
+.grid-item5{
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start:2;
+    grid-row-end:2;
+    background-color: lightgray;
+    text-align: left;
+
+}
+.grid-item6{
+    grid-column-start: 3;
+    grid-column-end: 4;
+    grid-row-start:2;
+    grid-row-end:2;
+    background-color: lightgray;
+    text-align: left;
+
+}
+.grid-item6 img{
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
 }
 
-.cardAboutUs p {
-    padding: 0.2em;
-}
