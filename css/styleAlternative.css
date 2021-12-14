@@ -164,6 +164,10 @@ DA CAPIRE SE CONTENUTO O PRESENTAZIONE
 footer{
     clear: both;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     background-color: lightgrey;
     border-top: 2px solid #000;
 }
@@ -217,6 +221,9 @@ footer{
 
 #autoList{
     text-align: center;
+    width: 45%;
+    display: inline-block;
+    margin-left: 1.5em;
 }
 
 #autoList dt{
@@ -225,8 +232,9 @@ footer{
     background-color: #FFA500;
     font-weight: bold;
     border: 1px solid #000;
-    border-top-right-radius: 2em;
-    border-top-left-radius: 2em;
+    border-top-right-radius: 1em;
+    border-top-left-radius: 1em;
+    box-shadow: 5px 10px #DFE0DF;
 }
 
 #autoList dd{
@@ -237,8 +245,9 @@ footer{
     min-height: 125px;
     padding: 0.5em;
     padding-bottom: 1.3em;
-    border-bottom-right-radius: 2em;
-    border-bottom-left-radius: 2em;
+    border-bottom-right-radius: 1em;
+    border-bottom-left-radius: 1em;
+    box-shadow: 5px 10px #DFE0DF;
 }
 
 #autoList dd .imgListaAuto{
@@ -302,24 +311,29 @@ footer{
 }
 
 /*SEZIONE CHI SIAMO*/
-.columnAboutUs{
-    display: table-cell;
-    width: 33%;
-    background: #DFE0DF;
-    vertical-align: middle;
-}
-
-.columnAboutUs p {
-    padding: 0.3em;
-}
-
-.columnAboutUs img{
+.AboutUs{
+    display: flex;
+    justify-content:center;
+    align-items: stretch;
+    flex-wrap: wrap;
+    margin-top: 1em;
     width: 100%;
-    vertical-align: middle;
 }
 
-.rowAboutUs{
-    display: table;
-    width: 100%;
+.cardAboutUs{
     border: 1px solid #000;
+    display: block;
+    max-width: 15em;
+    width: 15em;
+    text-align: center;
+
+}
+
+.cardAboutUs img{
+    max-width: 15em;
+    vertical-align: middle;
+}
+
+.cardAboutUs p {
+    padding: 0.2em;
 }
