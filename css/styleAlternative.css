@@ -317,11 +317,12 @@ footer{
 }
 
 .cardAboutUs{
-    border: 1px solid #000;
+    border:1px solid #000;
     display: block;
     max-width: 15em;
     width: 15em;
     text-align: center;
+    background-color: #D8D8D8;
 }
 
 .cardAboutUs img{
@@ -330,5 +331,11 @@ footer{
 }
 
 .cardAboutUs p {
-    padding: 0.2em;
+    padding: 1em;
+}
+
+.cardError404{
+    background-color:#000;
+    color:#fff;
+    padding: 1em;
 }

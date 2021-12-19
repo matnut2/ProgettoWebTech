@@ -2,7 +2,7 @@
 <html lang="it">
     <head>
         <link rel="icon" type="image/x-icon" href="../img/2061866.png"/>
-        <title>Homepage - Auto Asta</title>
+        <title>{currentPage}</title>
         <link rel="stylesheet" type="text/css" media="screen" href="../css/styleAlternative.css"/>
         <link rel="stylesheet" type="text/css" media="screen and (max-width:600px), only screen and (max-width:600px)"  href="../css/mobile.css"/>
         <meta charset="UTF-8"/>
@@ -24,7 +24,7 @@
                 </header>  
 
                 <nav id="breadcrumb" tabindex="4">
-                    <p>Ti Trovi in: {page}</p>
+                    <p>Ti Trovi in: {breadcrumb}</p>
                 </nav>
                 
                 <div id="menu">
@@ -32,7 +32,6 @@
                 </div>
                 
                 <div id="content" tabindex="8">
-                    <h2> {page-title} </h2>
                     {content}
                 </div>
                 
