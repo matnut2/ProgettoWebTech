@@ -14,6 +14,15 @@
             $output = str_replace("{currentPage}", "Prossimi - Eventi", $output);
             break;
 
+        case 'chisiamo':
+            $breadcrumb = "<a href=\"" . SessionManager::BASE_URL . 'home' . "\">HOME</a> &gt;&gt; Chi Siamo";
+            $page = file_get_contents("../html/chisiamo.html");
+            $output = str_replace("{breadcrumb}",$breadcrumb,$output);
+            $output = str_replace("{content}", $page, $output);
+            $output = str_replace("{currentPage}", "Chi Siamo", $output);
+            break;
+
+
         default:
             $breadcrumb = "<a href=\"" . SessionManager::BASE_URL . 'home' . "\">HOME</a> &gt;&gt; ERRORE 404";
             $page = file_get_contents("../html/404.html");
