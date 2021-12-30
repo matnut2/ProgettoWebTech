@@ -29,6 +29,30 @@
             $output = str_replace("{currentPage}", "Chi Siamo", $output);
             break;
 
+        case 'registrazione':
+            $breadcrumb = "<a href=\"" . SessionManager::BASE_URL . 'home' . "\">HOME</a> &gt;&gt; Registrati";
+            $page = file_get_contents("../html/form-registrazione.html");
+            $output = str_replace("{breadcrumb}",$breadcrumb,$output);
+            $output = str_replace("{content}", $page, $output);
+            $output = str_replace("{currentPage}", "Chi Siamo", $output);
+            break;
+
+        case 'registrazione-utente':
+            $breadcrumb = "<a href=\"" . SessionManager::BASE_URL . 'home' . "\">HOME</a> &gt;&gt; DATI UTENTE";
+            $page = file_get_contents("../html/form-registrazione-utente.html");
+            $output = str_replace("{breadcrumb}",$breadcrumb,$output);
+            $output = str_replace("{content}", $page, $output);
+            $output = str_replace("{currentPage}", "Chi Siamo", $output);
+            break;
+
+        case 'accedi':
+            $breadcrumb = "<a href=\"" . SessionManager::BASE_URL . 'home' . "\">HOME</a> &gt;&gt; Accedi";
+            $page = file_get_contents("../html/form-login.html");
+            $output = str_replace("{breadcrumb}",$breadcrumb,$output);
+            $output = str_replace("{content}", $page, $output);
+            $output = str_replace("{currentPage}", "Chi Siamo", $output);
+            break;
+
 
         default:
             $breadcrumb = "<a href=\"" . SessionManager::BASE_URL . 'home' . "\">HOME</a> &gt;&gt; ERRORE 404";

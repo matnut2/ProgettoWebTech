@@ -1,8 +1,13 @@
-/* GENERALE */
+/* 
+-------------------------------------------------------------------
+                    GENERALE 
+-------------------------------------------------------------------
+*/
 *
 {
     padding: 0;
     margin: 0;
+    box-sizing: border-box;
 }
 
 html, body
@@ -29,7 +34,11 @@ header{
     align-items: center;
 }
 
-/* SEZIONE HEADER */
+/* 
+-------------------------------------------------------------------
+                    SEZIONE HEADER 
+-------------------------------------------------------------------
+*/
 header h1{
     flex: 1;
     background:url("../img/LogoAutoasta.png");
@@ -93,15 +102,11 @@ input:focus::placeholder{
     font-size: 1.5em;
 }
 
-/*
-DA CAPIRE SE CONTENUTO O PRESENTAZIONE
-#accesso a img{
-    border: 2px solid #000;
-    width: 25%;
-}
+/* 
+-------------------------------------------------------------------
+                    SEZIONE BREADCRUMB
+-------------------------------------------------------------------
 */
-
-/* SEZIONE BREADCRUMB */
 #breadcrumb
 {
     clear: both;
@@ -121,7 +126,11 @@ DA CAPIRE SE CONTENUTO O PRESENTAZIONE
     color: #F2F5A9;
 }
 
-/* SEZIONE MENU"*/
+/* 
+-------------------------------------------------------------------
+                    SEZIONE MENU"
+-------------------------------------------------------------------
+*/
 #menu{
     width:20%;
     font-size: 1.4em;
@@ -160,7 +169,11 @@ DA CAPIRE SE CONTENUTO O PRESENTAZIONE
     padding-bottom: 1em;
 }
 
-/* SEZIONE FOOTER */
+/* 
+-------------------------------------------------------------------
+                    SEZIONE FOOTER 
+-------------------------------------------------------------------
+*/
 footer{
     clear: both;
     text-align: center;
@@ -172,12 +185,20 @@ footer{
     border-top: 2px solid #000;
 }
 
-/* LINK */
+/* 
+-------------------------------------------------------------------
+                     LINK 
+-------------------------------------------------------------------
+*/
 
 
-/* SEZIONE EVENTI */
+/* 
+-------------------------------------------------------------------
+                    SEZIONE EVENTI 
+-------------------------------------------------------------------
+*/
 
-#eventList dt{
+.eventTitle{
     background-color: #FFA500;
     font-size: 1.3em;
     padding: 0.3em;
@@ -187,33 +208,37 @@ footer{
 
 }
 
-#eventList dd img {
+.eventImg {
     float: left;
     padding: 0.5em;
     max-width: 80%;
-    
+    width: 15em;
 }
-#eventList dd {
+
+.eventDescription {
     background-color: #000;
     color: #fff;
     min-height: 200px;
     padding-bottom: 1em;
     box-shadow: 5px 10px #DFE0DF;
-
 }
 
-#eventList dd p{
+.eventParagraph{
     padding: 1em;
 }
 
-#eventList dd a {
+.eventButton{
     background-color: #FFA500;
     padding: 0.5em;
     border-radius: 5px;
     border: 1px solid #fff;
 }
 
-/*SEZIONE AUTO*/
+/*
+-------------------------------------------------------------------
+                    SEZIONE AUTO
+-------------------------------------------------------------------
+*/
 
 #autoList{
     text-align: center;
@@ -306,7 +331,11 @@ footer{
 
 }*/
 
-/*SEZIONE CHI SIAMO*/
+/*
+-------------------------------------------------------------------
+                    SEZIONE CHI SIAMO
+-------------------------------------------------------------------
+*/
 .AboutUs{
     display: flex;
     justify-content:center;
@@ -334,8 +363,88 @@ footer{
     padding: 1em;
 }
 
+/*
+-------------------------------------------------------------------
+                    SEZIONE ERRORE 404
+-------------------------------------------------------------------
+*/
 .cardError404{
     background-color:#000;
     color:#fff;
     padding: 1em;
+}
+
+/*
+-------------------------------------------------------------------
+                    SEZIONE FORM REGISTRAZIONE/LOGIN
+-------------------------------------------------------------------
+*/
+.registration_form {
+    padding: 0.5em;
+    border: 1px solid #000;
+    border-top-right-radius: 0.3em;
+    border-top-left-radius: 0.3em;
+}
+
+.login_form {
+    padding: 0.5em;
+    border: 1px solid #000;
+    border-top-right-radius: 0.3em;
+    border-top-left-radius: 0.3em;
+}
+
+.login_form input[type=text], input[type=password]{
+    width: 100%;
+    border: none;
+    font-size: 1em;
+    padding: 0.5em;
+    background-color: #f1f1f1;
+    border-bottom: 1px solid #000;
+    margin-bottom: 0.5em;
+    border-width: 80%;
+}
+
+.login_form hr{
+    margin-bottom: 1em;
+}
+
+.registration_form hr{
+    margin-bottom: 1em;
+}
+
+.registration_form input[type=text], input[type=password],input[type=date],input[type=file]{
+    width: 100%;
+    border: none;
+    font-size: 1em;
+    padding: 0.5em;
+    background-color: #f1f1f1;
+    border-bottom: 1px solid #000;
+    margin-bottom: 0.5em;
+    border-width: 80%;
+}
+
+.register_btn{
+    width: 100%;
+    background-color: #FFA500;
+    border: 1px solid #000;
+    cursor: pointer;
+    padding: 0.3em;
+    opacity: 0.9;
+    font-size: 1.5em;
+    margin-top: 0.5em;
+    border-radius: 0.3em;
+}
+
+.register_btn:hover{
+    opacity: 1;
+}
+
+.login_form_section{
+    background-color: #f1f1f1;
+    text-align: center;
+    padding: 0.5em;
+    border: 1px solid #000;
+    border-top: none;
+    border-bottom-left-radius: 0.3em;
+    border-bottom-right-radius: 0.3em;
 }
