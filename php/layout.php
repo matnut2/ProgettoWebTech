@@ -2,6 +2,7 @@
     include_once("database_Manager.php");
     include_once("session_Manager.php");
     include_once("eventi.php");
+    include_once("veicolo.php");
 
     ini_set('display_errors', 1);
     ini_set('display_startup_errors', 1);
@@ -34,7 +35,7 @@
             $page = file_get_contents("../html/form-registrazione.html");
             $output = str_replace("{breadcrumb}",$breadcrumb,$output);
             $output = str_replace("{content}", $page, $output);
-            $output = str_replace("{currentPage}", "Chi Siamo", $output);
+            $output = str_replace("{currentPage}", "Registrati", $output);
             break;
 
         case 'registrazione-utente':
@@ -42,7 +43,7 @@
             $page = file_get_contents("../html/form-registrazione-utente.html");
             $output = str_replace("{breadcrumb}",$breadcrumb,$output);
             $output = str_replace("{content}", $page, $output);
-            $output = str_replace("{currentPage}", "Chi Siamo", $output);
+            $output = str_replace("{currentPage}", "Completa registrazione", $output);
             break;
 
         case 'accedi':
@@ -50,9 +51,16 @@
             $page = file_get_contents("../html/form-login.html");
             $output = str_replace("{breadcrumb}",$breadcrumb,$output);
             $output = str_replace("{content}", $page, $output);
-            $output = str_replace("{currentPage}", "Chi Siamo", $output);
+            $output = str_replace("{currentPage}", "Accedi", $output);
             break;
 
+        case 'aggiungi-auto':
+            $breadcrumb = "<a href=\"" . SessionManager::BASE_URL . 'home' . "\">HOME</a> &gt;&gt; Aggiunta Auto";
+            $page = file_get_contents("../html/form-aggiunta-auto.html");
+            $output = str_replace("{breadcrumb}",$breadcrumb,$output);
+            $output = str_replace("{content}", $page, $output);
+            $output = str_replace("{currentPage}", "Aggiunta Auto", $output);
+            break;
 
         default:
             $breadcrumb = "<a href=\"" . SessionManager::BASE_URL . 'home' . "\">HOME</a> &gt;&gt; ERRORE 404";

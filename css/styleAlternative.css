@@ -389,8 +389,7 @@ footer{
 .login_form {
     padding: 0.5em;
     border: 1px solid #000;
-    border-top-right-radius: 0.3em;
-    border-top-left-radius: 0.3em;
+    border-radius: 0.3em;
 }
 
 .login_form input[type=text], input[type=password]{
@@ -412,7 +411,7 @@ footer{
     margin-bottom: 1em;
 }
 
-.registration_form input[type=text], input[type=password],input[type=date],input[type=file]{
+.registration_form input, select,textarea{
     width: 100%;
     border: none;
     font-size: 1em;
