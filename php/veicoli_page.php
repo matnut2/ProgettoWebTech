@@ -3,22 +3,22 @@
 
     // Leggere il risultato dal database e stamparlo a schermo (impaginandolo)
 
-    $paginaHTML= file_get_contents("../html/eventi.html");
+    $paginaHTML= file_get_contents("../html/veicoli.html");
     $connessione = new database_Manager();
     $connessioneOK = $connessione->connectDB();
     $personaggi = ""; /* DATI FREZZI DAL DB */ 
     $listaPersonaggi = ""; /* CODICE DI HTML DA DARE IN OUTPUT */
 
     if($connessioneOK){
-        $personaggi = $connessione->getEventiList();
+        $personaggi = $connessione->getVeicoliList();
         $connessione->releaseDB();
 
         if($personaggi != null){
 
             foreach($personaggi as $personaggio){
-                $listaPersonaggi .= '<dt class = "eventTitle" > ' . $personaggio['nome'] .' '. $personaggio['data'].'</dt>';
-                $listaPersonaggi .= '<dd class= "eventDescription">
-                    <img class="eventImg" src="../img/' . $personaggio['url_immagine'] . '"/>
+                $listaPersonaggi .= '<dt > ' . $personaggio['marca'].' '.$personaggio['modello'] .'</dt>';
+                $listaPersonaggi .= '<dd> 
+                    <img class="imgListaAuto" src="../img/' . $personaggio['url_immagine'] . '"/>
                     <p class="eventParagraph"> ' . $personaggio['descrizione'] . '</p>
                     <a class="eventButton" href="">COMPRA BIGLIETTI</a>
                 </dd>';
@@ -32,5 +32,5 @@
     else{
         $listaPersonaggi = "<p> I Sistemi sono Attualmente Fuori Uso </p>";
     }
-    echo str_replace("{event-list}", $listaPersonaggi, $paginaHTML);
+    echo str_replace("{auto-list}", $listaPersonaggi, $paginaHTML);
 ?>

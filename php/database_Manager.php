@@ -1,51 +1,61 @@
 <?php 
 class database_Manager{
 
-    private static $instance = null;
-    private $conn;
-
-    private $host = "localhost"; //da modificare
-    private $user = 'app';
-    private $pass = 'appdbpasswd';
-    private $database = 'AutoAsta';
-
-
-    private function __construct(){
-        $this->conn = new mysqli($this->host, $this->user, $this->pass, $this->database);
-        if ($this->conn->connect_errno) {
-            die("Connection to db failed");
-        }
-    }
-
-     
-    public static function getInstance()
-    {
-        if(!self::$instance)
-        {
-            self::$instance = new database_Manager();
-        }
+    private const DB_HOST = "localhost";
+    private const DB_NAME = "AutoAsta";
+    private const USER = "app";
+    private const PWD = "appdbpasswd";
     
-        return self::$instance;
+    private $connection;
+    
+    public function connectDB(){
+        $this->connection = mysqli_connect(database_Manager::DB_HOST, database_Manager::USER, database_Manager::PWD, database_Manager::DB_NAME);
+        if(mysqli_connect_errno($this->connection)){
+            return false;
+        }
+        else{
+            return true;
+        }
     }
+    
+    public function releaseDB(){
+        mysqli_close($this->connection);
+    }
+    
+    public function getEventiList(){
+        $query = "SELECT * FROM Evento ORDER BY data ASC;";
+        $queryResult = mysqli_query($this->connection, $query) or die("Errore in getEventiList:" . mysqli_error($this->connection));
 
-    public function query($queryString,$className = "stdClass")
-    {
-        $results = [];
-        $res = $this->conn->query($queryString);
-        if ($res == false)
+        if(mysqli_num_rows($queryResult) == 0){
             return null;
-        if ($res === true || $res === false)
-        {
-            return $res;
         }
-        while ($row = $res->fetch_object($className)) {
-            array_push($results, $row);
+        else{
+            $result = array();
+            while($row = mysqli_fetch_assoc($queryResult)){
+                array_push($result, $row);
+            }
+            
+            $queryResult->free();
+            return $result;
         }
-        return $results;
     }
 
-    function __destruct() {
-        $this->conn->close();
+    public function getVeicoliList(){
+        $query = "SELECT * FROM Veicolo ";
+        $queryResult = mysqli_query($this->connection, $query) or die("Errore in getVeicoliList:" . mysqli_error($this->connection));
+
+        if(mysqli_num_rows($queryResult) == 0){
+            return null;
+        }
+        else{
+            $result = array();
+            while($row = mysqli_fetch_assoc($queryResult)){
+                array_push($result, $row);
+            }
+            
+            $queryResult->free();
+            return $result;
+        }
     }
 }
 ?>

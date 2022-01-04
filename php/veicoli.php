@@ -2,7 +2,7 @@
 <html lang="it">
     <head>
         <link rel="icon" type="image/x-icon" href="../img/2061866.png"/>
-        <title>Eventi - Auto Asta</title>
+        <title>Veicoli - Auto Asta</title>
         <link rel="stylesheet" type="text/css" media="screen" href="../css/styleAlternative.css"/>
         <link rel="stylesheet" type="text/css" media="screen and (max-width:600px), only screen and (max-width:600px)"  href="../css/mobile.css"/>
         <meta charset="UTF-8"/>
@@ -16,7 +16,7 @@
         <?php include_once ('header.php')?>
 
             <div id="content" tabindex="8">
-                <?php include_once('eventi_page.php')?>
+                <?php include_once('veicoli_page.php')?>
             </div>   
         <?php include_once ('../html/footer.html')?>
         </div>

@@ -16,6 +16,7 @@
         <?php include_once ('header.php')?>
 
             <div id="content" tabindex="8">
+                
             </div>   
         <?php include_once ('../html/footer.html')?>
         </div>
