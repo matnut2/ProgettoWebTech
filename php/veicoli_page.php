@@ -18,7 +18,7 @@
             foreach($personaggi as $personaggio){
                 $listaPersonaggi .= '<dt > ' . $personaggio['marca'].' '.$personaggio['modello'] .'</dt>';
                 $listaPersonaggi .= '<dd> 
-                    <img class="imgListaAuto" src="../img/' . $personaggio['url_immagine'] . '"/>
+                    <img class="imgListaAuto" src="../img/' . $personaggio['url_Immagine'] . '"/>
                     <p class="eventParagraph"> ' . $personaggio['descrizione'] . '</p>
                     <a class="eventButton" href="">COMPRA BIGLIETTI</a>
                 </dd>';

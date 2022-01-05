@@ -11,8 +11,7 @@ class SessionManager
     public const BASE_URL = "../php/layout.php?page="; //to check
 
     private function __construct()
-    {
-    }
+    {}
 
     public static function startSessionForUser($userId, $username, $canPublish)
     {

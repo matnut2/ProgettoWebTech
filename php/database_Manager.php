@@ -10,7 +10,7 @@ class database_Manager{
     
     public function connectDB(){
         $this->connection = mysqli_connect(database_Manager::DB_HOST, database_Manager::USER, database_Manager::PWD, database_Manager::DB_NAME);
-        if(mysqli_connect_errno($this->connection)){
+        if(mysqli_connect_errno()){
             return false;
         }
         else{
@@ -34,7 +34,6 @@ class database_Manager{
             while($row = mysqli_fetch_assoc($queryResult)){
                 array_push($result, $row);
             }
-            
             $queryResult->free();
             return $result;
         }
