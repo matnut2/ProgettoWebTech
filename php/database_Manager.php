@@ -34,6 +34,7 @@ class database_Manager{
             while($row = mysqli_fetch_assoc($queryResult)){
                 array_push($result, $row);
             }
+            
             $queryResult->free();
             return $result;
         }

@@ -3,7 +3,7 @@ include_once("database_Manager.php");
 class page {
 
     private static function checkFileName($name){
-        return $_SERVER['SCRIPT_NAME'] == "/github/ProgettoWebTech/php/" . $name;
+        return ($_SERVER['SCRIPT_NAME'] == "/AutoAsta/php/". $name);
     }
 
     public function printBreadcrumb(){
@@ -18,6 +18,9 @@ class page {
         }
         else if($this->checkFileName("veicoli.php")){
             echo "<p> <a href=\"index.php\" lang=\"en\">Home</a> &gt &gt Veicoli </p>";
+        }
+        else if($this->checkFileName("login.php")){
+            echo "<p> <a href=\"index.php\" lang=\"en\">Home</a> &gt &gt Login </p>";
         }
     }
 
@@ -45,6 +48,12 @@ class page {
             echo "<li><a href=\"chisiamo.php\">Chi Siamo</a></li>";
             echo "<li><a href=\"eventi.php\">Eventi</a></li>";
             echo "<li>Veicoli</li>";
+        }
+        else{
+            echo "<li><a href=\"index.php\" lang=\"en\">Home</a></li>";
+            echo "<li><a href=\"chisiamo.php\">Chi Siamo</a></li>";
+            echo "<li><a href=\"eventi.php\">Eventi</a></li>";
+            echo "<li><a href=\"veicoli.php\">Veicoli</a></li>";
         } 
     }
 

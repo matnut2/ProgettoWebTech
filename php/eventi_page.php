@@ -16,11 +16,7 @@
         if($personaggi != null){
 
             foreach($personaggi as $personaggio){
-
-                $phpdate = strtotime( $personaggio['data']);
-                $mysqldate = date( 'd-m-Y ', $phpdate );
-
-                $listaPersonaggi .= '<dt class = "eventTitle" > ' . $personaggio['nome'] .' '.$mysqldate.'</dt>';
+                $listaPersonaggi .= '<dt class = "eventTitle" > ' . $personaggio['nome'] .' '. $personaggio['data'].'</dt>';
                 $listaPersonaggi .= '<dd class= "eventDescription">
                     <img class="eventImg" src="../img/' . $personaggio['url_immagine'] . '"/>
                     <p class="eventParagraph"> ' . $personaggio['descrizione'] . '</p>
