@@ -240,49 +240,51 @@ footer{
 -------------------------------------------------------------------
 */
 
-#autoList{
+.autoList{
     text-align: center;
     margin-left: 1.5em;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 2em;
 }
 
-#autoList dt{
+.carArticle {
+    flex-basis: 45%;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #000;
+    border: 1px solid #000;
+    border-radius: 15px;
+    box-shadow: 5px 10px #DFE0DF;
+}
+
+.carArticle h3{
     font-size: 1.4em;
     padding: 0.3em;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
     background-color: #FFA500;
     font-weight: bold;
-    border: 1px solid #000;
-    border-top-right-radius: 1em;
-    border-top-left-radius: 1em;
-    box-shadow: 5px 10px #DFE0DF;
 }
 
-#autoList dd{
-    border: 1px solid #000;
-    background-color: #000;
+.carArticle p {
     color: #FFF;
-    margin-bottom: 1.5em;
-    min-height: 125px;
-    padding: 0.5em;
-    padding-bottom: 1.3em;
-    border-bottom-right-radius: 1em;
-    border-bottom-left-radius: 1em;
-    box-shadow: 5px 10px #DFE0DF;
 }
 
-#autoList dd .imgListaAuto{
+.carArticle .imgListaAuto{
     max-width: 100%;
 }
 
-#autoList dd a{
+.carArticle a{
     background-color: #FFA500;
     border-radius: 5px;
-    padding: .5em;
+    margin: 1em;
 }
 
-#autoList dd p{
-    padding-top: 0.5em;
-    margin-bottom: 1em;
-}
+
 
 /* VERSIONE TABELLARE*/
 /*
