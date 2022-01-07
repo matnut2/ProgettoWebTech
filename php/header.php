@@ -14,7 +14,7 @@
     </form>
 
     <div id="accesso" tabindex="3">
-        <a href="" ><p>{area-utenti}</p></a>
+        <?php $header->printLogin(); ?>
     </div>
 </header>  
 

@@ -20,7 +20,14 @@ class page {
             echo "<p> <a href=\"index.php\" lang=\"en\">Home</a> &gt &gt Veicoli </p>";
         }
         else if($this->checkFileName("login.php")){
-            echo "<p> <a href=\"index.php\" lang=\"en\">Home</a> &gt &gt Login </p>";
+            echo "<p> <a href=\"index.php\" lang=\"en\">Home</a> &gt &gt
+                    <a href=\"registrazione.php\">Registrazione Utente</a> &gt &gt
+                <span lang=\"en\">Login </span> </p>";
+        }
+        else if($this->checkFileName("registrazione.php")){
+            echo"<p> <a href=\"index.php\" lang=\"en\">Home</a> &gt &gt
+                Registrazione Utente
+            ";
         }
     }
 
@@ -55,9 +62,25 @@ class page {
             echo "<li><a href=\"eventi.php\">Eventi</a></li>";
             echo "<li><a href=\"veicoli.php\">Veicoli</a></li>";
         } 
+        /*
+            TO DO: 
+            Controllo se l'utente è loggato o meno
+                - IF FALSE: non cambio la struttura del menu
+                - IF TRUE: 
+                    - AREA PROFILO (in cui si possono modificare i dati utente inseriti)
+                    - SE AMMINISTRATORE --> mostrare area per modifica/inserimento/cancellazione auto
+        */
     }
 
-    
+    public function printLogin(){
+        /* TO DO: 
+        Controllo se l'utente è loggato o meno
+            - IF FALSE: mostro bottone accedi/registrati
+            - IF TRUE: mostro lo username 
+        */
+
+        echo "<a href=\"registrazione.php\">ACCEDI/REGISTRATI</a>";
+    }
 
 }
 ?>
