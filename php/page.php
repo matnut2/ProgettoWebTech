@@ -3,7 +3,7 @@ include_once("database_Manager.php");
 class page {
 
     private static function checkFileName($name){
-        return ($_SERVER['SCRIPT_NAME'] == "/github/ProgettoWebTech/php/". $name);
+        return ($_SERVER['SCRIPT_NAME'] == "/AutoAsta/php/". $name);
     }
 
     public function printBreadcrumb(){

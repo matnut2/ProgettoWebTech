@@ -190,9 +190,9 @@ CREATE TABLE `Veicolo` (
 --
 
 INSERT INTO `Veicolo` (`Targa`, `marca`, `modello`, `cilindrata`, `anno`, `posti`, `cambio`, `carburante`, `colore_Esterni`, `url_Immagine`, `descrizione`, `chilometri_Percorsi`, `disponibile`) VALUES
-('AB001CD', 'Audi', 'A5', 2000, 2019, 5, 'Automatico', 'Benzina', 'Nero brillante', '', 'Bellissima AUDI A5, utilizzata prevalentemente come auto aziendale', 100000, 0),
-('AB002CD', 'McLaren', '570S', 3799, 2018, 2, 'Automatico', 'Benzina', 'Nero metallizzato', '', 'Spettacolare McLaren dotata dei seguenti optional: Lift sollevatore anteriore  Freni carboceramici  Pacchetto carbonio interno totale  Fari anteriori FULL LED  Climatizzatore automatico   Cerchi in lega 19 pollici anteriore 20 pollici posteriore  Navigatore  Bluetooth   Sedili in pelle e alcantara regolabili elettricamente con memorie  Volante in alcantara  Sensori luci e pioggia automatici  Telecamera di parcheggio  Sensori parcheggio anteriori e posteriori', 40000, 1),
-('AB003CD', 'Mercedes', 'G63 AMG ', 3982, 2020, 5, 'Automatico', 'Benzina', 'Grigio Metallizzato', '', 'Direttamente dal futuro questo fantastico esemplare di AMG G63 in grado di affrontare qualunque terreno o situazione le si porga davanti ', 15000, 1);
+('AB001CD', 'Audi', 'A5', 2000, 2019, 5, 'Automatico', 'Benzina', 'Nero brillante', 'AudiA5.jpg', 'Bellissima AUDI A5, utilizzata prevalentemente come auto aziendale', 100000, 0),
+('AB002CD', 'McLaren', '570S', 3799, 2018, 2, 'Automatico', 'Benzina', 'Nero metallizzato', 'McLaren570S.jpg', 'Spettacolare McLaren dotata dei seguenti optional: Lift sollevatore anteriore  Freni carboceramici  Pacchetto carbonio interno totale  Fari anteriori FULL LED  Climatizzatore automatico   Cerchi in lega 19 pollici anteriore 20 pollici posteriore  Navigatore  Bluetooth   Sedili in pelle e alcantara regolabili elettricamente con memorie  Volante in alcantara  Sensori luci e pioggia automatici  Telecamera di parcheggio  Sensori parcheggio anteriori e posteriori', 40000, 1),
+('AB003CD', 'Mercedes', 'G63 AMG ', 3982, 2020, 5, 'Automatico', 'Benzina', 'Grigio Metallizzato', 'MercedesC63AMG.jpg', 'Direttamente dal futuro questo fantastico esemplare di AMG G63 in grado di affrontare qualunque terreno o situazione le si porga davanti ', 15000, 1);
 
 -- --------------------------------------------------------
 
