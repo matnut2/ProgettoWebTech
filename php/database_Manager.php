@@ -2,9 +2,9 @@
 class database_Manager{
 
     private const DB_HOST = "localhost";
-    private const DB_NAME = "AutoAsta";
-    private const USER = "app";
-    private const PWD = "appdbpasswd";
+    private const DB_NAME = "progettowebtech-working.on";
+    private const USER = "root";
+    private const PWD = "";
     
     private $connection;
     
