@@ -1,22 +1,33 @@
 <?php 
 class database_Manager{
 
-    private const DB_HOST = "localhost";
-    private const DB_NAME = "AutoAsta";
-    private const USER = "app";
-    private const PWD = "appdbpasswd";
+    private $DB_HOST = "localhost";
+    private $DB_NAME = "AutoAsta";
+    private $USER = "app";
+    private $PWD = "appdbpasswd";
     
     private $connection;
-    
-    public function connectDB(){
-        $this->connection = mysqli_connect(database_Manager::DB_HOST, database_Manager::USER, database_Manager::PWD, database_Manager::DB_NAME);
-        if(mysqli_connect_errno()){
-            return false;
-        }
-        else{
-            return true;
-        }
-    }
+
+    public function __construct(){
+		if (!$this->connectToDatabase($this->DB_NAME))
+			throw new Exception();
+	}
+
+	public function DatabaseConnection($host,$username,$password,$connection) {
+		$this->DB_HOST = $host;
+		$this->USER = $username;
+		$this->PWD = $password;
+		if (!$this->connectToDatabase($DB_NAME))
+			throw new Exception();
+	}
+
+	public function connectToDatabase() {
+		$this->connection = mysqli_connect($this->DB_HOST,$this->USER,$this->PWD,$this->DB_NAME);
+		if (!$this->connection)
+			return false;
+		else
+			return true;
+	}
     
     public function releaseDB(){
         mysqli_close($this->connection);
@@ -57,5 +68,13 @@ class database_Manager{
             return $result;
         }
     }
+    
+    public function query($query) {
+		return mysqli_query($this->connection,$query);
+	}
+
+    public function getError() {
+		return $this->connection->errno;
+	}
 }
 ?>

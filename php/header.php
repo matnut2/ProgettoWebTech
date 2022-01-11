@@ -22,7 +22,7 @@
     <?php $header->printBreadcrumb();?>
 </nav>
 
-<div id="menu">
+<div id="menu" tabindex="5">
     <ul>
         <?php $header->printMenu(); ?>
     </ul>

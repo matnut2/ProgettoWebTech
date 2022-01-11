@@ -408,3 +408,15 @@ footer{
     border-bottom-left-radius: 0.3em;
     border-bottom-right-radius: 0.3em;
 }
+/*
+-------------------------------------------------------------------
+                    SEZIONE AVVISI 
+-------------------------------------------------------------------
+*/
+.success-msg{
+    background-color: green;
+}
+
+.failed-msg{
+    background-color: red;
+}

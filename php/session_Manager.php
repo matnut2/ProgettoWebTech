@@ -1,56 +1,33 @@
 <?php
 
-session_start(); // move to layout or somewhere else if necessary
+require_once('utente_Non_Registrato.php');
+require_once('utente_Registrato.php');
+require_once('amministratore.php');
+require_once('gestione_accessi.php');
 
 class SessionManager
 {
-    private const USER_ID_KEY = "user_id";
-    private const USERNAME_KEY = "user_username";
-    private const PUBLISH_KEY = "canPublish";
-
-    public const BASE_URL = "../php/layout.php?page="; //to check
-
-    private function __construct()
+    function __construct()
     {}
 
-    public static function startSessionForUser($userId, $username, $canPublish)
-    {
-        if (!is_int($userId))
-            $userId = intval($userId);
-        if ($userId >= 0 && is_string($username) && !empty($username))
-        {
-            $_SESSION[SessionManager::USER_ID_KEY] = $userId;
-            $_SESSION[SessionManager::USERNAME_KEY] = $username;
-            $_SESSION[SessionManager::PUBLISH_KEY] = $canPublish;
-            return true;
-        }
-        return false;
+    public function getLoggedUser(){
+        /*try {
+            return new amministratore($username);
+        } catch (Exception $exc) {
+            try {
+                return new utente_Registrato($username);
+            } catch (Exception $exc) {
+                return new utente_Non_Registrato();
+            }
+        }*/
+        return new utente_Non_Registrato();
     }
 
-    public static function isUserLogged()
-    {
-        return isset($_SESSION[SessionManager::USER_ID_KEY]);
-    }
-
-    public static function userCanPublish()
-    {
-        if (SessionManager::isUserLogged())
-            return $_SESSION[SessionManager::PUBLISH_KEY];
-        return false;
-    }
-
-    public static function getUserId()
-    {
-        if (SessionManager::isUserLogged())
-            return $_SESSION[SessionManager::USER_ID_KEY];
-        return null;
-    }
-
-    public static function getUsername()
-    {
-        if (SessionManager::isUserLogged())
-            return $_SESSION[SessionManager::USERNAME_KEY];
-        return null;
+    public function init() {
+        session_start();
+        $user = $this->getLoggedUser();
+        $user->setSessionVars();
+        return $user;
     }
 
     public static function logout()
