@@ -1,11 +1,9 @@
 <?php 
 class database_Manager{
-
     private $DB_HOST = "localhost";
     private $DB_NAME = "AutoAsta";
     private $USER = "app";
     private $PWD = "appdbpasswd";
-    
     private $connection;
 
     public function __construct(){
