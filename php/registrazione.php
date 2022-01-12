@@ -1,28 +1,6 @@
 <?php
-    include_once ('session_Manager.php');
-    include_once ('gestione_accessi.php');
-    include_once('page.php');
-
-    ini_set('display_errors', 1);
-    ini_set('display_startup_errors', 1);
-    error_reporting(E_ALL);
-
+    require_once 'session_Manager.php';
     //$username = createSession();
-    $session = new SessionManager ();
-    $user = $session->init();
-    $gestione_accessi = new  gestione_accessi();
-    $page = new Page();
-
-    if(!empty($_POST)){
-        $gestione_accessi->inserimentoNuovoUtente($_POST,$user);
-        if($gestione_accessi){
-            $_SESSION['successMsg'] = 'Registrazione avvenuta con successo';
-            header('Location: pagina_avvisi.php');
-        }
-        else{
-            //TROVARE MODO DIRE UTENTE REGISTRAZIONE FALLITA
-        }
-    }
 ?>
 <!DOCTYPE html>
 <html lang="it">

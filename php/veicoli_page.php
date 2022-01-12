@@ -5,7 +5,7 @@
 
     $paginaHTML= file_get_contents("../html/veicoli.html");
     $connessione = new database_Manager();
-    $connessioneOK = $connessione->connectToDatabase();
+    $connessioneOK = $connessione->connectDB();
     $personaggi = ""; /* DATI FREZZI DAL DB */ 
     $listaPersonaggi = ""; /* CODICE DI HTML DA DARE IN OUTPUT */
 
