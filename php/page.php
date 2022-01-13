@@ -1,5 +1,6 @@
 <?php 
 include_once("database_Manager.php");
+include_once("session_Manager.php");
 class page {
 
     private static function checkFileName($name){
@@ -70,6 +71,18 @@ class page {
                     - AREA PROFILO (in cui si possono modificare i dati utente inseriti)
                     - SE AMMINISTRATORE --> mostrare area per modifica/inserimento/cancellazione auto
         */
+    }
+
+    public function printMessagge($msg,$success){
+        if($success){
+            echo"<div class=\"success-msg\">";
+        }
+        else{
+            echo"<div class=\"failed-msg\">";
+        }
+        echo"
+            <p>$msg</p>
+            </div>";
     }
 
     public function printLogin(){

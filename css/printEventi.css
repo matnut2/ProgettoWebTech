@@ -70,11 +70,6 @@ dt{
 
 /*sezione footer*/
 footer{
-    clear: both;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-color: lightgrey;
+    padding-top: 1em;
+    font-size: 0.7em;
 }

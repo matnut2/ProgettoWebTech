@@ -27,6 +27,7 @@ transform: scale(1.05);
 
 #header h2{
     font-size:2em;
+    padding: 0em;
 }
 
 #searchForm{
@@ -50,30 +51,26 @@ transform: scale(1.05);
 /*sezione chisiamo*/
 
  img{
-    float:right;
-    padding-top: 5em;
-    width: 12%;
-
+   float:left;
+    padding-top: 3em;
+    width: 15%;
+    
     
 }
 h3{
     padding-top: 2em;
-    text-align:left;
+    float:left;
+    padding-bottom:2em;
 }
 p{
     float: center;
-    text-align: left;  
+    padding-top: 12em;
+    text-align: left;    
    
 }
 
 /*sezione footer*/
 footer{
-    clear: both;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-color: lightgrey;
+    padding-top: 3em;
     font-size: 0.7em;
 }

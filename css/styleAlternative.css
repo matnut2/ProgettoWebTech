@@ -134,7 +134,7 @@ input:focus::placeholder{
 
 /* 
 -------------------------------------------------------------------
-                    SEZIONE MENU"
+                    SEZIONE MENU
 -------------------------------------------------------------------
 */
 #menu{
@@ -189,6 +189,7 @@ footer{
     justify-content: center;
     background-color: lightgrey;
     border-top: 2px solid #000;
+    padding: 0.5em
 }
 
 /* 
@@ -333,10 +334,17 @@ h3{
                     SEZIONE ERRORE 404
 -------------------------------------------------------------------
 */
-.cardError404{
-    background-color:#000;
-    color:#fff;
-    padding: 1em;
+ #errorPage {
+    text-align: center;
+}
+
+#errorPage img{
+    width: 100%;
+    margin: 1em 0;
+}
+
+#errorPage h1{
+    font-size: 2.5em;
 }
 
 /*
@@ -411,4 +419,16 @@ h3{
     border-top: none;
     border-bottom-left-radius: 0.3em;
     border-bottom-right-radius: 0.3em;
+}
+/*
+-------------------------------------------------------------------
+                    SEZIONE AVVISI 
+-------------------------------------------------------------------
+*/
+.success-msg{
+    background-color: green;
+}
+
+.failed-msg{
+    background-color: red;
 }

@@ -18,7 +18,7 @@
 
             <div id="content" tabindex="8">
                 <?php include_once('eventi_page.php')?>
-                </div>   
+            </div>   
         <?php include_once ('../html/footer.html')?>
         </div>
     </body>
