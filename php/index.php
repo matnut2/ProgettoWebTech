@@ -1,3 +1,7 @@
+<?php
+    require_once 'session_Manager.php';
+    createSession();
+?>
 <!DOCTYPE html>
 <html lang="it">
     <head>

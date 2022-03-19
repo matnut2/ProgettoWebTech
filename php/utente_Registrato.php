@@ -15,10 +15,10 @@ class utente_Registrato extends utente{
     public function __construct($email_user) {
 		parent::__construct();
 
-		$query = $this->getDBConnection()->query("SELECT * FROM Utente,Account WHERE Utente.Email = '$email_user' AND Utente.Email = Account.email");
+		$query = $this->getDB()->query("SELECT * FROM Utente,Account WHERE Utente.Email = '$email_user' AND Utente.Email = Account.email");
 		if ($query->num_rows > 0) {
 			$result = $query->fetch_assoc();
-			$this->ID = $result['ID'];
+			$this->ID = $result['id_Account'];
 			$this->username = $result['username'];
 			$this->password = $result['password'];
 			$this->email = $email_user;
@@ -32,5 +32,26 @@ class utente_Registrato extends utente{
 		}
 	}
 
+    public function isReg(){
+        return true;
+    }
+
+    public function checkPassword($psw){
+        //return sha1($psw) == $this->password;
+        return $psw == $this->password;
+    }
+
+    public function getEmail(){
+        return $this->email;
+    }
+
+    public function getID(){
+        return $this->ID;
+    }
+
+    public function setVarSession(){
+        $_SESSION['username'] = $this->getEmail();
+        $_SESSION['ID'] = $this->getID();
+    }
 }
 ?>

@@ -1,8 +1,10 @@
 <?php
 include_once('database_Manager.php');
 
-class utente{
+abstract class utente{
     private $db; 
+
+	public abstract function isReg();
 
     public function __construct(){
 		try {

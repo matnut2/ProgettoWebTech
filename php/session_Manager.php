@@ -5,37 +5,39 @@ require_once('utente_Registrato.php');
 require_once('amministratore.php');
 require_once('gestione_accessi.php');
 
-class SessionManager
-{
-    function __construct()
-    {}
 
-    public function getLoggedUser(){
-        /*try {
-            return new amministratore($username);
+function getLoggedUser($email){
+    try {
+        return new amministratore($email);
+    } catch (Exception $exc) {
+        try {
+            return new utente_Registrato($email);
         } catch (Exception $exc) {
-            try {
-                return new utente_Registrato($username);
-            } catch (Exception $exc) {
-                return new utente_Non_Registrato();
-            }
-        }*/
-        return new utente_Non_Registrato();
-    }
-
-    public function init() {
-        session_start();
-        $user = $this->getLoggedUser();
-        $user->setSessionVars();
-        return $user;
-    }
-
-    public static function logout()
-    {
-        session_unset();
-        session_destroy();
+            return new utente_Non_Registrato();
+        }
     }
 }
 
+function login ($email, $password){
+    $user = getLoggedUser($email);
+    if($user -> isReg() && !$user->checkPassword($password)){
+        $user = new utente_Non_Registrato();
+    }
+    $user->setVarSession();
+    return $user;
+}
+
+function logout()
+{
+    session_unset();
+    session_destroy();
+}
+
+function createSession(){
+    session_start();
+    $user = getLoggedUser($_SESSION['email']);
+    $user->setVarSession();
+    return $user;
+}
 
 ?>

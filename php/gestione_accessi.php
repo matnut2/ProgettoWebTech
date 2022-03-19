@@ -6,7 +6,7 @@ require_once('utente_Registrato.php');
 
 class gestione_accessi extends page{
     public function inserimentoNuovoUtente ($post, utente_Non_Registrato $utente){
-        $utente -> iscrizione($post['email'],$post['username'], $post['password'], 0,$post['nome'],$post['cognome']
+        $utente -> iscrizione($post['email'],$post['username'], $post['psw'], 0,$post['nome'],$post['cognome']
         ,$post['url_immagine'],$post['data_nascita']);
         if($utente){
             return true;
