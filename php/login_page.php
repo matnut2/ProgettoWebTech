@@ -2,7 +2,7 @@
     require_once 'session_Manager.php';
     require_once 'page.php';
     $username = createSession();
-    $page = new Page();
+    $page = new page();
 
     if($username->isReg()){
         $_SESSION['errorMSG'] = "Hai gi&agrave; effettuato l\'accesso";

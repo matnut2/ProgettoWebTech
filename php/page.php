@@ -1,12 +1,23 @@
 <?php 
-include_once("database_Manager.php");
-include_once("session_Manager.php");
+require_once("database_Manager.php");
+require_once("session_Manager.php");
 class page {
 
     public $errors = null;
 
     private static function checkFileName($name){
         return ($_SERVER['SCRIPT_NAME'] == "/Github/ProgettoWebTech/php/". $name);
+    }
+
+    private function checkUserLog(){
+        if(isset($_SESSION["ID"]) && $_SESSION["ID"]!=-1){ //se ID è istanziato ed è diverso da -1 significa che l'utente è registrato
+            //echo("$_SESSION[ID]");
+            return true;
+        }
+        else{
+            //echo("$_SESSION[ID]");
+            return false;
+        }
     }
 
     public function inserimentoNuovoUtente ($post, utente_Non_Registrato $utente){
@@ -39,6 +50,11 @@ class page {
         else if($this->checkFileName("registrazione.php")){
             echo"<p> <a href=\"index.php\" lang=\"en\">Home</a> &gt &gt
                 Registrazione Utente
+            ";
+        }
+        else if($this->checkFileName("scheda_utente.php")){
+            echo"<p> <a href=\"index.php\" lang=\"en\">Home</a> &gt &gt
+                Scheda Utente
             ";
         }
         else if($this->checkFileName("pagina_avvisi.php")){
@@ -79,6 +95,7 @@ class page {
             echo "<li><a href=\"eventi.php\">Eventi</a></li>";
             echo "<li><a href=\"veicoli.php\">Veicoli</a></li>";
         } 
+        
         /*
             TO DO: 
             Controllo se l'utente è loggato o meno
@@ -102,9 +119,18 @@ class page {
     }
 
     public function printLogin(){
-        
-
-        echo "<a href=\"registrazione.php\">ACCEDI/REGISTRATI</a>";
+        if (!$this->checkFileName("scheda_utente.php")){
+            if(!$this->checkUserLog()){ 
+                echo "<a href=\"registrazione.php\">ACCEDI/REGISTRATI</a>";
+            }
+            else{
+                echo "<a href=\"scheda_utente.php\">VISITA IL TUO PROFILO</a>";
+            }
+            /*PHP non può sa se il bottone viene premuto servirebbe AJAX */
+        }
+        else {
+            echo "SEI NEL TUO PROFILO";
+        }   
     }
 
     public function setErrors($errors){

@@ -27,7 +27,7 @@ class utente_Non_Registrato extends utente{
         return $this->getDBError() == 0;
     }
 
-    public function setVarSession() {
+    public function setSessionVars() {
 		$_SESSION['ID'] = -1;
 	}
 

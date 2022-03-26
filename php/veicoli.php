@@ -14,12 +14,12 @@
     <body>
         <div class="globalDiv">     
 
-        <?php include_once ('header.php')?>
+        <?php require_once ('header.php')?>
 
             <div id="content" tabindex="8">
-                <?php include_once('veicoli_page.php')?>
+                <?php require_once('veicoli_page.php')?>
             </div>   
-        <?php include_once ('../html/footer.html')?>
+        <?php require_once ('../html/footer.html')?>
         </div>
     </body>
 </html>

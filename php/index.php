@@ -1,6 +1,12 @@
 <?php
+    ini_set('display_errors', 1);
+    ini_set('display_startup_errors', 1);
+    error_reporting(E_ALL);
     require_once 'session_Manager.php';
-    createSession();
+    require_once 'page.php';
+    $username = createSession();
+    $page = new page();
+
 ?>
 <!DOCTYPE html>
 <html lang="it">
@@ -18,12 +24,12 @@
     <body>
         <div class="globalDiv">     
 
-        <?php include_once ('header.php')?>
+        <?php require_once ('header.php')?>
 
             <div id="content" tabindex="8">
                 
             </div>   
-        <?php include_once ('../html/footer.html')?>
+        <?php require_once ('../html/footer.html')?>
         </div>
     </body>
 </html>

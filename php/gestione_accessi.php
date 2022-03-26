@@ -2,7 +2,6 @@
 
 require_once('page.php');
 require_once('utente_Non_Registrato.php');
-require_once('utente_Registrato.php');
 
 class gestione_accessi extends page{
     public function inserimentoNuovoUtente ($post, utente_Non_Registrato $utente){

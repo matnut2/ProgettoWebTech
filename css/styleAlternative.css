@@ -31,6 +31,7 @@ header{
     background-color: #FFA500;
     display: flex;
     flex-flow: row;
+    justify-content: center;
     align-items: center;
 }
 
@@ -40,7 +41,7 @@ header{
 -------------------------------------------------------------------
 */
 header h1{
-    flex: 1;
+    flex:1;
     background:url("../img/LogoAutoasta.png");
     text-indent: -9999em;
     background-size: contain;
@@ -50,7 +51,7 @@ header h1{
 }
 
 #searchForm{
-    flex: 2;
+    flex:2;
     display: flex;
     flex-flow: row;
     align-items:center;
@@ -97,12 +98,8 @@ input:focus::placeholder{
 }
 
 #accesso{
-    flex: 1;
     text-align: center;
     font-size: 1.1em;
-}
-
-#accesso a{
     border: 2px solid #000;
     border-radius: 3px;
     padding: 0.2em;

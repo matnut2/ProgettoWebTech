@@ -17,6 +17,7 @@ class utente_Registrato extends utente{
 
 		$query = $this->getDB()->query("SELECT * FROM Utente,Account WHERE Utente.Email = '$email_user' AND Utente.Email = Account.email");
 		if ($query->num_rows > 0) {
+
 			$result = $query->fetch_assoc();
 			$this->ID = $result['id_Account'];
 			$this->username = $result['username'];
@@ -26,7 +27,7 @@ class utente_Registrato extends utente{
             $this->cognome = $result['cognome'];
             $this->data_Creazione = $result['data_Creazione'];
             $this->url_Immagine = $result['url_Immagine'];
-            $this->data_Nascita = $result['data_Nascita'];
+            $this->data_Nascita = $result['data_nascita'];
 		} else {
 			throw new Exception("Utente non esistente");
 		}
@@ -49,8 +50,8 @@ class utente_Registrato extends utente{
         return $this->ID;
     }
 
-    public function setVarSession(){
-        $_SESSION['username'] = $this->getEmail();
+    public function setSessionVars(){
+        $_SESSION['email'] = $this->getEmail();
         $_SESSION['ID'] = $this->getID();
     }
 }

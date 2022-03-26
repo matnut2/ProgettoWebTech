@@ -1,5 +1,5 @@
 <?php
-    include_once 'database_Manager.php';
+    require_once 'database_Manager.php';
 
     $username = $_POST['email'];
     

@@ -23,20 +23,18 @@ function login ($email, $password){
     if($user -> isReg() && !$user->checkPassword($password)){
         $user = new utente_Non_Registrato();
     }
-    $user->setVarSession();
+    $user->setSessionVars();
     return $user;
-}
-
-function logout()
-{
-    session_unset();
-    session_destroy();
 }
 
 function createSession(){
     session_start();
-    $user = getLoggedUser($_SESSION['email']);
-    $user->setVarSession();
+    $user_mail = null;
+    if(isset($_SESSION['email'])){
+        $user_mail = $_SESSION['email'];
+    }
+    $user = getLoggedUser($user_mail);
+    $user->setSessionVars();
     return $user;
 }
 

@@ -1,5 +1,5 @@
 <?php
-include_once('database_Manager.php');
+require_once('database_Manager.php');
 
 abstract class utente{
     private $db; 
@@ -13,6 +13,12 @@ abstract class utente{
 			header('Location: '.$_SERVER['PATH_INFO'].'html/404.html');
 			exit();
 		}
+	}
+
+	public abstract function setSessionVars();
+
+	public function isAdmin(){
+		return false;
 	}
 
 	public function getDBError() {

@@ -1,8 +1,8 @@
 <?php
     require_once('page.php');
-    include_once ('session_Manager.php');
+    require_once ('session_Manager.php');
     $user = createSession();
-    $page = new Page();
+    $page = new page();
     
     if (!$_SESSION['errorMsg'] && !$_SESSION['successMsg']){
         header('Location: notfound.php');
@@ -25,7 +25,7 @@
     <body>
         <div class="globalDiv">     
 
-        <?php include_once ('header.php')?>
+        <?php require_once ('header.php')?>
 
             <div id="content" tabindex="8">
                 <?php
@@ -37,7 +37,7 @@
                     unset($_SESSION['successMsg']);
                 ?>    
             </div>   
-        <?php include_once ('../html/footer.html')?>
+        <?php require_once ('../html/footer.html')?>
         </div>
     </body>
 </html>
