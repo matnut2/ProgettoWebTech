@@ -83,11 +83,11 @@ class page {
             echo "<li>Eventi</li>";
             echo "<li><a href=\"veicoli.php\">Veicoli</a></li>";
         } 
-        else if ($this->checkFileName("veicoli.php")){
-            echo "<li><a href=\"index.php\" lang=\"en\">Home</a></li>";
-            echo "<li><a href=\"chisiamo.php\">Chi Siamo</a></li>";
-            echo "<li><a href=\"eventi.php\">Eventi</a></li>";
-            echo "<li>Veicoli</li>";
+       else if ($this->checkFileName("veicoli.php")){
+            echo "<li><a class='shome' href=\"index.php\" lang=\"en\">Home</a></li>";
+            echo "<li><a class='schisiamo' href=\"chisiamo.php\">Chi Siamo</a></li>";
+            echo "<li><a class='seventi' href=\"eventi.php\">Eventi</a></li>";
+            echo "<li class='sveicoli' id='active'>Veicoli</li>";
         }
         else{
             echo "<li><a href=\"index.php\" lang=\"en\">Home</a></li>";
