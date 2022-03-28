@@ -91,6 +91,72 @@ DA CAPIRE SE CONTENUTO O PRESENTAZIONE
     font-size: 2em;
 }
 
+/*
+----------------------------------------------
+                MENU'
+----------------------------------------------
+*/
+
+#menu{
+    overflow: hidden;
+    position: fixed;
+    bottom:0;
+    width: 100%;
+    margin: 0;
+    float: none;
+    padding: none;
+    text-align: center;
+    padding-bottom: 2em;
+}
+
+#menu ul{
+    height: auto;
+}
+
+#menu li{
+    display: inline;
+}
+
+#menu a{
+    text-align: center;
+    padding: 0.2em;
+    
+    
+}
+
+.shome{
+    background: url("../img/home.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    color: transparent; /*DA RIMUOVERE, OVVIAMENTE*/
+}
+
+.schisiamo{
+    background: url("../img/chisiamo.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    color: transparent; /*DA RIMUOVERE, OVVIAMENTE*/
+}
+
+.seventi{
+    background: url("../img/biglietto.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    color: transparent; /*DA RIMUOVERE, OVVIAMENTE*/    
+}
+
+.sveicoli{
+    background: url("../img/auto.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    color: transparent; /*DA RIMUOVERE, OVVIAMENTE*/    
+}
+
+
 /* SEZIONE FOOTER */
 footer{
     text-align: center;
