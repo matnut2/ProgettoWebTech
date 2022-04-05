@@ -103,18 +103,18 @@ DA CAPIRE SE CONTENUTO O PRESENTAZIONE
     bottom:0;
     width: 100%;
     margin: 0;
-    float: none;
-    padding: none;
     text-align: center;
-    padding-bottom: 2em;
+    padding-bottom: 0.5em;
+    padding-top: 0.5em;
 }
 
-#menu ul{
-    height: auto;
-}
 
-#menu li{
+#menu ul li{
     display: inline;
+}
+
+#active{
+    background-color: lightgray;
 }
 
 #menu a{
@@ -156,6 +156,10 @@ DA CAPIRE SE CONTENUTO O PRESENTAZIONE
     color: transparent; /*DA RIMUOVERE, OVVIAMENTE*/    
 }
 
+#menu ul li{
+    border: 1px;
+}
+
 
 /* SEZIONE FOOTER */
 footer{
@@ -163,6 +167,7 @@ footer{
     background-color: lightgrey;
     border-top: 2px solid #000;
     font-size: 1.1em;
+    margin-bottom: 2.5em;
 }
 
 /* LINK */
