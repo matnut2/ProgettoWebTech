@@ -108,13 +108,18 @@ DA CAPIRE SE CONTENUTO O PRESENTAZIONE
     padding-top: 0.5em;
 }
 
+#menu ul li a{
+    margin:0;
+    color: transparent;
+
+}
 
 #menu ul li{
     display: inline;
 }
 
 #active{
-    background-color: lightgray;
+    background-color: white;
 }
 
 #menu a{
@@ -156,8 +161,8 @@ DA CAPIRE SE CONTENUTO O PRESENTAZIONE
     color: transparent; /*DA RIMUOVERE, OVVIAMENTE*/    
 }
 
-#menu ul li{
-    border: 1px;
+li{
+    border: 1px solid black;
 }
 
 
