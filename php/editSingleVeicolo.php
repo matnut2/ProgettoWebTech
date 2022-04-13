@@ -16,7 +16,7 @@
 
         <?php require_once ('header.php')?>
         <div id='content'>
-        <?php require_once ('../html/editSingleVeicolo.html')?>
+        <?php require_once ('editSingleVeicolo_page.php')?>
         </div>
 
         </div>   

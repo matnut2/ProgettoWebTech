@@ -74,5 +74,22 @@ class database_Manager{
     public function getError() {
 		return $this->connection->errno;
 	}
+
+    public function getInfoVeicolo($targa){
+        $query = "SELECT * FROM Veicolo WHERE Targa='$targa'";
+        $queryResult = mysqli_query($this->connection, $query) or die("Errore nel recupero dei dati del veicolo:" . mysqli_error($this->connection));
+
+        if(mysqli_num_rows($queryResult) == 0){
+            return null;
+        }else{
+            
+            $info = mysqli_fetch_object($queryResult);
+        }
+        
+        $queryResult->free();
+        $output = json_decode(json_encode($info), true);
+        return $output;
+
+    }
 }
 ?>
