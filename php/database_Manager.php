@@ -66,6 +66,42 @@ class database_Manager{
             return $result;
         }
     }
+
+    public function getNewVeicoli(){
+        $query = "SELECT * FROM Veicolo ORDER BY data_Aggiunta ASC LIMIT 2";
+        $queryResult = mysqli_query($this->connection, $query) or die("Errore in getNewVeicoli:" . mysqli_error($this->connection));
+
+        if(mysqli_num_rows($queryResult) == 0){
+            return null;
+        }
+        else{
+            $result = array();
+            while($row = mysqli_fetch_assoc($queryResult)){
+                array_push($result, $row);
+            }
+            
+            $queryResult->free();
+            return $result;
+        }
+    }
+
+    public function getNextEvento(){
+        $query = "SELECT * FROM Evento WHERE data >= CURRENT_TIMESTAMP  LIMIT 1;";
+        $queryResult = mysqli_query($this->connection, $query) or die("Errore in getNextEvento:" . mysqli_error($this->connection));
+
+        if(mysqli_num_rows($queryResult) == 0){
+            return null;
+        }
+        else{
+            $result = array();
+            while($row = mysqli_fetch_assoc($queryResult)){
+                array_push($result, $row);
+            }
+            
+            $queryResult->free();
+            return $result;
+        }
+    }
     
     public function query($query) {
 		return mysqli_query($this->connection,$query);

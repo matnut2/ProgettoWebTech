@@ -46,6 +46,10 @@ class utente_Registrato extends utente{
         return $this->email;
     }
 
+    public function getUsername(){
+        return $this->username;
+    }
+
     public function getID(){
         return $this->ID;
     }
