@@ -22,7 +22,7 @@
                     <img class="eventImg" src="../img/' . $evento['url_immagine'] . '"/>
                     <p class="eventParagraph"> ' . $evento['descrizione'] . '</p>';
                     if($checkDate[$index]){
-                        $listaEventi.= '<a class="notAvailable" >EVENTO SVOLTO</a></dd>'; 
+                        $listaEventi.= '<a class="notAvailable" >PECCATO, QUESTO EVENTO &Egrave TRASCORSO </a></dd>'; 
                     }
                     else {
                         $listaEventi .= '<a class="eventButton" href="">COMPRA BIGLIETTI</a> </dd>';
