@@ -6,31 +6,37 @@
     $paginaHTML= file_get_contents("../html/eventi.html");
     $connessione = new database_Manager();
     $connessioneOK = $connessione->connectToDatabase();
-    $personaggi = ""; /* DATI FREZZI DAL DB */ 
-    $listaPersonaggi = ""; /* CODICE DI HTML DA DARE IN OUTPUT */
+    $eventi = ""; /* DATI FREZZI DAL DB */ 
+    $listaEventi = ""; /* CODICE DI HTML DA DARE IN OUTPUT */
 
     if($connessioneOK){
-        $personaggi = $connessione->getEventiList();
+        $eventi = $connessione->getEventiList();
+        $checkDate = $connessione->checkEventiDate($eventi);
         $connessione->releaseDB();
 
-        if($personaggi != null){
-
-            foreach($personaggi as $personaggio){
-                $listaPersonaggi .= '<dt class = "eventTitle" > ' . $personaggio['nome'] .' '. $personaggio['data'].'</dt>';
-                $listaPersonaggi .= '<dd class= "eventDescription">
-                    <img class="eventImg" src="../img/' . $personaggio['url_immagine'] . '"/>
-                    <p class="eventParagraph"> ' . $personaggio['descrizione'] . '</p>
-                    <a class="eventButton" href="">COMPRA BIGLIETTI</a>
-                </dd>';
+        if($eventi != null){
+            $index= 0;
+            foreach($eventi as $evento){
+                $listaEventi .= '<dt class = "eventTitle" > ' . $evento['nome'] .' '. $evento['data'].'</dt>';
+                $listaEventi .= '<dd class= "eventDescription">
+                    <img class="eventImg" src="../img/' . $evento['url_immagine'] . '"/>
+                    <p class="eventParagraph"> ' . $evento['descrizione'] . '</p>';
+                    if($checkDate[$index]){
+                        $listaEventi.= '<a class="notAvailable" >EVENTO SVOLTO</a></dd>'; 
+                    }
+                    else {
+                        $listaEventi .= '<a class="eventButton" href="">COMPRA BIGLIETTI</a> </dd>';
+                    }
+                $index++;
             }
 
         }
         else{
-            $listaPersonaggi = "<p> Non ci sono informazioni relative ai personaggi </p>";
+            $listaEventi = "<p> Non ci sono informazioni relative ai eventi </p>";
         }
     }
     else{
-        $listaPersonaggi = "<p> I Sistemi sono Attualmente Fuori Uso </p>";
+        $listaEventi = "<p> I Sistemi sono Attualmente Fuori Uso </p>";
     }
-    echo str_replace("{event-list}", $listaPersonaggi, $paginaHTML);
+    echo str_replace("{event-list}", $listaEventi, $paginaHTML);
 ?>
