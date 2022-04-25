@@ -19,7 +19,10 @@
                 $ListaVeicoli .='<article class = "carArticle">';
                 $ListaVeicoli .= '<h3 > ' . $veicolo['marca'].' '.$veicolo['modello'] . ' - Targa ' . $veicolo['Targa']  .'</h3>';
                 $ListaVeicoli .= '
-                   
+                    <img class="imgListaAuto" src="../img/' . $veicolo['url_Immagine'] . '"/>
+                    <p class="eventParagraph"> ' . $veicolo['descrizione'] . '</p>   
+                <a class="eventButton" href="editSingleVeicolo.php?'.$veicolo['Targa'].'">Modifica</a>
+                </article>';
             }
 
         }

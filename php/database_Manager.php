@@ -1,9 +1,9 @@
 <?php 
 class database_Manager{
-    private $DB_HOST = "127.0.0.1";
-    private $DB_NAME = "autoasta";
-    private $USER = "root";
-    private $PWD = "";
+    private $DB_HOST = "localhost";
+    private $DB_NAME = "AutoAsta";
+    private $USER = "app";
+    private $PWD = "appdbpasswd";
     private $connection;
 
     public function __construct(){
@@ -49,6 +49,18 @@ class database_Manager{
         }
     }
 
+    public function checkEventiDate($eventi){
+        $checkEventiDate = array();
+        $date = date("Y-m-d");
+        foreach($eventi as $evento){
+            if($evento['data'] <  $date){
+                array_push($checkEventiDate,true);
+            }
+            else array_push($checkEventiDate,false);
+        }
+        return $checkEventiDate;
+    }
+
     public function getVeicoliList(){
         $query = "SELECT * FROM Veicolo ";
         $queryResult = mysqli_query($this->connection, $query) or die("Errore in getVeicoliList:" . mysqli_error($this->connection));
@@ -66,16 +78,15 @@ class database_Manager{
             return $result;
         }
     }
-    
-    public function getVeicoli(){
-        $query = "SELECT * FROM Veicolo ";
-        $queryResult = mysqli_query($this->connection, $query) or die("Errore in getVeicoliList:" . mysqli_error($this->connection));
-        return $queryResult;
 
-        /*if(mysqli_num_rows($queryResult) == 0){
+    public function getNewVeicoli(){
+        $query = "SELECT * FROM Veicolo ORDER BY data_Aggiunta ASC LIMIT 2";
+        $queryResult = mysqli_query($this->connection, $query) or die("Errore in getNewVeicoli:" . mysqli_error($this->connection));
+
+        if(mysqli_num_rows($queryResult) == 0){
             return null;
         }
-       /* else{
+        else{
             $result = array();
             while($row = mysqli_fetch_assoc($queryResult)){
                 array_push($result, $row);
@@ -84,7 +95,24 @@ class database_Manager{
             $queryResult->free();
             return $result;
         }
-        */
+    }
+
+    public function getNextEvento(){
+        $query = "SELECT * FROM Evento WHERE data >= CURRENT_TIMESTAMP  LIMIT 1;";
+        $queryResult = mysqli_query($this->connection, $query) or die("Errore in getNextEvento:" . mysqli_error($this->connection));
+
+        if(mysqli_num_rows($queryResult) == 0){
+            return null;
+        }
+        else{
+            $result = array();
+            while($row = mysqli_fetch_assoc($queryResult)){
+                array_push($result, $row);
+            }
+            
+            $queryResult->free();
+            return $result;
+        }
     }
     
     public function query($query) {
@@ -111,26 +139,5 @@ class database_Manager{
         return $output;
 
     }
-    public function insertVeicolo(){
-        $query = "INSERT INTO Veicolo(Targa,marca,modello,cilindrata,anno,posti,cambio,carburante,colore_Esterni,url_immagine,descrizione,chilometri_Percorsi,disponibile) VALUES($Targa,$marca,$modello,$cilindrata,$anno,$posti,$cambio,$carburante,$colore_Esterni,$url_immagine,$descrizione,$chilometri_Percorsi,$disponibile);";
-        //$query = "INSERT INTO Veicolo(Targa,marca,modello,cilindrata,anno,posti,cambio,carburante,colore_Esterni,url_immagine,descrizione,chilometri_Percorsi,disponibile) VALUES('AP001CV','Romeo','147','2000','2001','5','Manuale','Benzina','Nero','../img/AudiA5.jpg','ciao','1500','1');";
-        $queryResult = mysqli_query($this->connection, $query) or die("Errore in inserimentoVeicolo:" . mysqli_error($this->connection));
-
-       /* if(mysqli_num_rows($queryResult) == 0){
-            return null;
-        }
-        else{
-            $result = array();
-            while($row = mysqli_fetch_assoc($queryResult)){
-                array_push($result, $row);
-            }
-            
-            $queryResult->free();
-            return $result;
-        }
-    }*/
-//}
 }
-}
-
 ?>

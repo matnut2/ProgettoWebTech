@@ -6,7 +6,7 @@
     $paginaHTML= file_get_contents("../html/veicoli.html");
     $connessione = new database_Manager();
     $connessioneOK = $connessione->connectToDatabase();
-    $personaggi = ""; /* DATI FREZZI DAL DB */ 
+    $personaggi = ""; /* DATI  DAL DB */ 
     $listaPersonaggi = ""; /* CODICE DI HTML DA DARE IN OUTPUT */
 
     if($connessioneOK){
@@ -27,7 +27,7 @@
 
         }
         else{
-            $listaPersonaggi = "<p> Non ci sono informazioni relative ai personaggi </p>";
+            $listaPersonaggi = "<p> Non ci sono informazioni relative ai veicoli </p>";
         }
     }
     else{
