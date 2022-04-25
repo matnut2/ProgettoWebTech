@@ -26,7 +26,56 @@
             }
         }
 
-        public function aggiunta(){
+        public function getTarga(){
+            return $this->targa;
+        }
+
+        public function getModello(){
+            return $this->modello;
+        }
+
+        public function getCilindrata(){
+            return $this->cilindrata;
+        }
+
+        public function getAnno(){
+            return $this->anno;
+        }
+
+        public function getPosti(){
+            return $this->posti;
+        }
+
+        public function getCambio(){
+            return $this->cambio;
+        }
+
+        public function getCarburante(){
+            return $this->carburante;
+        }
+
+        public function getColoriEsterni(){
+            return $this->colori_Esterni;
+        }
+
+        public function getUrlImmagine(){
+            return $this->url_Immagine;
+        }
+
+        public function getDescrizione(){
+            return $this->descrizione;
+        }
+
+        public function getChilometriPercorsi(){
+            return $this->chilometri_Percorsi;
+        }
+
+        public function getDisponibile(){
+            return $this->disponibile;
+        }
+
+        public function getDataAggiunta(){
+            return $this->data_Aggiunta;
         }
     }
 ?>
