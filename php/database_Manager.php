@@ -123,6 +123,8 @@ class database_Manager{
 		return $this->connection->errno;
 	}
 
+   
+
     public function getInfoVeicolo($targa){
         $query = "SELECT * FROM Veicolo WHERE Targa='$targa'";
         $queryResult = mysqli_query($this->connection, $query) or die("Errore nel recupero dei dati del veicolo:" . mysqli_error($this->connection));

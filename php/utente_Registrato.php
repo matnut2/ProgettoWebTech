@@ -17,7 +17,6 @@ class utente_Registrato extends utente{
 
 		$query = $this->getDB()->query("SELECT * FROM Utente,Account WHERE Utente.Email = '$email_user' AND Utente.Email = Account.email");
 		if ($query->num_rows > 0) {
-
 			$result = $query->fetch_assoc();
 			$this->ID = $result['id_Account'];
 			$this->username = $result['username'];
@@ -58,5 +57,18 @@ class utente_Registrato extends utente{
         $_SESSION['email'] = $this->getEmail();
         $_SESSION['ID'] = $this->getID();
     }
+
+    public function addVeicolo($targa,$marca,$modello,$cilindrata,$anno,$posti,$cambio,$carburante,$colori_Esterni,$url_Immagine,$descrizione,$chilometri_Percorsi,$disponibile){
+        date_default_timezone_set("Europe/Rome");
+        $data_Aggiunta = date("Y-m-d");
+
+        $this->getDB()->query(
+            "INSERT INTO VEICOLO (Targa, marca, modello, cilindrata, anno, posti, cambio,carburante, colore_Esterni, url_Immagine, descrizione, chilometri_Percorsi, disponibile, data_Aggiunta)
+            VALUES ('$targa','$marca','$modello','$cilindrata','$anno','$posti','$cambio','$carburante','$colori_Esterni','$url_Immagine','$descrizione','$chilometri_Percorsi','$disponibile','$data_Aggiunta');"
+        );
+
+        return $this->getDBError() == 0;
+    }
+    
 }
 ?>
