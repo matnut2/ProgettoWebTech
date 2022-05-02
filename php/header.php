@@ -11,10 +11,11 @@
 
 <header>
     <h1>AUTO ASTA</h1>
-    <form action="cerca" id="searchForm">
+    <form action="livesearch.php" id="searchForm" method="post">
         <input type="text" placeholder="Digita qui quello che cerchi" name="search" tabindex="1" autocomplete="off">
-        <button id="btnSearchForm" type="submit" form="searchForm" tabindex="2" >CERCA</button>    
+         <button id="btnSearchForm" type="submit" form="searchForm" tabindex="2" >CERCA</button> 
     </form>
+    </script>
 
     <div id="accesso" tabindex="3">
         <?php $page->printLogin(); ?>

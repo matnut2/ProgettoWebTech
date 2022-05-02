@@ -1,9 +1,9 @@
 <?php 
 class database_Manager{
-    private $DB_HOST = "localhost";
-    private $DB_NAME = "AutoAsta";
-    private $USER = "app";
-    private $PWD = "appdbpasswd";
+    private $DB_HOST = "127.0.0.1";
+    private $DB_NAME = "autoasta";
+    private $USER = "root";
+    private $PWD = "";
     private $connection;
 
     public function __construct(){
@@ -49,18 +49,6 @@ class database_Manager{
         }
     }
 
-    public function checkEventiDate($eventi){
-        $checkEventiDate = array();
-        $date = date("Y-m-d");
-        foreach($eventi as $evento){
-            if($evento['data'] <  $date){
-                array_push($checkEventiDate,true);
-            }
-            else array_push($checkEventiDate,false);
-        }
-        return $checkEventiDate;
-    }
-
     public function getVeicoliList(){
         $query = "SELECT * FROM Veicolo ";
         $queryResult = mysqli_query($this->connection, $query) or die("Errore in getVeicoliList:" . mysqli_error($this->connection));
@@ -77,6 +65,18 @@ class database_Manager{
             $queryResult->free();
             return $result;
         }
+    }
+    
+    public function checkEventiDate($eventi){
+        $checkEventiDate = array();
+        $date = date("Y-m-d");
+        foreach($eventi as $evento){
+            if($evento['data'] <  $date){
+                array_push($checkEventiDate,true);
+            }
+            else array_push($checkEventiDate,false);
+        }
+        return $checkEventiDate;
     }
 
     public function getNewVeicoli(){
@@ -123,8 +123,6 @@ class database_Manager{
 		return $this->connection->errno;
 	}
 
-   
-
     public function getInfoVeicolo($targa){
         $query = "SELECT * FROM Veicolo WHERE Targa='$targa'";
         $queryResult = mysqli_query($this->connection, $query) or die("Errore nel recupero dei dati del veicolo:" . mysqli_error($this->connection));
@@ -141,5 +139,27 @@ class database_Manager{
         return $output;
 
     }
+    public function inserimentoVeicolo(){
+        if(isset($_POST['submit'])){
+            $Targa = $_POST['Targa'];
+            $marca = $_POST['marca'];
+            $modello = $_POST['modello'];
+            $cilindrata = $_POST['cilindrata'];
+            $anno = $_POST['anno'];
+            $posti = $_POST['posti'];
+            $cambio = $_POST['cambio'];
+            $carburante = $_POST['carburante'];
+            $colore_Esterni = $_POST['colore_Esterni'];
+            $url_immagine = $_POST['url_immagine'];
+            $descrizione = $_POST['descrizione'];
+            $chilometri_Percorsi = $_POST['chilometri_Percorsi'];
+            $disponibile = $_POST['disponibile'];
+
+            $query = "INSERT INTO Veicolo(Targa,marca,modello,cilindrata,anno,posti,cambio,carburante,colore_Esterni,url_immagine,descrizione,chilometri_Percorsi,disponibile) VALUES('$Targa','$marca','$modello','$cilindrata','$anno','$posti','$cambio','$carburante','$colore_Esterni','$url_immagine','$descrizione','$chilometri_Percorsi','$disponibile');";
+            $queryResult = mysqli_query($this->connection, $query) or die("Errore in inserimentoVeicolo:" . mysqli_error($this->connection));
+       
 }
+}
+}
+
 ?>
