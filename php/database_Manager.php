@@ -114,6 +114,22 @@ class database_Manager{
             return $result;
         }
     }
+
+    public function getUserInfo($email){
+        $query = "SELECT* FROM Utente WHERE Utente.Email='$email';";
+        $queryResult = mysqli_query($this->connection, $query) or die("Errore in getUserInfo:" . mysqli_error($this->connection));
+        if(mysqli_num_rows($queryResult) == 0){
+            return null;
+        }
+        else{
+            $result = array();
+            while($row = mysqli_fetch_assoc($queryResult)){
+                array_push($result, $row);
+            }
+            $queryResult->free();
+            return $result;
+        }
+    }
     
     public function query($query) {
 		return mysqli_query($this->connection,$query);
@@ -132,7 +148,6 @@ class database_Manager{
         if(mysqli_num_rows($queryResult) == 0){
             return null;
         }else{
-            
             $info = mysqli_fetch_object($queryResult);
         }
         

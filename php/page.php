@@ -6,7 +6,7 @@ class page {
     public $errors = null;
 
     private static function checkFileName($name){
-        return ($_SERVER['SCRIPT_NAME'] == "/AutoAsta/php/". $name);
+        return ($_SERVER['SCRIPT_NAME'] == "/GitHub/ProgettoWebTech/php/". $name);
     }
 
     private function checkUserLog(){
@@ -126,7 +126,6 @@ class page {
             else{
                 echo "<a href=\"scheda_utente.php\">VISITA IL TUO PROFILO</a>";
             }
-            /*PHP non può sa se il bottone viene premuto servirebbe AJAX */
         }
         else {
             echo "SEI NEL TUO PROFILO";

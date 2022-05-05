@@ -195,7 +195,46 @@ footer{
 -------------------------------------------------------------------
 */
 
+/* 
+-------------------------------------------------------------------
+                     SEZIONE SCHEDA PROFILO 
+-------------------------------------------------------------------
+*/
+div .userProfileCard{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    max-width: 450px;
+    margin: auto;
+    display: flex;
+    flex-flow: column nowrap;
+}
+.userProfileCard .row{
+    display: flex;
+    flex-flow: row;
+    align-items: stretch;
+    border-bottom: 1px solid #000;
+}
+.userProfileCard .row ul{
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+}
 
+.userProfileCard .row ul li{
+}
+
+.userProfileCard .second_row{
+    display: flex;
+    justify-content: space-around;
+    background-color: #FFA500;
+}
+
+.userProfileCard .second_row a{
+    background-color: #FFF;
+    padding: 0.5em;
+    border-radius: 5px;
+    margin:0.5em;
+    border: 1px solid #000;
+}
 /* 
 -------------------------------------------------------------------
                     SEZIONE EVENTI 
