@@ -11,6 +11,7 @@ class utente_Registrato extends utente{
     private $data_Creazione = null;
     private $url_Immagine = null;
     private $data_Nascita = null;
+    private $isAdmin = 0;
 
     public function __construct($email_user) {
 		parent::__construct();
@@ -27,6 +28,7 @@ class utente_Registrato extends utente{
             $this->data_Creazione = $result['data_Creazione'];
             $this->url_Immagine = $result['url_Immagine'];
             $this->data_Nascita = $result['data_nascita'];
+            $this->isAdmin = $result['isAdmin'];
 		} else {
 			throw new Exception("Utente non esistente");
 		}
@@ -53,9 +55,14 @@ class utente_Registrato extends utente{
         return $this->ID;
     }
 
+    public function getIsAdmin(){
+        return $this->isAdmin;
+    }
+
     public function setSessionVars(){
         $_SESSION['email'] = $this->getEmail();
         $_SESSION['ID'] = $this->getID();
+        $_SESSION['isAdmin'] = $this->getIsAdmin();
     }
 
     public function addVeicolo($targa,$marca,$modello,$cilindrata,$anno,$posti,$cambio,$carburante,$colori_Esterni,$url_Immagine,$descrizione,$chilometri_Percorsi,$disponibile){

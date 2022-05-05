@@ -10,6 +10,11 @@
 
     $user = createSession();
 
+    if($_SESSION["isAdmin"] != 1){
+        header('Location: index.php');
+        exit;
+    }
+
     if(!empty($_POST)){
         $checkIns = $user->addVeicolo($_POST['Targa'],$_POST['marca'],$_POST['modello'],$_POST['cilindrata'],$_POST['anno'],$_POST['posti'],$_POST['cambio'],$_POST['carburante'],$_POST['colore_esterni'],$_POST['url_immagine'],$_POST['descrizione'],$_POST['chilometri_Percorsi'],$_POST['disponibile']);
 
