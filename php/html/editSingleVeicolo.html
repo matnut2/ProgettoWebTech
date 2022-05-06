@@ -1,0 +1,50 @@
+<h3>EDITOR DEL VEICOLO</h3>
+
+<form method="post" action="">
+    <p>Targa</p>
+    <input type="text" maxlength="6" placeholder="{placeholder-targa}"/>
+
+    <p>Marca</p>
+    <input type="text" maxlength="15" placeholder="{placeholder-marca}"/>
+
+    <p>Modello</p>
+    <input type="text" maxlength="30" placeholder="{placeholder-modello}"/>
+
+    <p>Cilindrata</p>
+    <input type="number" min="1" max="9999" placeholder="{placeholder-cilindrata}">
+
+    <p>Anno</p>
+    <input type="year" placeholder="{placeholder-anno}">
+
+    <p>Posti</p>
+    <input type="number" min="1" max="12" placeholder="{placeholder-posti}">
+
+    <p>Cambio</p>
+    <input type="radio" id="auto" name="cambio" value="Automatico"><label for="auto">Automatico</label><br/>
+    <input type="radio" id="man" name="cambio" value="Manuale"><label for="man">Manuale</label><br/>
+
+    <p>Tipo di Carburante</p>
+    <input type="radio" value="Benzina" name="alimentazione" id="b"><label for="b">Benzina</label><br/>
+    <input type="radio" value="Diesel" name="alimentazione" id="d"><label for="d">Diesel</label><br/>
+    <input type="radio" value="Elettrica" name="alimentazione" id="e"><label for="e">Elettrica</label><br/>
+    <input type="radio" value="Ibrido Benzina" name="alimentazione" id="ib"><label for="ib">Ibrido Benzina</label><br/>
+    <input type="radio" value="Ibrido Diesel" name="alimentazione" id="id"><label for="id">Ibrido Diesel</label><br/>
+    <input type="radio" value="Altro" name="alimentazione" id="a"><label for="a">Altro</label><br/>
+
+    <p>Colore Carrozzeria</p>
+    <input type="text" maxlength="20" placeholder="{placeholder-colore}">
+
+    <p>URL Immagine</p>
+    <input type="url" placeholder="{placeholder-immagine}">
+
+    <p>Descrizione</p>
+    <textarea>{placeholder-descrizione}</textarea>
+
+    <p>Chilometri Attuali</p>
+    <input type="number" min="0" max="999999" placeholder="{placeholder-chilometri}">
+
+    <br/><br/>
+    <p>
+        <input type="submit">
+    </p>
+</form>
