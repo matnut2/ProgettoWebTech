@@ -65,6 +65,12 @@ class page {
                 Scheda Utente
             ";
         }
+        else if($this->checkFileName("edit_profile.php")){
+            echo"<p> <a href=\"index.php\" lang=\"en\">Home</a> &gt &gt
+                <a href=\"scheda_utente.php\">Scheda Utente</a> &gt &gt
+                Modifica Profilo
+            ";
+        }
         else if($this->checkFileName("pagina_avvisi.php")){
             echo"<p> <a href=\"index.php\" lang=\"en\">Home</a> &gt &gt
                 Pagina Avvisi
