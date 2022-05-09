@@ -13,7 +13,8 @@
         $checkIns = $gestione_accessi->inserimentoNuovoUtente($_POST,$user);
         if($checkIns){
            $user = createSession();
-           $user = login($_POST['email'], $_POST['psw']);
+           $enc_pswd = md5($_POST['psw']);
+           $user = login($_POST['email'], $enc_pswd);
            header("Location: scheda_utente.php");
             exit();
         }

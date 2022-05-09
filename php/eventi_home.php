@@ -26,7 +26,7 @@
 
         }
         else{
-            $listaPersonaggi = "<p> Non ci sono informazioni relative ai personaggi </p>";
+            $listaPersonaggi = "<p> Non ci sono informazioni relative agli eventi </p>";
         }
     }
     else{

@@ -10,7 +10,8 @@
         exit();
     } else {
         if (!empty($_POST)){
-            $user = login($_POST['email'], $_POST['psw']);
+            $enc_pswd = md5($_POST['psw']);
+            $user = login($_POST['email'], $enc_pswd);
             $page->setErrors(!$user->isReg());
             if (!$page->hasErrors()){
                 header("Location: index.php");

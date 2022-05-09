@@ -103,11 +103,12 @@ class utente_Registrato extends utente{
 
     public function updateUserInfo ($username, $password, $url_immagine, $data_Nascita){
 
+        $enc_pswd = md5($password);
         if($username!="" && $this->getUsername()!=$username){
             $this->username=$username;
         }
-        if($password!="" && $this->getPassword()!=$password){
-            $this->password=$password;
+        if($password!="" && $this->getPassword()!=$enc_pswd){
+            $this->password=$enc_pswd;
         }
         if($url_immagine!="" && $this->getUrlImmagine()!=$url_immagine){
             $this->url_Immagine = $url_immagine;
@@ -123,9 +124,9 @@ class utente_Registrato extends utente{
              WHERE Utente.Email='".$this->getEmail()."';"
         );
 
-        echo("Sono lo user:".$this->getUsername());
+        echo("La tua password criptata e': ".$enc_pswd.$this->getPassword());
         $this->getDB()->query(
-            "UPDATE Account SET Account.username = '".$this->getUsername()."' 
+            "UPDATE Account SET Account.username = '".$this->getUsername()."', Account.password='".$this->getPassword()."'
             WHERE Account.email = '".$this->getEmail()."';"
         );
 

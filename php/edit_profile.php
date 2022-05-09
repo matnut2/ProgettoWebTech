@@ -15,8 +15,8 @@
             $checkUpdate = $gestione_Update->updateUserInfo($_POST,$user);
             if($checkUpdate){
                //UPDATE AVVENUTO CON SUCCESSO
-               header("Location: scheda_utente.php");
-               exit();
+               /*header("Location: scheda_utente.php");
+               exit();*/
             }else echo("ERRORE NELLA QUERY");
         }
     }

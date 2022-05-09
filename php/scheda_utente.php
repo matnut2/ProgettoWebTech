@@ -63,7 +63,7 @@
                             }
                         }
                         else{
-                            $listaPersonaggi = "<p> Non ci sono informazioni relative ai veicoli </p>";
+                            $listaPersonaggi = "<p> Non ci sono informazioni relative agli utenti </p>";
                         }
                     }
                     else{
