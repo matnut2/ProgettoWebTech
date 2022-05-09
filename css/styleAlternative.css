@@ -210,16 +210,12 @@ div .userProfileCard{
 .userProfileCard .row{
     display: flex;
     flex-flow: row;
-    align-items: stretch;
     border-bottom: 1px solid #000;
 }
 .userProfileCard .row ul{
     list-style-type: none;
     display: flex;
     flex-direction: column;
-}
-
-.userProfileCard .row ul li{
 }
 
 .userProfileCard .second_row{

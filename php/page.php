@@ -29,6 +29,14 @@ class page {
         else return false;
     }
 
+    public function updateUserInfo($post, utente_Registrato $utente){
+        $utente->updateUserInfo($post['username'],$post['psw'],$post['url_immagine'],$post['data_nascita']);
+        if($utente){
+            return true;
+        }
+        else return false;
+    }
+
     public function printBreadcrumb(){
         if($this->checkFileName("index.php")){
             echo "<p lang=\"en\">Home</p>";
@@ -89,21 +97,18 @@ class page {
             echo "<li class='seventi'><a href=\"eventi.php\">Eventi</a></li>";
             echo "<li class='sveicoli' id='active'>Veicoli</li>";
         }
+
         else{
             echo "<li class='shome'><a href=\"index.php\" lang=\"en\">Home</a></li>";
             echo "<li class='schisiamo'><a href=\"chisiamo.php\">Chi Siamo</a></li>";
             echo "<li class='sevento'><a href=\"eventi.php\">Eventi</a></li>";
             echo "<li class='sveicoli'><a href=\"veicoli.php\">Veicoli</a></li>";
         } 
-        
-        /*
-            TO DO: 
-            Controllo se l'utente è loggato o meno
-                - IF FALSE: non cambio la struttura del menu
-                - IF TRUE: 
-                    - AREA PROFILO (in cui si possono modificare i dati utente inseriti)
-                    - SE AMMINISTRATORE --> mostrare area per modifica/inserimento/cancellazione auto
-        */
+
+        if(isset($_SESSION['isAdmin']) && $_SESSION['isAdmin']==1){
+            echo "<li><a href=\"\">Modifica veicoli</a></li>";
+            echo "<li><a href=\"\">Modifica eventi</a></li>";
+        }
     }
 
     public function printMessagge($msg,$success){

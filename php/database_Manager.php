@@ -116,7 +116,7 @@ class database_Manager{
     }
 
     public function getUserInfo($email){
-        $query = "SELECT* FROM Utente WHERE Utente.Email='$email';";
+        $query = "SELECT* FROM Utente,Account WHERE Utente.Email='$email' AND Utente.Email=Account.email;";
         $queryResult = mysqli_query($this->connection, $query) or die("Errore in getUserInfo:" . mysqli_error($this->connection));
         if(mysqli_num_rows($queryResult) == 0){
             return null;

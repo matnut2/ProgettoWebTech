@@ -1,6 +1,5 @@
 <?php
     require_once ('session_Manager.php');
-    require_once ('gestione_accessi.php');
     require_once('page.php');
 
     ini_set('display_errors', 1);
@@ -15,11 +14,14 @@
         if($checkIns){
            $user = createSession();
            $user = login($_POST['email'], $_POST['psw']);
+           header("Location: scheda_utente.php");
+            exit();
         }
     }
 
     if ($user->isReg()){
-        
+        header("Location: index.php");
+        exit();
     }
 
 ?>
@@ -78,6 +80,6 @@
                 </form>
             </div>
             <?php require_once ('../html/footer.html')?>
-        <div class="globalDiv">
+        </div>
     </body>
 </html>

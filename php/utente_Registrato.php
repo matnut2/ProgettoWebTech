@@ -43,16 +43,40 @@ class utente_Registrato extends utente{
         return $psw == $this->password;
     }
 
-    public function getEmail(){
-        return $this->email;
+    public function getID(){
+        return $this->ID;
     }
 
-    public function getUsername(){
+    function getUsername(){
         return $this->username;
     }
 
-    public function getID(){
-        return $this->ID;
+    function getEmail(){
+        return $this->email;
+    }
+    
+    private function getPassword(){
+        return $this->password;
+    }
+
+    private function getNome(){
+        return $this->nome;
+    }
+
+    private function getCognome(){
+        return $this->cognome;
+    }
+
+    public function getDataCreazione(){
+        return $this->data_Creazione;
+    }
+
+    public function getUrlImmagine(){
+        return $this->url_Immagine;
+    }
+
+    private function getDataNascita(){
+        return $this->data_Nascita;
     }
 
     public function getIsAdmin(){
@@ -73,6 +97,38 @@ class utente_Registrato extends utente{
             "INSERT INTO VEICOLO (Targa, marca, modello, cilindrata, anno, posti, cambio,carburante, colore_Esterni, url_Immagine, descrizione, chilometri_Percorsi, disponibile, data_Aggiunta)
             VALUES ('$targa','$marca','$modello','$cilindrata','$anno','$posti','$cambio','$carburante','$colori_Esterni','$url_Immagine','$descrizione','$chilometri_Percorsi','$disponibile','$data_Aggiunta');"
         );
+
+        return $this->getDBError() == 0;
+    }
+
+    public function updateUserInfo ($username, $password, $url_immagine, $data_Nascita){
+
+        if($username!="" && $this->getUsername()!=$username){
+            $this->username=$username;
+        }
+        if($password!="" && $this->getPassword()!=$password){
+            $this->password=$password;
+        }
+        if($url_immagine!="" && $this->getUrlImmagine()!=$url_immagine){
+            $this->url_Immagine = $url_immagine;
+        }
+        if($data_Nascita!="" && $this->getDataNascita()!=$data_Nascita){
+            $this->data_Nascita = $data_Nascita;
+        }
+
+        $this->getDB()->query(
+            "UPDATE Utente SET 
+             Utente.url_Immagine='".$this->getUrlImmagine()."',
+             Utente.data_nascita='".$this->getDataNascita()."'
+             WHERE Utente.Email='".$this->getEmail()."';"
+        );
+
+        echo("Sono lo user:".$this->getUsername());
+        $this->getDB()->query(
+            "UPDATE Account SET Account.username = '".$this->getUsername()."' 
+            WHERE Account.email = '".$this->getEmail()."';"
+        );
+
 
         return $this->getDBError() == 0;
     }

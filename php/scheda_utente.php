@@ -54,6 +54,7 @@
                             foreach($personaggi as $personaggio){
                                 $listaPersonaggi = str_replace("{user_name}", $personaggio["nome"],$listaPersonaggi);
                                 $listaPersonaggi = str_replace("{user_surname}",$personaggio["cognome"],$listaPersonaggi);
+                                $listaPersonaggi = str_replace("{username}",$personaggio['username'],$listaPersonaggi);
                                 $listaPersonaggi = str_replace("{user_email}",$personaggio['Email'],$listaPersonaggi);
                                 $listaPersonaggi = str_replace("{user_birthday}",$personaggio['data_nascita'],$listaPersonaggi);
                                 $listaPersonaggi = str_replace("{user_reg_day}",$personaggio['data_Creazione'],$listaPersonaggi);
