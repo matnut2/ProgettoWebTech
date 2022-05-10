@@ -1,6 +1,5 @@
 <?php
     require_once ('session_Manager.php');
-    require_once ('gestione_accessi.php');
     require_once('page.php');
     require_once('veicolo.php');
 
