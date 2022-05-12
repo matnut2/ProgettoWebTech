@@ -112,7 +112,7 @@ class page {
         } 
 
         if(isset($_SESSION['isAdmin']) && $_SESSION['isAdmin']==1){
-            echo "<li><a href=\"\">Modifica veicoli</a></li>";
+            echo "<li><a href=\"addVeicolo.php\">Modifica veicoli</a></li>";
             echo "<li><a href=\"\">Modifica eventi</a></li>";
         }
     }
