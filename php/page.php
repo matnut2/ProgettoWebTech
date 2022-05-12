@@ -6,7 +6,7 @@ class page {
     public $errors = null;
 
     private static function checkFileName($name){
-        return ($_SERVER['SCRIPT_NAME'] == "/GitHub/ProgettoWebTech/php/". $name);
+        return ($_SERVER['SCRIPT_NAME'] == "/progettowebtech/php/". $name);
     }
 
     private function checkUserLog(){
@@ -132,7 +132,11 @@ class page {
     public function printLogin(){
         if (!$this->checkFileName("scheda_utente.php")){
             if(!$this->checkUserLog()){ 
-                echo "<a href=\"registrazione.php\">ACCEDI/REGISTRATI</a>";
+                if($this->checkFileName("registrazione.php")){
+                    echo "<a>ACCEDI/REGISTRATI</a>";
+                } else        
+                    echo "<a href=\"registrazione.php\">ACCEDI/REGISTRATI</a>";
+
             }
             else{
                 echo "<a href=\"scheda_utente.php\">VISITA IL TUO PROFILO</a>";
