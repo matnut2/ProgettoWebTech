@@ -62,7 +62,7 @@ class database_Manager{
     }
 
     public function getVeicoliList(){
-        $query = "SELECT * FROM Veicolo ";
+        $query = "SELECT * FROM Veicolo, Asta Where Asta.targa_Veicolo = Veicolo.Targa";
         $queryResult = mysqli_query($this->connection, $query) or die("Errore in getVeicoliList:" . mysqli_error($this->connection));
 
         if(mysqli_num_rows($queryResult) == 0){
@@ -140,17 +140,11 @@ class database_Manager{
 	}
 
     public function getInfoVeicolo($targa){
-        $query = "SELECT * FROM Veicolo WHERE Targa='$targa'";
+        $query = "SELECT * FROM Veicolo,Asta WHERE Targa='$targa' AND Asta.targa_Veicolo='$targa'";
         $queryResult = mysqli_query($this->connection, $query) or die("Errore nel recupero dei dati del veicolo:" . mysqli_error($this->connection));
         if(mysqli_num_rows($queryResult) == 0){
             return null;
         }
-        /*else{
-            $info = mysqli_fetch_object($queryResult);
-        }
-        $queryResult->free();
-        $output = json_decode(json_encode($info), true);
-        return $output;*/
         else{
             $result = array();
             while($row = mysqli_fetch_assoc($queryResult)){

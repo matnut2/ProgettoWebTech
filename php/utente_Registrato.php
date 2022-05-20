@@ -101,24 +101,32 @@ class utente_Registrato extends utente{
         return $this->getDBError() == 0;
     }
 
-    public function updateVeicolo($targa,$marca,$modello,$cilindrata,$anno,$posti,$cambio,$carburante,$colori_Esterni,$url_Immagine,$descrizione,$chilometri_Percorsi,$disponibile){
+    public function updateVeicolo($targa,$marca,$modello,$cilindrata,$anno,$posti,$cambio,$carburante,$colori_Esterni,$url_Immagine,$descrizione,$chilometri_Percorsi,$disponibile,$prezzo){
+      
         $this->getDB()->query(
             "UPDATE VEICOLO SET
-            Veicolo.marca = '".$marca."',
-            Veicolo.modello = '".$modello."',
-            Veicolo.cilindrata = '".$cilindrata."',
-            Veicolo.anno = '".$anno."',
-            Veicolo.posti = '".$posti."',
-            Veicolo.cambio = '".$cambio."',
-            Veicolo.carburante = '".$carburante."',
-            Veicolo.colori_Esterni = '".$colori_Esterni."',
-            Veicolo.url_Immagine = '".$url_Immagine."',
-            Veicolo.descrizione = '".$descrizione."',
-            Veicolo.chilometri_Percorsi = '".$chilometri_Percorsi."',
-            Veicolo.disponibile = '".$disponibile."'
-            WHERE Veicolo.Targa='".$targa."';"
+            Veicolo.marca = '$marca',
+            Veicolo.modello = '$modello',
+            Veicolo.cilindrata = '$cilindrata',
+            Veicolo.anno = '$anno',
+            Veicolo.posti = '$posti',
+            Veicolo.cambio = '$cambio',
+            Veicolo.carburante = '$carburante',
+            Veicolo.colore_Esterni = '$colori_Esterni',
+            Veicolo.url_Immagine = '$url_Immagine',
+            Veicolo.descrizione = '$descrizione',
+            Veicolo.chilometri_Percorsi = '$chilometri_Percorsi',
+            Veicolo.disponibile = '$disponibile'
+            WHERE Veicolo.Targa='$targa';"
             );
-            return $this->getDBError() == 0;
+        $this->getDB()->query(
+            "UPDATE Asta SET
+            Asta.base_Asta = '$prezzo'
+            WHERE Asta.targa_Veicolo='$targa';"
+            );
+        
+   
+        return $this->getDBError() == 0;
     }
 
     public function updateUserInfo ($username, $password, $url_immagine, $data_Nascita){

@@ -38,7 +38,10 @@ class page {
     }
 
     public function updateVeicoloInfo($post, utente_Registrato $utente){
-        $utente->updateVeicolo($post['Targa'],$post['marca'],$post['modello'],$post['cilindrata'],$post['anno'],$post['posti'],$post['cambio'],$post['carburante'],$post['colori_Esterni'],$post['url_Immagine'],"",$post['chilometri_Percorsi'],1);
+        echo('CIAOOOOO SONO UPDATE INFO VEICOLOOOO:');
+        echo($post['targa']);
+        echo($post['modello']);
+        $utente->updateVeicolo($post['targa'],$post['marca'],$post['modello'],$post['cilindrata'],$post['anno'],$post['posti'],$post['cambio'],$post['carburante'],$post['colori_Esterni'],$post['url_Immagine'],$post['descrizione'],$post['chilometri_Percorsi'],1,$post['prezzo_base']);
         if($utente){
             return true;
         }

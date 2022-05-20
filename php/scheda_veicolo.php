@@ -51,7 +51,7 @@
                                 $listaVeicoli = str_replace("{veicolo_targa}", $veicolo["Targa"],$listaVeicoli);
                                 $listaVeicoli = str_replace("{chilometri_Percorsi}", $veicolo["chilometri_Percorsi"],$listaVeicoli);
                                 $listaVeicoli = str_replace("{data_Aggiunta}", $veicolo["data_Aggiunta"],$listaVeicoli);
-
+                                $listaVeicoli = str_replace("{base_Asta}",$veicolo['base_Asta'],$listaVeicoli);
                             }
                         }
                         else{
