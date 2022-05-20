@@ -21,7 +21,7 @@
                 $listaPersonaggi .= '
                     <img class="imgListaAuto" src="../img/' . $personaggio['url_Immagine'] . '"/>
                     <p class="eventParagraph"> ' . $personaggio['descrizione'] . '</p>   
-                <a class="eventButton" href="">APRI SCHEDA VEICOLO</a>
+                <a class="eventButton" href="scheda_veicolo.php?Targa='.$personaggio['Targa'].'">APRI SCHEDA VEICOLO</a>
                 </article>';
             }
 

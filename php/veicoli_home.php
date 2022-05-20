@@ -19,7 +19,7 @@
                 $listaPersonaggi .= '<h3 > ' . $personaggio['marca'].' '.$personaggio['modello'] .'</h3>';
                 $listaPersonaggi .= '
                     <img class="imgListaAuto" src="../img/' . $personaggio['url_Immagine'] . '"/>
-                <a class="eventButton" href="">MAGGIORI INFORMAZIONI</a>
+                <a class="eventButton"  href="scheda_veicolo.php?Targa='.$personaggio['Targa'].'">MAGGIORI INFORMAZIONI</a>
                 </article>';
             }
         }

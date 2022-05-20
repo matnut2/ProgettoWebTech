@@ -10,7 +10,7 @@
     $user = createSession();
 
     if($_SESSION["isAdmin"] != 1){
-        header('Location: index.php');
+        header('Location: err-404.php');
         exit;
     }
 

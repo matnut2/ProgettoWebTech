@@ -144,12 +144,21 @@ class database_Manager{
         $queryResult = mysqli_query($this->connection, $query) or die("Errore nel recupero dei dati del veicolo:" . mysqli_error($this->connection));
         if(mysqli_num_rows($queryResult) == 0){
             return null;
-        }else{
+        }
+        /*else{
             $info = mysqli_fetch_object($queryResult);
         }
         $queryResult->free();
         $output = json_decode(json_encode($info), true);
-        return $output;
+        return $output;*/
+        else{
+            $result = array();
+            while($row = mysqli_fetch_assoc($queryResult)){
+                array_push($result, $row);
+            }
+            $queryResult->free();
+            return $result;
+        }
     }
 
     public function getAllTarghe(){

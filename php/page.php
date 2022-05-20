@@ -79,6 +79,28 @@ class page {
                 Modifica Profilo
             ";
         }
+        else if($this->checkFileName("scheda_veicolo.php")){
+            echo"<p> <a href=\"index.php\" lang=\"en\">Home</a> &gt &gt
+                <a href=\"veicoli.php\">Veicoli</a> &gt &gt
+                Scheda Veicolo
+            ";
+        }
+        else if($this->checkFileName("editorVeicoli.php")){
+            echo"<p> <a href=\"index.php\" lang=\"en\">Home</a> &gt &gt
+                Modifica Veicoli
+            ";
+        }
+        else if($this->checkFileName("editSingleVeicolo.php")){
+            echo"<p> <a href=\"index.php\" lang=\"en\">Home</a> &gt &gt
+                 <a href=\"editorVeicoli.php\">Modifica Veicoli</a> &gt &gt
+                Veicolo da modificare 
+            ";
+        }
+        else if($this->checkFileName("addVeicolo.php")){
+            echo"<p> <a href=\"index.php\" lang=\"en\">Home</a> &gt &gt
+                Aggiungi Veicolo
+            ";
+        }
         else if($this->checkFileName("pagina_avvisi.php")){
             echo"<p> <a href=\"index.php\" lang=\"en\">Home</a> &gt &gt
                 Pagina Avvisi
