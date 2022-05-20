@@ -2,6 +2,10 @@
     require_once "database_Manager.php";
 
     // Leggere il risultato dal database e stamparlo a schermo (impaginandolo)
+    if($_SESSION["isAdmin"] != 1){
+        header('Location: index.php');
+        exit;
+    }
 
     $paginaHTML= file_get_contents("../html/editorVeicoli.html");
     $connessione = new database_Manager();
@@ -21,7 +25,7 @@
                 $ListaVeicoli .= '
                     <img class="imgListaAuto" src="../img/' . $veicolo['url_Immagine'] . '"/>
                     <p class="eventParagraph"> ' . $veicolo['descrizione'] . '</p>   
-                <a class="eventButton" href="editSingleVeicolo.php?'.$veicolo['Targa'].'">Modifica</a>
+                <a class="eventButton" href="editSingleVeicolo.php?targa='.$veicolo['Targa'].'">Modifica</a>
                 </article>';
             }
 

@@ -1,3 +1,35 @@
+<?php
+     require_once ('session_Manager.php');
+     require_once('page.php');
+     
+     ini_set('display_errors', 1);
+     ini_set('display_startup_errors', 1);
+     error_reporting(E_ALL);
+     
+    $gestione_Update = new  page();
+    $session = createSession();
+
+    if($_SESSION["isAdmin"] != 1){
+        header('Location: index.php');
+        exit;
+    }
+
+    if(!empty($_SESSION)){
+        $user = getLoggedUser($_SESSION['email']);
+        if(!empty($_POST)){
+            $checkUpdate = $gestione_Update->updateVeicoloInfo($_POST,$user);
+            if($checkUpdate){
+            //UPDATE AVVENUTO CON SUCCESSO
+            header("Location: editorVeicoli.php");
+            exit();
+            }else {
+                echo("ERRORE NELLA QUERY");
+                header("Location: index.php");
+                exit();
+            }
+        }
+    }
+?>
 <!DOCTYPE html>
 <html lang="it">
     <head>

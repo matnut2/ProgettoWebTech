@@ -15,7 +15,7 @@ class database_Manager{
 		$this->DB_HOST = $host;
 		$this->USER = $username;
 		$this->PWD = $password;
-		if (!$this->connectToDatabase($DB_NAME))
+		if (!$this->connectToDatabase($this->DB_NAME))
 			throw new Exception();
 	}
 
@@ -139,22 +139,33 @@ class database_Manager{
 		return $this->connection->errno;
 	}
 
-   
-
     public function getInfoVeicolo($targa){
         $query = "SELECT * FROM Veicolo WHERE Targa='$targa'";
         $queryResult = mysqli_query($this->connection, $query) or die("Errore nel recupero dei dati del veicolo:" . mysqli_error($this->connection));
-
         if(mysqli_num_rows($queryResult) == 0){
             return null;
         }else{
             $info = mysqli_fetch_object($queryResult);
         }
-        
         $queryResult->free();
         $output = json_decode(json_encode($info), true);
         return $output;
+    }
 
+    public function getAllTarghe(){
+        $query = "SELECT Targa FROM Veicolo";
+        $queryResult = mysqli_query($this->connection, $query) or die("Errore in getAllTarghe:" . mysqli_error($this->connection));
+        if(mysqli_num_rows($queryResult) == 0){
+            return null;
+        }
+        else{
+            $result = array();
+            while($row = mysqli_fetch_assoc($queryResult)){
+                array_push($result, $row);
+            }
+            $queryResult->free();
+            return $result;
+        }
     }
 }
 ?>

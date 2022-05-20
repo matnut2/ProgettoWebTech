@@ -101,6 +101,26 @@ class utente_Registrato extends utente{
         return $this->getDBError() == 0;
     }
 
+    public function updateVeicolo($targa,$marca,$modello,$cilindrata,$anno,$posti,$cambio,$carburante,$colori_Esterni,$url_Immagine,$descrizione,$chilometri_Percorsi,$disponibile){
+        $this->getDB()->query(
+            "UPDATE VEICOLO SET
+            Veicolo.marca = '".$marca."',
+            Veicolo.modello = '".$modello."',
+            Veicolo.cilindrata = '".$cilindrata."',
+            Veicolo.anno = '".$anno."',
+            Veicolo.posti = '".$posti."',
+            Veicolo.cambio = '".$cambio."',
+            Veicolo.carburante = '".$carburante."',
+            Veicolo.colori_Esterni = '".$colori_Esterni."',
+            Veicolo.url_Immagine = '".$url_Immagine."',
+            Veicolo.descrizione = '".$descrizione."',
+            Veicolo.chilometri_Percorsi = '".$chilometri_Percorsi."',
+            Veicolo.disponibile = '".$disponibile."'
+            WHERE Veicolo.Targa='".$targa."';"
+            );
+            return $this->getDBError() == 0;
+    }
+
     public function updateUserInfo ($username, $password, $url_immagine, $data_Nascita){
 
         $enc_pswd = md5($password);
@@ -124,7 +144,6 @@ class utente_Registrato extends utente{
              WHERE Utente.Email='".$this->getEmail()."';"
         );
 
-        echo("La tua password criptata e': ".$enc_pswd.$this->getPassword());
         $this->getDB()->query(
             "UPDATE Account SET Account.username = '".$this->getUsername()."', Account.password='".$this->getPassword()."'
             WHERE Account.email = '".$this->getEmail()."';"

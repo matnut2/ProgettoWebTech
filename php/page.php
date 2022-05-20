@@ -37,6 +37,14 @@ class page {
         else return false;
     }
 
+    public function updateVeicoloInfo($post, utente_Registrato $utente){
+        $utente->updateVeicolo($post['Targa'],$post['marca'],$post['modello'],$post['cilindrata'],$post['anno'],$post['posti'],$post['cambio'],$post['carburante'],$post['colori_Esterni'],$post['url_Immagine'],"",$post['chilometri_Percorsi'],1);
+        if($utente){
+            return true;
+        }
+        else return false;
+    }
+
     public function printBreadcrumb(){
         if($this->checkFileName("index.php")){
             echo "<p lang=\"en\">Home</p>";
@@ -112,7 +120,8 @@ class page {
         } 
 
         if(isset($_SESSION['isAdmin']) && $_SESSION['isAdmin']==1){
-            echo "<li><a href=\"addVeicolo.php\">Modifica veicoli</a></li>";
+            echo "<li><a href=\"addVeicolo.php\">Aggiungi veicolo</a></li>";
+            echo "<li><a href=\"editorVeicoli.php\">Modifica veicolo</a></li>";
             echo "<li><a href=\"\">Modifica eventi</a></li>";
         }
     }

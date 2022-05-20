@@ -1,3 +1,19 @@
+<?php 
+    require_once ('session_Manager.php');
+    require_once('page.php');
+    require_once('veicolo.php');
+
+    ini_set('display_errors', 1);
+    ini_set('display_startup_errors', 1);
+    error_reporting(E_ALL);
+
+    $user = createSession();
+
+    if($_SESSION["isAdmin"] != 1){
+        header('Location: index.php');
+        exit;
+    }
+?>
 <!DOCTYPE html>
 <html lang="it">
     <head>
