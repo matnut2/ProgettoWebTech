@@ -51,6 +51,7 @@ class database_Manager{
 
     public function checkEventiDate($eventi){
         $checkEventiDate = array();
+        
         $date = date("Y-m-d");
         foreach($eventi as $evento){
             if($evento['data'] <  $date){

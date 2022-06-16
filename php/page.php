@@ -145,9 +145,25 @@ class page {
         } 
 
         if(isset($_SESSION['isAdmin']) && $_SESSION['isAdmin']==1){
-            echo "<li><a href=\"addVeicolo.php\">Aggiungi veicolo</a></li>";
-            echo "<li><a href=\"editorVeicoli.php\">Modifica veicolo</a></li>";
-            echo "<li><a href=\"\">Modifica eventi</a></li>";
+            if($this->checkFileName("addVeicolo.php")){
+                echo "<li>Aggiungi Veicolo</li>";
+            }
+            else {
+                echo "<li><a href=\"addVeicolo.php\">Aggiungi veicolo</a></li>";
+            }
+            
+            if($this->checkFileName("editorVeicoli.php")){
+                echo "<li>Modifica Veicolo</li>";
+            }
+            else {
+                echo "<li><a href=\"editorVeicoli.php\">Modifica veicolo</a></li>";
+            }
+            if($this->checkFileName("editorEventi.php")){
+                echo "<li>Modifica Evento</li>";
+            }
+            else {
+                echo "<li><a href=\"\">Modifica eventi</a></li>";
+            }
         }
     }
 
