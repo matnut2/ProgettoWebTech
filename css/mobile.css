@@ -280,3 +280,7 @@ footer{
 .rowAboutUs{
     border: none;
 }
+
+.cardAboutUs{
+    flex-basis: 100%;
+}
