@@ -507,3 +507,30 @@ h3{
 .failed-msg{
     background-color: red;
 }
+
+/*
+-------------------------------------------------------------------
+                    SEZIONE SCHEDA VEICOLO 
+-------------------------------------------------------------------
+*/
+.schedaVeicolo{
+    display: flex;
+    flex-flow: column;
+    border: 1px solid #000;
+}
+.schedaVeicolo img{
+    margin: auto;
+    width: 100%;
+}
+.infoVeicolo {
+    list-style-type: none;
+    padding: 1em;
+}
+.infoVeicolo li {
+    display: flex;
+    flex-flow: row;
+    align-items: baseline;
+}
+.infoVeicolo li p{
+    margin-left: 0.5em;
+}
