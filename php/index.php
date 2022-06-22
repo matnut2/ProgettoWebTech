@@ -1,13 +1,3 @@
-<?php
-    ini_set('display_errors', 1);
-    ini_set('display_startup_errors', 1);
-    error_reporting(E_ALL);
-    require_once 'session_Manager.php';
-    require_once 'page.php';
-    $username = createSession();
-    $page = new page();
-
-?>
 <!DOCTYPE html>
 <html lang="it">
     <head>
