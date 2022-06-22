@@ -31,8 +31,9 @@ header{
     background-color: #FFA500;
     display: flex;
     flex-flow: row;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
+    gap: 2em;
 }
 
 /* 
@@ -103,6 +104,7 @@ input:focus::placeholder{
     border: 2px solid #000;
     border-radius: 3px;
     padding: 0.2em;
+    margin: 0.5em;
     background-color: #fff;
 }
 /* 
@@ -293,6 +295,7 @@ div .userProfileCard{
     flex-wrap: wrap;
     justify-content: space-between;
     gap: 2em;
+    margin-bottom: 2em;
 }
 
 .carArticle {
@@ -304,7 +307,6 @@ div .userProfileCard{
     background-color: #000;
     border: 1px solid #000;
     border-radius: 15px;
-    box-shadow: 5px 10px #DFE0DF;
 }
 
 .carArticle h3{
@@ -317,7 +319,12 @@ div .userProfileCard{
 }
 
 .carArticle p {
-    color: #FFF;
+    color: #000;
+    background-color: #DFE0DF;
+    padding: 0.2em;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+
 }
 
 .carArticle .imgListaAuto{
