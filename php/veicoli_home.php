@@ -20,7 +20,7 @@
                 $listaVeicoli .= '
                     <img class="imgListaAuto" src="../img/' . $veicolo['url_Immagine'] . '"/>
                 <a class="eventButton"  href="scheda_veicolo.php?Targa='.$veicolo['Targa'].'">MAGGIORI INFORMAZIONI</a>
-                <p> Pubblicato il giorno: '.$veicolo['data_Aggiunta'].'</p>
+                <p class="publish_date"> Pubblicato il giorno: '.$veicolo['data_Aggiunta'].'</p>
                 </article>';
             }
         }

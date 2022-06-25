@@ -30,6 +30,7 @@ class utente_Non_Registrato extends utente{
 
     public function setSessionVars() {
 		$_SESSION['ID'] = -1;
+        $_SESSION['email'] = -1;
 	}
 
     public function isReg(){

@@ -129,6 +129,23 @@ class utente_Registrato extends utente{
         return $this->getDBError() == 0;
     }
 
+    public function buyTicket($email_user,$id_Evento){
+        date_default_timezone_set("Europe/Rome");
+        $data_Acquisto = date("Y-m-d");        
+
+        $this->getDB()->query(
+            "INSERT INTO Biglietto (Id_Biglietto, evento, utente,data_Acquisto)
+            VALUES (NULL,'$id_Evento','$email_user','$data_Acquisto');"
+        );
+                
+        $this->getDB()->query(
+            "UPDATE Evento SET 
+             Evento.capienza=Evento.capienza-1
+             WHERE Evento.id_Evento='$id_Evento' AND Evento.capienza > 1;"
+        );
+        return $this->getDBError()==0;
+    }
+
     public function updateUserInfo ($username, $password, $url_immagine, $data_Nascita){
 
         $enc_pswd = md5($password);

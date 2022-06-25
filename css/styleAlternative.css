@@ -318,14 +318,19 @@ div .userProfileCard{
     font-weight: bold;
 }
 
-.carArticle p {
+
+.carArticle p{
+    color: #FFF;
+}
+
+.carArticle .publish_date {
     color: #000;
     background-color: #DFE0DF;
     padding: 0.2em;
     border-bottom-left-radius: 15px;
     border-bottom-right-radius: 15px;
-
 }
+
 
 .carArticle .imgListaAuto{
     max-width: 100%;

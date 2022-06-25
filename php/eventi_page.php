@@ -25,7 +25,7 @@
                         $listaEventi.= '<a class="notAvailable" >PECCATO, QUESTO EVENTO &Egrave TRASCORSO </a></dd>'; 
                     }
                     else {
-                        $listaEventi .= '<a class="eventButton" href="">COMPRA BIGLIETTI</a> </dd>';
+                        $listaEventi .= '<a class="eventButton" href="buy_Ticket.php?ID='.$evento['id_Evento'].'">COMPRA BIGLIETTI</a> </dd>';
                     }
                 $index++;
             }
