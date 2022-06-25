@@ -124,8 +124,6 @@ class utente_Registrato extends utente{
             Asta.base_Asta = '$prezzo'
             WHERE Asta.targa_Veicolo='$targa';"
             );
-        
-   
         return $this->getDBError() == 0;
     }
 

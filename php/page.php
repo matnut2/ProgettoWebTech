@@ -165,6 +165,14 @@ class page {
                 echo "<li><a href=\"\">Modifica eventi</a></li>";
             }
         }
+        if(isset($_SESSION['email']) && $_SESSION['email']!='-1'){
+            if($this->checkFileName("listaBiglietti.php")){
+                echo "<li>Lista biglietti</li>";
+            }
+            else {
+                echo "<li><a href=\"listaBiglietti.php\">Lista biglietti</a></li>";
+            }
+        }
     }
 
     public function printMessagge($msg,$success){

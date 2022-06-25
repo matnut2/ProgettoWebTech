@@ -31,6 +31,24 @@ class database_Manager{
         mysqli_close($this->connection);
     }
     
+    public function getEventoInfo($id_Evento){
+        $query = "SELECT * FROM Evento WHERE Evento.id_Evento=$id_Evento;";
+        $queryResult = mysqli_query($this->connection, $query) or die("Errore in getEventoInfo:" . mysqli_error($this->connection));
+
+        if(mysqli_num_rows($queryResult) == 0){
+            return null;
+        }
+        else{
+            $result = array();
+            while($row = mysqli_fetch_assoc($queryResult)){
+                array_push($result, $row);
+            }
+            
+            $queryResult->free();
+            return $result;
+        }
+    }
+
     public function getEventiList(){
         $query = "SELECT * FROM Evento ORDER BY data ASC;";
         $queryResult = mysqli_query($this->connection, $query) or die("Errore in getEventiList:" . mysqli_error($this->connection));
@@ -131,7 +149,23 @@ class database_Manager{
             return $result;
         }
     }
-    
+
+    public function getListaBiglietti($email){
+        $query = "SELECT * FROM Biglietto WHERE Biglietto.utente='$email';";
+        $queryResult = mysqli_query($this->connection, $query) or die("Errore in getUserInfo:" . mysqli_error($this->connection));
+        if(mysqli_num_rows($queryResult) == 0){
+            return null;
+        }
+        else{
+            $result = array();
+            while($row = mysqli_fetch_assoc($queryResult)){
+                array_push($result, $row);
+            }
+            $queryResult->free();
+            return $result;
+        }    
+    } 
+
     public function query($query) {
 		return mysqli_query($this->connection,$query);
 	}
