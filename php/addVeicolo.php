@@ -96,8 +96,8 @@
              <label for="chilometri_Percorsi"><b>Chilometraggio</b></label>
              <input type="number" placeholder="Inserisci i chilometri percorsi" name="chilometri_Percorsi" id="chilometri_Percorsi"  value ="0" min="0">
 
-             <input type="reset" class="reset_btn">
              <button type="submit" class="register_btn" name="submit">Inserisci Veicolo</button>
+             <input type="reset" class="reset_btn">
              </div>
          </form>
          </div>

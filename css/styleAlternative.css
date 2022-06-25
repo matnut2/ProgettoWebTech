@@ -412,6 +412,8 @@ div .userProfileCard{
     border: 1px solid #000;
     border-top-right-radius: 0.3em;
     border-top-left-radius: 0.3em;
+    display: flex;
+    flex-flow: column;
 }
 
 .login_form {
@@ -441,7 +443,7 @@ div .userProfileCard{
 
 .reset_btn{
     width: 100%;
-    background-color: #FFA500;
+    background-color: #ff0000;
     border: 1px solid #000;
     cursor: pointer;
     padding: 0.3em;
@@ -449,6 +451,7 @@ div .userProfileCard{
     font-size: 1.5em;
     margin-top: 0.5em;
     border-radius: 0.3em;
+    align-self: center;
 }
 
 .registration_form input[type=text],input[type=number],input[type=date],input[type=file]{
@@ -495,8 +498,6 @@ div .userProfileCard{
     margin-top: 0.5em;
     border-radius: 0.3em;
 }
-
-
 
 .register_btn:hover{
     opacity: 1;

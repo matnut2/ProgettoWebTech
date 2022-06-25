@@ -72,7 +72,7 @@
                     <input type="file" name="url_immagine" id="url_immagine" accept=".jpg,.png,.jpeg">
 
                     <p>Creando un account accetti i nostri <a href="">Termini e Condizioni</a>.</p>
-                    <input type="reset" class="reset_btn">
+                    <input type="reset" class="reset_btn" value="CANCELLA DATI INSERITI">
                     <button type="submit" class="register_btn">REGISTRATI</button>
                     </div>
 
