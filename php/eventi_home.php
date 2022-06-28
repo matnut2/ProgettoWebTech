@@ -16,11 +16,12 @@
         if($personaggi != null){
 
             foreach($personaggi as $personaggio){
-                $listaPersonaggi .= '<dt class = "eventTitle" > ' . $personaggio['nome'] .' '. $personaggio['data'].'</dt>';
+                $date = new DateTime($personaggio['data']);
+                $listaPersonaggi .= '<dt class = "eventTitle" > ' . $personaggio['nome'] .' '. $date->format('d-m-Y').'</dt>';
                 $listaPersonaggi .= '<dd class= "eventDescription">
                     <img class="eventImg" src="../img/' . $personaggio['url_immagine'] . '"/>
                     <p class="eventParagraph"> ' . $personaggio['descrizione'] . '</p>
-                    <a class="eventButton" href="">MAGGIORI INFORMAZIONI</a>
+                    <a class="eventButton" href="../php/eventi.php">ALTRI EVENTI</a>
                 </dd>';
             }
 

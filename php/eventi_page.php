@@ -17,7 +17,9 @@
         if($eventi != null){
             $index= 0;
             foreach($eventi as $evento){
-                $listaEventi .= '<dt class = "eventTitle" > ' . $evento['nome'] .' '. $evento['data'].'</dt>';
+                $date = new DateTime($evento['data']);
+
+                $listaEventi .= '<dt class = "eventTitle" > ' . $evento['nome'] .' '.  $date->format('d-m-Y').'</dt>';
                 $listaEventi .= '<dd class= "eventDescription">
                     <img class="eventImg" src="../img/' . $evento['url_immagine'] . '"/>
                     <p class="eventParagraph"> ' . $evento['descrizione'] . '</p>';
