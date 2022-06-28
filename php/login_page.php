@@ -3,7 +3,6 @@
     require_once 'page.php';
     $username = createSession();
     $page = new page();
-
     if($username->isReg()){
         $_SESSION['errorMSG'] = "Hai gi&agrave; effettuato l\'accesso";
         header("Location: pagina_avvisi.php");
@@ -30,27 +29,31 @@
         <meta charset="UTF-8"/>
         <meta name="description" content="Login Utente di Auto Asta"/>
         <meta name="keywords" content="auto, asta, homepage, principale, veicoli"/>
-        <meta name="author" content="Carlesso Niccolò, Pillon Matteo, Soldà Matteo, Veronese Andrea"/>       
+        <meta name="author" content="Carlesso Niccolò, Pillon Matteo, Soldà Matteo, Veronese Andrea"/>    
+        <script src="../JS/script.js"></script>   
     </head>
     <body>
         <div class="globalDiv">
         <?php require_once ('header.php')?>
         <div id="content">
-        <form action="../php/login_page.php" method="post">
+        <form name="login" action="../php/login_page.php" method="post">
             <div class="login_form">
             <h2>FORM LOGIN</h2>
             <p>Compila i campi seguenti per completare il login </p>
             <hr>
         
-            <label for="email"><b>Email</b></label>
-            <input type="text" placeholder="Inserisci la tua email" name="email" id="email" required>
-        
+            <fieldset form="registrazione" name="email">
+                <label for="email"><b>Email</b></label>
+                <input type="text" placeholder="Inserisci la tua email" name="email" id="email" onblur="return checkEmail()" required>
+            </fieldset>
+
             <label for="psw"><b>Password</b></label>
             <input type="password" placeholder="Inserisci la tua  password" name="psw" id="psw" required>
 
             <?php 
-                if ($page->hasErrors())
-                $page->printMessagge('Username o password errati',false);
+                    if($user)
+                        $page->setErrors(!$user->isReg());
+                        if($page->hasErrors()) $page->printMessagge('Username o password errati',false);
             ?>
         
             <button type="submit" class="register_btn">ACCEDI</button>

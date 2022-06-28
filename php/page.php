@@ -5,6 +5,37 @@ class page {
 
     public $errors = null;
 
+    public function __construct($errors = null){
+		$this->errors = $errors;
+	}
+
+	public function addError($error) {
+		if (!is_array($this->errors)) {
+			$this->errors = $error;
+		} else {
+			if (!is_array($error)){
+				array_push($this->errors,$error);
+			} else {
+				$this->errors = array_merge($this->errors,$error);
+			}
+		}
+	}
+
+    public function setErrors($errors){
+        $this->errors = $errors;
+    }
+
+    public function hasErrors(){
+        if($this->errors == null) return false;
+        if(!is_array($this->errors)) return !empty($this->errors);
+        $checkErr = false;
+        foreach($this->errors as $error){
+            $checkErr = $checkErr || !empty($error);
+        }
+        return $checkErr;
+    }
+    
+
     private static function checkFileName($name){
         return ($_SERVER['SCRIPT_NAME'] == "/progettowebtech/php/". $name);
     }
@@ -38,9 +69,6 @@ class page {
     }
 
     public function updateVeicoloInfo($post, utente_Registrato $utente){
-        echo('CIAOOOOO SONO UPDATE INFO VEICOLOOOO:');
-        echo($post['targa']);
-        echo($post['modello']);
         $utente->updateVeicolo($post['targa'],$post['marca'],$post['modello'],$post['cilindrata'],$post['anno'],$post['posti'],$post['cambio'],$post['carburante'],$post['colori_Esterni'],$post['url_Immagine'],$post['descrizione'],$post['chilometri_Percorsi'],1,$post['prezzo_base']);
         if($utente){
             return true;
@@ -205,18 +233,6 @@ class page {
         }   
     }
 
-    public function setErrors($errors){
-        $this->errors = $errors;
-    }
-
-    public function hasErrors(){
-        if($this->errors == null) return false;
-        if(!is_array($this->errors)) return !empty($this->errors);
-        $checkErr = false;
-        foreach($this->errors as $error){
-            $checkErr = $checkErr || !empty($error);
-        }
-        return $checkErr;
-    }
+    
 }
 ?>

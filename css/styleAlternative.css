@@ -531,18 +531,6 @@ div .userProfileCard{
     border-bottom-left-radius: 0.3em;
     border-bottom-right-radius: 0.3em;
 }
-/*
--------------------------------------------------------------------
-                    SEZIONE AVVISI 
--------------------------------------------------------------------
-*/
-.success-msg{
-    background-color: green;
-}
-
-.failed-msg{
-    background-color: red;
-}
 
 /*
 -------------------------------------------------------------------
@@ -584,6 +572,17 @@ fieldset{
 }
 .invalid-feedback{
     background: #ff0000;
-    padding: 0.3em;
+    padding: 0.5em;
+}
+
+.success-msg{
+    background-color: green;
+}
+
+.failed-msg{
+    background-color: red;
+}
+.failed-msg p{
+    padding: 0.5em;
 }
 
