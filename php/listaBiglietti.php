@@ -19,9 +19,7 @@
             <div id="content" tabindex="8">
             <?php
                 require_once "database_Manager.php";
-
-                // Leggere il risultato dal database e stamparlo a schermo (impaginandolo)
-
+                
                 $paginaHTML= file_get_contents("../html/eventi.html");
                 $connessione = new database_Manager();
                 $connessioneOK = $connessione->connectToDatabase();
@@ -34,13 +32,14 @@
                         $index = 0;
                         foreach($biglietti as $biglietto){
                             $evento = $connessione->getEventoInfo($biglietto['evento']);
-                            $listaEventi .= '<dt class = "eventTitle" > Fiera di: ' . $evento[0]['nome'] .'</dt>';
-                            $listaEventi .= '<img class="eventImg" src="../img/' . $evento[0]['url_immagine'] . '"/>';
-                            $listaEventi .= '<dd class= "eventDescription">
+                            $listaEventi .= '<dt class = "eventTitle" > Biglietto valido per la fiera di: ' . $evento[0]['nome'] .'</dt>';
+                            $listaEventi .= '<dd class= "eventDescription">';
+                            $listaEventi .= '<img class="eventImg" src="../img/' . $evento[0]['url_immagine'] . '"/>
                                 <ul class="eventParagraph">
                                 <li>INTESTATO A: ' . $biglietto['utente'] . '</li>
-                                <li>ACQUISTATO IL GIORNO: ' . $biglietto['data_Acquisto'].'</li>
-                                <li>VALIDO IL GIORNO: ' . $evento[0]['data'] . '</li>
+                                <li>ACQUISTATO IL GIORNO: <p>' . $biglietto['data_Acquisto'].'</p></li>
+                                <li>VALIDO IL GIORNO: <p>' . $evento[0]['data'] . '</p></li>
+                                <li>LUOGO SVOLGIMENTO: <p>' . $evento[0]['via'] .' '. $evento[0]['citta'] .' '. $evento[0]['num_Civico'] .' '.$evento[0]['cap'].'</p></li>
                                 </ul>';
                             $listaEventi .='<p class="idBiglietto">IDENTIFICATIVO BIGLIETTO: '. $biglietto['Id_Biglietto'].'</p>';
                         }

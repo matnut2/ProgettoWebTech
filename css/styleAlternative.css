@@ -245,8 +245,6 @@ div .userProfileCard{
     padding: 0.3em;
     border: 1px solid #000;
     margin-top: 1.5em;
-    box-shadow: 5px 10px #DFE0DF;
-
 }
 
 .eventImg {
@@ -260,12 +258,31 @@ div .userProfileCard{
     background-color: #000;
     color: #fff;
     min-height: 200px;
-    padding-bottom: 1em;
-    box-shadow: 5px 10px #DFE0DF;
+    display: flex;
+    flex-flow: row;
+}
+.eventDescription ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.eventDescription ul li{
+    padding: 0.5em;
+}
+
+.idBiglietto{
+    padding: 0.2em;
+    margin: 0 auto;
+    color:#000;
+    text-align: center;
+    background-color: #D8D8D8;
 }
 
 .eventParagraph{
     padding: 1em;
+    align-self: center;
 }
 
 .eventButton{
@@ -273,6 +290,8 @@ div .userProfileCard{
     padding: 0.5em;
     border-radius: 5px;
     border: 1px solid #fff;
+    margin: 0.3em;
+    align-self: center;
 }
 
 .notAvailable{
