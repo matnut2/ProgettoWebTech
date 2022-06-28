@@ -570,3 +570,20 @@ div .userProfileCard{
 .infoVeicolo li p{
     margin-left: 0.5em;
 }
+
+/*
+-------------------------------------------------------------------
+                    GESTIONE ERRORI  
+-------------------------------------------------------------------
+*/
+fieldset{
+    border:0;
+}
+.feedback{
+    margin-bottom: 0.5em;
+}
+.invalid-feedback{
+    background: #ff0000;
+    padding: 0.3em;
+}
+
