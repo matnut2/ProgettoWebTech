@@ -33,7 +33,8 @@
          <meta charset="UTF-8"/>
          <meta name="description" content="Login Utente di Auto Asta"/>
          <meta name="keywords" content="auto, asta, homepage, principale, veicoli"/>
-         <meta name="author" content="Carlesso Niccolò, Pillon Matteo, Soldà Matteo, Veronese Andrea"/>       
+         <meta name="author" content="Carlesso Niccolò, Pillon Matteo, Soldà Matteo, Veronese Andrea"/>  
+         <script src="../JS/script.js"></script>     
      </head>
      <body>
          <div class="globalDiv">
@@ -45,56 +46,81 @@
              <p>Compila i campi seguenti per inserire un nuovo veicolo</p>
              <hr>
 
-             <label for="Targa"><b>Targa</b></label>
-             <input type="text" placeholder="Inserisci la targa" name="Targa" id="Targa" required >
+             <fieldset name="targa" form="formAddVeicolo">
+                 <label for="Targa"><b>Targa</b></label>
+                 <input type="text" placeholder="Inserisci la targa" name="Targa" id="Targa" onblur="return checkText('Targa','Targa non valida, formato accettato: ab000cd',/^[a-zA-Z]{2}[0-9]{3}[a-zA-Z]{2}$/)" required >
+             </fieldset>
+            
+             <fieldset name="marca" form="formAddVeicolo">
+                <label for="marca"><b>Marca</b></label>
+                <select id ="marca" name = "marca" form = "formAddVeicolo">
+                    <option value="Volvo">Volvo</option>
+                    <option value="Mercedes">Mercedes</option>
+                    <option value="Opel">Opel</option>
+                    <option value="Audi">Audi</option>      
+                </select>
+             </fieldset>
 
-             <label for="marca"><b>Marca</b></label>
-             <select id ="marca" name = "marca" form = "formAddVeicolo">
-                <option value="Volvo">Volvo</option>
-                <option value="Mercedes">Mercedes</option>
-                <option value="Opel">Opel</option>
-                <option value="Audi">Audi</option>      
-             </select>
+             <fieldset name="modello" form="formAddVeicolo">
+                 <label for="modello"><b>Modello</b></label>
+                 <input type="text" placeholder="Inserisci il modello" name="modello" id="modello"  onblur="return checkText('modello','Modello non valido',/^[a-zA-Z0-9]+$/)" >
+             </fieldset>
+            
+             <fieldset name="cilindrata" form="formAddVeicolo">
+                <label for="cilindrata"><b>Cilindrata</b></label>
+                <input type="number" placeholder="Inserisci cilindrata" name="cilindrata" id="cilindrata">
+             </fieldset>
 
-             <label for="modello"><b>Modello</b></label>
-             <input type="text" placeholder="Inserisci il modello" name="modello" id="modello"  >
+             <fieldset name="anno" form="formAddVeicolo">
+                <label for="anno"><b>Anno</b></label>
+                <input type="number" placeholder="Inserisci l'anno di immatricolazione" name="anno" id="anno">
+             </fieldset>
 
-             <label for="cilindrata"><b>Cilindrata</b></label>
-             <input type="number" placeholder="Inserisci la cilindrata" name="cilindrata" id="cilindrata"  >
+             <fieldset name="posti" form="formAddVeicolo">
+                 <label for="posti"><b>Posti a Sedere</b></label>
+                 <input type="number" placeholder="Inserisci i posti per i passeggeri" name="posti" id="posti" max="10" >
+             </fieldset>
 
-             <label for="anno"><b>Anno</b></label>
-             <input type="number" placeholder="Inserisci l'anno di immatricolazione" name="anno" id="anno"  min="1900">
+             <fieldset name="cambio" form="formAddVeicolo">
+                <label for="cambio"><b>Tipologia Cambio</b></label>
+                <select id ="cambio" name = "cambio" form = "formAddVeicolo">
+                    <option value="Automatico">Automatico</option>
+                    <option value="Manuale">Manuale</option>
+                    <option value="SemiAutomatico">Semi Automatico</option>
+                </select>
+             </fieldset>
 
-             <label for="posti"><b>Posti a Sedere</b></label>
-             <input type="number" placeholder="Inserisci i posti per i passeggeri" name="posti" id="posti" max="10" >
+             <fieldset name="carburante" form="formAddVeicolo">
+                <label for="carburante"><b>Carburante</b></label>
+                <select id ="carburante" name = "carburante" form = "formAddVeicolo">
+                    <option value="Benzina">Benzina</option>
+                    <option value="Diesel">Diesel</option>
+                    <option value="Elettrico">Elettrico</option>
+                    <option value="Ibrido">Ibrido</option>
+                    <option value="Gasolio">Gasolio</option>
+                    <option value="GPL">GPL</option>
+                </select>
+             </fieldset>
 
-             <label for="cambio"><b>Tipologia Cambio</b></label>
-             <select id ="cambio" name = "cambio" form = "formAddVeicolo">
-                <option value="Automatico">Automatico</option>
-                <option value="Manuale">Manuale</option>
-                <option value="SemiAutomatico">Semi Automatico</option>
-             </select>
+             <fieldset name="colore_esterni" form="formAddVeicolo">
+               <label for="colore_esterni"><b>Colore Esterno</b></label>
+               <input type="text" placeholder="Inserisci il colore della carrozzeria" name="colore_esterni" id="colore_esterni"  >
+            </fieldset>
+            
+            <fieldset name="url_immagine" form="formAddVeicolo">
+                <label for="url_immagine"><b>Inserisci l'Immagine</b></label>
+                <input type="file" placeholder="Inserisci l'url dell'immagine" name="url_immagine" id="url_immagine">
+            </fieldset>
 
-             <label for="carburante"><b>Carburante</b></label>
-             <select id ="carburante" name = "carburante" form = "formAddVeicolo">
-                <option value="Benzina">Benzina</option>
-                <option value="Diesel">Diesel</option>
-                <option value="Elettrico">Elettrico</option>
-                <option value="Ibrido">Ibrido</option>
-                <option value="Gasolio">Gasolio</option>
-                <option value="GPL">GPL</option>
-            </select>
-             <label for="colore_esterni"><b>Colore Esterno</b></label>
-             <input type="text" placeholder="Inserisci il colore della carrozzeria" name="colore_esterni" id="colore_esterni"  >
+            <fieldset name="descrizione" form="formAddVeicolo">
+                <label for="descrizione"><b>Descrizione</b></label>
+                <input type="text" placeholder="Inserisci una descrizione completa" name="descrizione" id="descrizione"  >
+            </fieldset>
 
-             <label for="url_immagine"><b>Inserisci l'Immagine</b></label>
-             <input type="file" placeholder="Inserisci l'url dell'immagine" name="url_immagine" id="url_immagine">
-
-             <label for="descrizione"><b>Descrizione</b></label>
-             <input type="text" placeholder="Inserisci una descrizione completa" name="descrizione" id="descrizione"  >
-
-             <label for="chilometri_Percorsi"><b>Chilometraggio</b></label>
-             <input type="number" placeholder="Inserisci i chilometri percorsi" name="chilometri_Percorsi" id="chilometri_Percorsi"  value ="0" min="0">
+            <fieldset name="chilometri_Percorsi" form="formAddVeicolo">
+                <label for="chilometri_Percorsi"><b>Chilometraggio</b></label>
+                <input type="number" placeholder="Inserisci i chilometri percorsi" name="chilometri_Percorsi" id="chilometri_Percorsi"  value ="0" min="0">
+            </fieldset>
 
              <button type="submit" class="register_btn" name="submit">Inserisci Veicolo</button>
              <input type="reset" class="reset_btn">

@@ -92,6 +92,7 @@ class utente_Registrato extends utente{
     public function addVeicolo($targa,$marca,$modello,$cilindrata,$anno,$posti,$cambio,$carburante,$colori_Esterni,$url_Immagine,$descrizione,$chilometri_Percorsi,$disponibile){
         date_default_timezone_set("Europe/Rome");
         $data_Aggiunta = date("Y-m-d");
+        $targa = strtoupper($targa);
 
         $this->getDB()->query(
             "INSERT INTO VEICOLO (Targa, marca, modello, cilindrata, anno, posti, cambio,carburante, colore_Esterni, url_Immagine, descrizione, chilometri_Percorsi, disponibile, data_Aggiunta)
