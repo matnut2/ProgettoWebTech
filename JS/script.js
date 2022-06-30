@@ -23,7 +23,7 @@ function checkPassword(){
     var inputRepeatPassword =document.getElementById('password-repeat');
     var parent = inputRepeatPassword.parentNode;
 	var alert = parent.querySelector(".invalid-feedback");
-	return showAlert(alert, inputPassword.value === inputRepeatPassword.value, 'Passoword e Conferma Password non coincidono, riprova', parent);
+	return showAlert(alert, inputPassword.value === inputRepeatPassword.value, 'Password e Conferma Password non coincidono, riprova', parent);
 }
 
 function checkDateProfile(){

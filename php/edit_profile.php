@@ -14,10 +14,13 @@
         if(!empty($_POST)){
             $checkUpdate = $gestione_Update->updateUserInfo($_POST,$user);
             if($checkUpdate){
-               //UPDATE AVVENUTO CON SUCCESSO
                header("Location: scheda_utente.php");
                exit();
-            }else echo("ERRORE NELLA QUERY");
+            }else{
+                $_SESSION['errorMsg'] = "Impossibile aggiornare le informazioni, ti preghiamo di riprovare.";
+                header("Location: pagina_avvisi.php");
+                exit();
+            }
         }
     }
 
@@ -32,7 +35,8 @@
         <meta charset="UTF-8"/>
         <meta name="description" content="Registrazione Utente di Auto Asta"/>
         <meta name="keywords" content="auto, asta, homepage, principale, veicoli"/>
-        <meta name="author" content="Carlesso Niccolò, Pillon Matteo, Soldà Matteo, Veronese Andrea"/>       
+        <meta name="author" content="Carlesso Niccolò, Pillon Matteo, Soldà Matteo, Veronese Andrea"/>   
+        <script src="../JS/script.js"></script>    
     </head>
     <body>
         <div class="globalDiv">
@@ -43,18 +47,19 @@
                     <h2>FORM MODIFICA DATI UTENTE </h2>
                     <p>Compila solamente i campi dati che vuoi modificare </p>
                     <hr>
-                    <label for="psw"><b>Password</b></label>
-                    <input type="password" placeholder="Inserisci la tua  password" name="psw" id="psw" >  
-                    <label for="psw-repeat"><b>Ripeti Password</b></label>
-                    <input type="password" placeholder="Ripeti la password scelta" name="password-repeat" id="password-repeat" >
-            
-                    <label for="name"><b>Username</b></label>
-                    <input type="text" placeholder="Inserisci il tuo username" name="username" id="username">
+                    <fieldset name="password" form = "registration_form">
+                        <label for="psw"><b>Nuova Password</b></label>
+                        <input type="password" placeholder="Inserisci la tua nuova password" name="psw" id="psw" onblur="return checkPassword()" required >  
+                        <label for="psw-repeat"><b>Ripeti Nuova Password</b></label>
+                        <input type="password" placeholder="Ripeti la nuova password scelta" name="password-repeat" id="password-repeat" onblur="return checkPassword()"  required>
+                    </fieldset>
 
-                    <label for="birthday"><b>Data nascita</b></label>
-                    <input type="date" name="data_nascita" id="data_nascita" >
-
-                    <label for="profile_image"><b>Carica foto profilo</b></label>
+                    <fieldset name="username" form="registration_form">
+                        <label for="name"><b>Username</b></label>
+                        <input type="text" placeholder="Inserisci il tuo nuovo username" name="username" id="username" onblur="return checkText('username','Username non valido',/^[a-zA-Z0-9]+$/)">
+                    </fieldset>
+                 
+                    <label for="profile_image"><b>Cambia la tua foto profilo</b></label>
                     <input type="file" name="url_immagine" id="url_immagine" accept=".jpg,.png,.jpeg">
 
                     <button type="submit" class="register_btn">AGGIORNA DATI</button>

@@ -61,11 +61,13 @@ class page {
     }
 
     public function updateUserInfo($post, utente_Registrato $utente){
-        $utente->updateUserInfo($post['username'],$post['psw'],$post['url_immagine'],$post['data_nascita']);
-        if($utente){
-            return true;
+        if($post['psw'] == $post['password-repeat']){
+            $utente->updateUserInfo($post['username'],$post['psw'],$post['url_immagine'],$post['data_nascita']);
+            if($utente){
+                return true;
+            }
         }
-        else return false;
+        return false;
     }
 
     public function updateVeicoloInfo($post, utente_Registrato $utente){

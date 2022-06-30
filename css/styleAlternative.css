@@ -203,11 +203,12 @@ footer{
 -------------------------------------------------------------------
 */
 div .userProfileCard{
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    max-width: 450px;
+    max-width: 550px;
     margin: auto;
     display: flex;
+    border: 1px solid #000;
     flex-flow: column nowrap;
+    margin-bottom: 15em;
 }
 .userProfileCard .row{
     display: flex;
@@ -218,6 +219,9 @@ div .userProfileCard{
     list-style-type: none;
     display: flex;
     flex-direction: column;
+}
+.userProfileCard .row ul li{
+    padding: 0.3em;
 }
 
 .userProfileCard .second_row{
