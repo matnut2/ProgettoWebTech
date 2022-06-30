@@ -18,6 +18,11 @@
            header("Location: scheda_utente.php");
             exit();
         }
+        else{
+            $_SESSION['errorMsg'] = "Impossibile completare la registrazione";
+            header("Location: pagina_avvisi.php");
+            exit();
+        }
     }
 
     if ($user->isReg()){

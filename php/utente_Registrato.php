@@ -145,6 +145,17 @@ class utente_Registrato extends utente{
         return $this->getDBError()==0;
     }
 
+    public function deleteTicket($email_user,$id_Biglietto){
+        date_default_timezone_set("Europe/Rome");
+        $data_Acquisto = date("Y-m-d");        
+
+        $this->getDB()->query(
+            "DELETE FROM Biglietto WHERE Biglietto.Id_Biglietto = '$id_Biglietto' AND Biglietto.utente='$email_user';"
+        );
+                
+        return $this->getDBError()==0;
+    }
+
     public function updateUserInfo ($username, $password, $url_immagine, $data_Nascita){
 
         $enc_pswd = md5($password);

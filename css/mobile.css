@@ -284,3 +284,18 @@ footer{
 .cardAboutUs{
     flex-basis: 100%;
 }
+
+.eventDescription{
+    flex-flow: column;
+    flex-wrap: wrap;
+}
+
+.eventDescription img {
+    align-items: center;
+}
+
+.eventImg {
+    align-self: center;
+    padding: 0.5em;
+    max-width: 100%;
+}

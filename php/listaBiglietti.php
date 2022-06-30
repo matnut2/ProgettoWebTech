@@ -43,6 +43,7 @@
                                 <li>VALIDO IL GIORNO: <p>' . $dataEvento->format('d-m-Y'). '</p></li>
                                 <li>LUOGO SVOLGIMENTO: <p>' . $evento[0]['via'] .' '. $evento[0]['citta'] .' '. $evento[0]['num_Civico'] .' '.$evento[0]['cap'].'</p></li>
                                 </ul>';
+                            $listaEventi .='<a class="eventButton" href="../php/delete_Ticket.php?Id_Biglietto='.$biglietto['Id_Biglietto'].'">Elimina Biglietto</a></dd>';
                             $listaEventi .='<p class="idBiglietto">IDENTIFICATIVO BIGLIETTO: '. $biglietto['Id_Biglietto'].'</p>';
                         }
                         $connessione->releaseDB();

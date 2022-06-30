@@ -18,7 +18,6 @@
     if(!empty($_SESSION)){
         $user = getLoggedUser($_SESSION['email']);
         if(!empty($_POST)){
-            echo('CIAOO SONO LA POST DI EDIT SINGLE VEICOLOOOO');
             $checkUpdate = $gestione_Update->updateVeicoloInfo($_POST,$user);
             if($checkUpdate){
             //UPDATE AVVENUTO CON SUCCESSO

@@ -248,7 +248,7 @@ div .userProfileCard{
 }
 
 .eventImg {
-    float: left;
+    align-self: flex-start;
     padding: 0.5em;
     max-width: 80%;
     width: 15em;
@@ -278,6 +278,7 @@ div .userProfileCard{
     color:#000;
     text-align: center;
     background-color: #D8D8D8;
+
 }
 
 .eventParagraph{
@@ -577,6 +578,10 @@ fieldset{
 
 .success-msg{
     background-color: green;
+}
+
+.success-msg p{
+    padding: 0.5em;
 }
 
 .failed-msg{
