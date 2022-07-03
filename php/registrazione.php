@@ -92,7 +92,7 @@
                     </fieldset>
                     
                     <p>Creando un account accetti i nostri <a href="">Termini e Condizioni</a>.</p>
-                    <input type="reset" class="reset_btn" value="CANCELLA DATI INSERITI">
+                    <input type="reset" class="reset_btn" value="CANCELLA DATI">
                     <button type="submit" class="register_btn">REGISTRATI</button>
                     </div>
 

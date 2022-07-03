@@ -125,9 +125,9 @@ input:focus::placeholder{
     border:none;
 }
 
-#content h2 {
+#content h2{
     text-align: center;
-    font-size: 1.5em;
+    font-size: 1.3em;
 }
 
 /*
@@ -351,4 +351,104 @@ footer{
 
 .cardAboutUs h3{
     font-size: 1.2em;
+}
+/*
+-------------------------------------------------------------------
+                    SEZIONE FORM REGISTRAZIONE/LOGIN
+-------------------------------------------------------------------
+*/
+.registration_form {
+    padding: 0em;
+    border: 0px solid #000;
+    border-top-right-radius: 0em;
+    border-top-left-radius: 0em;
+    display: flex;
+    flex-flow: column;
+}
+
+.login_form {
+    padding: 0.5em;
+    border: 1px solid #000;
+    border-radius: 0.3em;
+}
+
+.login_form input[type=text], input[type=password]{
+    width: 100%;
+    border: none;
+    font-size: 1em;
+    padding: 0.5em;
+    background-color: #f1f1f1;
+    border-bottom: 1px solid #000;
+    margin-bottom: 0.5em;
+    border-width: 80%;
+}
+
+.login_form hr{
+    margin-bottom: 1em;
+}
+
+.registration_form hr{
+    margin-bottom: 1em;
+}
+
+.reset_btn{
+    width: 80%;
+    opacity: 0.8;
+    font-size: 1.1em;
+    align-self: center;
+}
+
+.registration_form input[type=text],input[type=number],input[type=date],input[type=file]{
+    width: 100%;
+    border: none;
+    font-size: 1em;
+    padding: 0.5em;
+    background-color: #f1f1f1;
+    border-bottom: 1px solid #000;
+    margin-bottom: 0.5em;
+    border-width: 80%;
+}
+
+.registration_form textarea{
+    width: 100%;
+    border: none;
+    font-size: 1em;
+    padding: 0.5em;
+    background-color: #f1f1f1;
+    border-bottom: 1px solid #000;
+    margin-bottom: 0.5em;
+    border-width: 80%;
+}
+
+.registration_form select{
+    width: 100%;
+    border: none;
+    font-size: 1em;
+    padding: 0.5em;
+    background-color: #f1f1f1;
+    border-bottom: 1px solid #000;
+    margin-bottom: 0.5em;
+    border-width: 80%;
+}
+
+.register_btn{
+    width: 100%;
+    background-color: #FFA500;
+    border: 1px solid #000;
+    cursor: pointer;
+    padding: 0.3em;
+    opacity: 0.9;
+    font-size: 1.1em;
+    margin-top: 0.5em;
+    border-radius: 0.3em;
+}
+
+.register_btn:hover{
+    opacity: 1;
+}
+
+.login_form_section{
+    margin-top: 1em;
+    border: 1px solid #000;
+    border-radius: 0.3em;
 }
