@@ -22,7 +22,7 @@
                     <img class="imgListaAuto" src="../img/' . $veicolo['url_Immagine'] . '"/>
                     <p class="eventParagraph"> ' . $veicolo['descrizione'] . '</p>   
                     <p class="carPrice">Prezzo base: '.$veicolo['base_Asta'].'&euro;</p>
-                <a class="eventButton" href="scheda_veicolo.php?Targa='.$veicolo['Targa'].'">APRI SCHEDA VEICOLO</a>
+                <a href="scheda_veicolo.php?Targa='.$veicolo['Targa'].'">APRI SCHEDA VEICOLO</a>
                 <p class="publish_date"> Pubblicato il giorno: '.$veicolo['data_Aggiunta'].'</p>
                 </article>';
             }

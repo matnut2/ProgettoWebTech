@@ -15,6 +15,7 @@ html, body
     font-size: 100%;
     margin: auto;
     max-width: 1024px;
+    min-width: 320px;
 }
 
 body
@@ -365,6 +366,7 @@ div .userProfileCard{
     background-color: #FFA500;
     border-radius: 5px;
     margin: 1em;
+    padding: 0.5em;
 }
 
 

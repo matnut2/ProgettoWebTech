@@ -25,7 +25,8 @@
                 $ListaVeicoli .= '
                     <img class="imgListaAuto" src="../img/' . $veicolo['url_Immagine'] . '"/>
                     <p class="eventParagraph"> ' . $veicolo['descrizione'] . '</p>   
-                <a class="eventButton" href="editSingleVeicolo.php?Targa='.$veicolo['Targa'].'">Modifica</a>
+                    <p class="carPrice">Prezzo base: '.$veicolo['base_Asta'].'&euro;</p>
+                <a  href="editSingleVeicolo.php?Targa='.$veicolo['Targa'].'">Modifica</a>
                 </article>';
             }
 

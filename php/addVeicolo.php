@@ -10,6 +10,8 @@
 
     if($_SESSION["isAdmin"] != 1){
         $_SESSION['errorMsg'] = "Devi essere un amministratore per accedere alla funzionalit&agrave; di aggiunta veicolo";
+        header('Location: ../php/pagina_avvisi.php');
+        exit;
     }
 
     if(!empty($_POST)){
@@ -18,10 +20,10 @@
             $_SESSION['successMsg'] = "Veicolo aggiunto con successo con successo";
         }
         $_SESSION['errorMsg'] = "Impossibile aggiungere il veicolo richiesto";
-    }
-
         header('Location: ../php/pagina_avvisi.php');
         exit;
+    }
+        
 ?>
 <!DOCTYPE html>
  <html lang="it">
