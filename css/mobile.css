@@ -18,43 +18,83 @@ body
 }
 
 
+/* 
+-------------------------------------------------------------------
+                    SEZIONE HEADER 
+-------------------------------------------------------------------
+*/
 header{
-    background-color: #FFA500;
-    display: flex;
     flex-flow: column;
-    justify-content: space-around;
-    gap: 1em 2em;
+    justify-content:flex-start;
+    gap: 1em;
 }
 
 header h1{
+    background:url("../img/LogoAutoasta.png");
+    background-repeat: no-repeat;
     background-position: center;
-    width: 100%;
+    background-size: contain;
+    text-indent: 10000em;
+    font-size: 2em;
+    margin: 0.2em;
+}
+
+#searchForm{
+    display: flex;
+    flex-flow: column;
+    flex-wrap: nowrap;
+    align-items:flex-start;
+    justify-content: space-between;
+    border: 2px solid #000;
+    border: none;
+}
+
+#searchForm input{
+    font-size: 1em;
+    width: fit-content;
+    border-bottom: 2px solid #000;
+}
+
+::placeholder{
+    color: #000;
+    /*font-style: italic;*/
+}
+
+input:focus::placeholder{
+    color:transparent;
 }
 
 #searchForm button {  
-    font-size: 1.3em;
-    background-color: #fff;
-    border:none;
-    border-left: 2px solid #000;
-    border-radius: 0px 3px 3px 0px;
-    padding: 0.2em;
+    cursor:pointer;
+    font-size: 1em;
+    border:1px solid #000;
+    border-radius:3px;
+    margin: 0 auto;
+    margin-top: 0.5em;
+    width: 100%;
+    padding: 0.3em;
+}
+
+#searchForm button img{
+    box-shadow: none;
+    width: 1.5em;
 }
 
 #accesso{
-    font-size: 1.3em;
-    order: 2;
-    margin-bottom: 1em;
+    text-align: center;
+    font-size: 1 em;
+    border-radius: 3px;
+    border: 1px solid #000;
+    padding: 0.2em;
+    margin: 0.5em;
+    background-color: #fff;
 }
 
-/*
-DA CAPIRE SE CONTENUTO O PRESENTAZIONE
-#accesso a img{
-    border: 2px solid #000;
-    width: 25%;
-}
+/* 
+-------------------------------------------------------------------
+                    SEZIONE BREADCRUMB 
+-------------------------------------------------------------------
 */
-
-/* SEZIONE BREADCRUMB */
 
 #breadcrumb a:link
 {
@@ -67,7 +107,7 @@ DA CAPIRE SE CONTENUTO O PRESENTAZIONE
 }
 
 #breadcrumb{
-    text-align: center;
+    text-align: left;
 }
 
 #menu{
@@ -101,7 +141,7 @@ DA CAPIRE SE CONTENUTO O PRESENTAZIONE
     overflow: hidden;
     position: fixed;
     bottom:0;
-    width: 100%;
+    width: 80%;
     margin: 0;
     text-align: center;
     padding-bottom: 0.5em;
@@ -111,7 +151,6 @@ DA CAPIRE SE CONTENUTO O PRESENTAZIONE
 #menu ul li a{
     margin:0;
     color: transparent;
-
 }
 
 #menu ul li{
@@ -125,8 +164,6 @@ DA CAPIRE SE CONTENUTO O PRESENTAZIONE
 #menu a{
     text-align: center;
     padding: 0.2em;
-    
-    
 }
 
 .shome{
@@ -190,8 +227,6 @@ footer{
     padding: 0.3em;
     border: 1px solid #000;
     margin-top: 1.5em;
-    box-shadow: 5px 10px #DFE0DF;
-
 }
 
 #eventList dd img {
@@ -205,8 +240,6 @@ footer{
     color: #fff;
     min-height: 200px;
     padding-bottom: 1em;
-    box-shadow: 5px 10px #DFE0DF;
-
 }
 
 #eventList dd p{
@@ -222,23 +255,17 @@ footer{
 
 /*SEZIONE AUTO*/
 .autoList{
-    text-align: center;
-    margin-left: 1.5em;
-    display: block;
-    justify-content: space-between;
-    gap: 2em;
 }
 
 .carArticle {
-    flex-basis: 45%;
     display: flex;
+    width: 100%;
     flex-wrap: nowrap;
     flex-direction: column;
     justify-content: space-between;
     background-color: #000;
     border: 1px solid #000;
     border-radius: 15px;
-    box-shadow: 5px 10px #DFE0DF;
     margin-bottom: 2em;
 }
 

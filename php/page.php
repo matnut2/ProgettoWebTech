@@ -145,6 +145,11 @@ class page {
                 Lista Biglietti
             ";
         }
+        else if($this->checkFileName("404.php")){
+            echo"<p> <a href=\"index.php\" lang=\"en\">Home</a> &gt &gt
+                Errore 404
+            ";
+        }
     }
 
     public function printMenu() {

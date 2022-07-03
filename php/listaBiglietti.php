@@ -1,3 +1,16 @@
+<?php
+    require_once 'session_Manager.php';
+    require_once 'database_Manager.php';
+    require_once 'page.php';
+    $page = new page();
+    $username = createSession();
+
+    if(!isset($_SESSION['email']) || $_SESSION['email']==-1){
+        $_SESSION['errorMsg'] = "Devi prima effettuare l'accesso per visualizzare i tuoi biglietti";
+    }
+    header("Location: pagina_avvisi.php");
+    exit();
+?>
 <!DOCTYPE html>
 <html lang="it">
     <head>
