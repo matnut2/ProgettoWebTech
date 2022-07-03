@@ -139,6 +139,12 @@ class page {
                 Pagina Avvisi
             ";
         }
+	    
+	    else if($this->checkFileName("listaBiglietti.php")){
+            echo"<p> <a href=\"index.php\" lang=\"en\">Home</a> &gt &gt
+                Lista Biglietti
+            ";
+        }
     }
 
     public function printMenu() {
