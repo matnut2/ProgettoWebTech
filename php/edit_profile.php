@@ -31,7 +31,7 @@
         <link rel="icon" type="image/x-icon" href="../img/2061866.png"/>
         <title>Aggiorna informazioni Utente - Auto Asta</title>
         <link rel="stylesheet" type="text/css" media="screen" href="../css/styleAlternative.css"/>
-        <link rel="stylesheet" type="text/css" media="screen and (max-width:800px), only screen and (max-width:800px)"  href="../css/mobile.css"/>
+        <link rel="stylesheet" type="text/css" media="screen and (max-width:1200px), only screen and (max-width:1200px)"  href="../css/mobile.css"/>
         <meta charset="UTF-8"/>
         <meta name="description" content="Registrazione Utente di Auto Asta"/>
         <meta name="keywords" content="auto, asta, homepage, principale, veicoli"/>
