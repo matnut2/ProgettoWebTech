@@ -7,9 +7,10 @@
 
     if(!isset($_SESSION['email']) || $_SESSION['email']==-1){
         $_SESSION['errorMsg'] = "Devi prima effettuare l'accesso per visualizzare i tuoi biglietti";
+        header("Location: pagina_avvisi.php");
+        exit();
     }
-    header("Location: pagina_avvisi.php");
-    exit();
+    
 ?>
 <!DOCTYPE html>
 <html lang="it">

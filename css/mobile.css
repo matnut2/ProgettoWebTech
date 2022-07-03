@@ -1,15 +1,4 @@
-/* GENERALE */
-*
-{
-    padding: 0;
-    margin: 0;
-}
 
-html, body
-{
-    font-size: 150%;
-    margin: auto;
-}
 
 body
 {
@@ -23,22 +12,23 @@ body
 -------------------------------------------------------------------
 */
 header{
-    flex-flow: column;
-    justify-content:flex-start;
-    gap: 1em;
+    flex-wrap: wrap;
+    gap: 0.5em;
 }
 
 header h1{
+    flex-basis: 100%;
     background:url("../img/LogoAutoasta.png");
     background-repeat: no-repeat;
     background-position: center;
     background-size:contain;
-    text-indent: 0em;
-    font-size: 2em;
+    font-size: 4em;
+    text-indent: -99999em;
     margin: 0.2em;
 }
 
 #searchForm{
+    flex-basis: 100%;
     display: flex;
     flex-flow: column;
     flex-wrap: nowrap;
@@ -49,8 +39,9 @@ header h1{
 }
 
 #searchForm input{
+    width: 80%;
     font-size: 1em;
-    width: fit-content;
+    margin: 0 auto;
     border-bottom: 2px solid #000;
 }
 
@@ -70,7 +61,7 @@ input:focus::placeholder{
     border-radius:3px;
     margin: 0 auto;
     margin-top: 0.5em;
-    width: 100%;
+    width: 80%;
     padding: 0.3em;
 }
 
@@ -137,68 +128,8 @@ input:focus::placeholder{
 */
 
 #menu{
-    overflow: hidden;
-    bottom:0;
-    position: fixed;
-    width: 80%;
-    margin: 0;
-    text-align: center;
-    padding-bottom: 0.5em;
-    padding-top: 0.5em;
-}
-
-#menu ul li a{
-    margin:0;
-    color: transparent;
-}
-
-#menu ul li{
-    display: inline;
-}
-
-#active{
-    background-color: white;
-}
-
-#menu a{
-    text-align: center;
-    padding: 0.2em;
-}
-
-.shome{
-    background: url("../img/home.png");
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    color: transparent; /*DA RIMUOVERE, OVVIAMENTE*/
-}
-
-.schisiamo{
-    background: url("../img/chisiamo.png");
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    color: transparent; /*DA RIMUOVERE, OVVIAMENTE*/
-}
-
-.seventi{
-    background: url("../img/biglietto.png");
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    color: transparent; /*DA RIMUOVERE, OVVIAMENTE*/    
-}
-
-.sveicoli{
-    background: url("../img/auto.png");
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    color: transparent; /*DA RIMUOVERE, OVVIAMENTE*/    
-}
-
-li{
-    border: 1px solid black;
+    float: none;
+    width: 100%;
 }
 
 
@@ -234,41 +165,9 @@ footer{
                     SEZIONE EVENTI 
 -------------------------------------------------------------------
 */
-#eventList{
-
-}
-
-
-#eventList dt{
-    background-color: #FFA500;
-    font-size: 1.3em;
-    padding: 0.3em;
-    border: 1px solid #000;
-    margin-top: 1.5em;
-}
-
-#eventList dd img {
-    float: left;
-    padding: 0.5em;
-    max-width: 80%;
-    
-}
-#eventList dd {
-    background-color: #000;
-    color: #fff;
-    min-height: 200px;
-    padding-bottom: 1em;
-}
-
-#eventList dd p{
-    padding: 1em;
-}
-
-#eventList dd a {
-    background-color: #FFA500;
-    padding: 0.5em;
-    border-radius: 5px;
-    border: 1px solid #fff;
+.eventList{
+    width: 80%;
+    margin: 0 auto;
 }
 
 .eventDescription{
@@ -277,13 +176,19 @@ footer{
 }
 
 .eventDescription img {
+    width: 100%;
     align-items: center;
 }
 
-.eventImg {
+.eventDescription a {
+    width: 100%;
+}
+
+.eventButton {
     align-self: center;
-    padding: 0.5em;
-    max-width: 100%;
+    max-width: 80%;
+    text-align: center;
+    margin-bottom: 1em;
 }
 /*
 ----------------------------------------------
@@ -296,13 +201,14 @@ footer{
 
 .carArticle {
     display: flex;
-    flex-basis: 100%;
+    flex-basis: 75%;
     flex-wrap: nowrap;
     flex-direction: column;
     justify-content: space-between;
     background-color: #000;
     border: 1px solid #000;
     border-radius: 15px;
+    margin: 0 auto;
     margin-bottom: 0em;
 }
 
@@ -341,11 +247,14 @@ footer{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    width: 80%;
+    margin: 0 auto;
     justify-content: space-between;
 }
 
 .cardAboutUs{
-    flex-basis: 100%;
+    flex-basis: 75%;
+    margin: 0 auto;
 }
 
 
