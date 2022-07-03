@@ -372,25 +372,6 @@ footer{
     border-radius: 0.3em;
 }
 
-.login_form input[type=text], input[type=password]{
-    width: 100%;
-    border: none;
-    font-size: 1em;
-    padding: 0.5em;
-    background-color: #f1f1f1;
-    border-bottom: 1px solid #000;
-    margin-bottom: 0.5em;
-    border-width: 80%;
-}
-
-.login_form hr{
-    margin-bottom: 1em;
-}
-
-.registration_form hr{
-    margin-bottom: 1em;
-}
-
 .reset_btn{
     width: 80%;
     opacity: 0.8;
@@ -398,49 +379,8 @@ footer{
     align-self: center;
 }
 
-.registration_form input[type=text],input[type=number],input[type=date],input[type=file]{
-    width: 100%;
-    border: none;
-    font-size: 1em;
-    padding: 0.5em;
-    background-color: #f1f1f1;
-    border-bottom: 1px solid #000;
-    margin-bottom: 0.5em;
-    border-width: 80%;
-}
-
-.registration_form textarea{
-    width: 100%;
-    border: none;
-    font-size: 1em;
-    padding: 0.5em;
-    background-color: #f1f1f1;
-    border-bottom: 1px solid #000;
-    margin-bottom: 0.5em;
-    border-width: 80%;
-}
-
-.registration_form select{
-    width: 100%;
-    border: none;
-    font-size: 1em;
-    padding: 0.5em;
-    background-color: #f1f1f1;
-    border-bottom: 1px solid #000;
-    margin-bottom: 0.5em;
-    border-width: 80%;
-}
-
 .register_btn{
-    width: 100%;
-    background-color: #FFA500;
-    border: 1px solid #000;
-    cursor: pointer;
-    padding: 0.3em;
-    opacity: 0.9;
     font-size: 1.1em;
-    margin-top: 0.5em;
-    border-radius: 0.3em;
 }
 
 .register_btn:hover{
@@ -451,4 +391,32 @@ footer{
     margin-top: 1em;
     border: 1px solid #000;
     border-radius: 0.3em;
+}
+
+/* 
+-------------------------------------------------------------------
+                     SEZIONE SCHEDA PROFILO 
+-------------------------------------------------------------------
+*/
+div .userProfileCard{
+    margin: auto;
+    display: flex;
+    border: 1px solid #000;
+    flex-flow: column nowrap;
+    margin-bottom: 5em;
+}
+.userProfileCard .row{
+    display: flex;
+    flex-flow: column;
+    border-bottom: 1px solid #000;
+}
+.userProfileCard .second_row{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    background-color: #FFA500;
+}
+
+.userProfileCard .second_row a{
+    text-align: center;
 }
