@@ -17,7 +17,7 @@
             <?php require_once ('header.php')?>
 
             <div id="content" tabindex="8">
-                <?php require_once('../error/err-404.html')?>
+                <?php require_once('../html/404.html')?>
             </div>   
         <?php require_once ('../html/footer.html')?>
         </div>

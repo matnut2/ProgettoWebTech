@@ -194,12 +194,6 @@ class page {
             else {
                 echo "<li><a href=\"editorVeicoli.php\">Modifica veicolo</a></li>";
             }
-            if($this->checkFileName("editorEventi.php")){
-                echo "<li>Modifica Evento</li>";
-            }
-            else {
-                echo "<li><a href=\"\">Modifica eventi</a></li>";
-            }
         }
         if(isset($_SESSION['email']) && $_SESSION['email']!='-1'){
             if($this->checkFileName("listaBiglietti.php")){

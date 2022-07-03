@@ -9,18 +9,19 @@
     $user = createSession();
 
     if($_SESSION["isAdmin"] != 1){
-        header('Location: err-404.php');
-        exit;
+        $_SESSION['errorMsg'] = "Devi essere un amministratore per accedere alla funzionalit&agrave; di aggiunta veicolo";
     }
 
     if(!empty($_POST)){
         $checkIns = $user->addVeicolo($_POST['Targa'],$_POST['marca'],$_POST['modello'],$_POST['cilindrata'],$_POST['anno'],$_POST['posti'],$_POST['cambio'],$_POST['carburante'],$_POST['colore_esterni'],$_POST['url_immagine'],$_POST['descrizione'],$_POST['chilometri_Percorsi'],1);
-
         if($checkIns){
-            echo("INSERIMENTO AVVENUTO CON SUCCESSO");
+            $_SESSION['successMsg'] = "Veicolo aggiunto con successo con successo";
         }
-        else echo("FAILED: $checkIns");
+        $_SESSION['errorMsg'] = "Impossibile aggiungere il veicolo richiesto";
     }
+
+        header('Location: ../php/pagina_avvisi.php');
+        exit;
 ?>
 <!DOCTYPE html>
  <html lang="it">

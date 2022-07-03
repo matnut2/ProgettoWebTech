@@ -2,50 +2,48 @@
 if(!empty($_GET)){
     $input = $_GET['search'];
     strtolower($input);
+    $wordsAuto = array('auto','veicoli','veicolo','moto',
+    'motocicletta','motociclette','automobile','vettura','autovettura','mezzo','quad','motorino');
 
-    if(checkVeicoli($input)){
-        header('Location: veicoli.php');
+    $wordsEventi  = array('eventi','evento','asta','manifestazione',
+                    'aste','prossimi');
+
+    if(checkDistance($input,$wordsAuto)){
+        header('Location: ../php/veicoli.php');
         exit;
     }
-    elseif(checkEventi($input)){
-        header('Location: eventi.php');
+    elseif(checkDistance($input,$wordsEventi)){
+        header('Location: ../php/eventi.php');
         exit;
     }
     else {
-        header('Location: err-404.php');
+        header('Location: ../php/404.php');
         exit;
     }
 }
 
-function checkVeicoli($input){
-    $words  = array('auto','veicoli','veicolo','moto',
-                    'motocicletta','motociclette','automobile','vettura','autovettura','mezzo','quad','motorino');
+function checkDistance($input, $words){
 
-    // no shortest distance found, yet
+    // distanza più vicina non ancora trovata
     $shortest = -1;
 
-    // loop through words to find the closest
+    // ciclo per trovare la parola che più si avvicina a quella fornita in input
     foreach ($words as $word) {
 
-        // calculate the distance between the input word,
-        // and the current word
+        // viene calcolata la distanza tra la parola corrente e quella fornita in input
         $lev = levenshtein($input, $word);
 
-        // check for an exact match
+        // controllo se c'è un match perfetto
         if ($lev == 1) {
-
-            // closest word is this one (exact match)
+            // se esiste lo salvo ed esco dal ciclo
             $closest = $word;
             $shortest = 0;
-
-            // break out of the loop; we've found an exact match
             break;
         }
 
-        // if this distance is less than the next found shortest
-        // distance, OR if a next shortest word has not yet been found
+        // se la distanza minima o il match esatto non sono stati ancora trovati
+        //salvo la distanza e il match più vicini possibili alla parola 
         if ($lev <= $shortest || $shortest < 0) {
-            // set the closest match, and shortest distance
             $closest  = $word;
             $shortest = $lev;
         }
@@ -55,44 +53,3 @@ function checkVeicoli($input){
         return true;
     } else return false;
 }
-
-
-function checkEventi($input){
-    $words  = array('eventi','evento','asta','manifestazione',
-                    'aste','prossimi');
-
-    // no shortest distance found, yet
-    $shortest = -1;
-
-    // loop through words to find the closest
-    foreach ($words as $word) {
-
-        // calculate the distance between the input word,
-        // and the current word
-        $lev = levenshtein($input, $word);
-
-        // check for an exact match
-        if ($lev == 1) {
-
-            // closest word is this one (exact match)
-            $closest = $word;
-            $shortest = 0;
-
-            // break out of the loop; we've found an exact match
-            break;
-        }
-
-        // if this distance is less than the next found shortest
-        // distance, OR if a next shortest word has not yet been found
-        if ($lev <= $shortest || $shortest < 0) {
-            // set the closest match, and shortest distance
-            $closest  = $word;
-            $shortest = $lev;
-        }
-    }
-
-    if ($shortest == 0) {
-        return true;
-    } else return false;
-}
-?>
