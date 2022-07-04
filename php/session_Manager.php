@@ -3,8 +3,6 @@
 require_once('utente_Non_Registrato.php');
 require_once('utente_Registrato.php');
 require_once('amministratore.php');
-require_once('gestione_accessi.php');
-
 
 function getLoggedUser($email){
     try {

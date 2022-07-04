@@ -1,5 +1,6 @@
 <?php
     require_once 'session_Manager.php';
+    require_once 'database_Manager.php';
     require_once 'page.php';
     
     $username = createSession();
@@ -39,8 +40,39 @@
         <div class="globalDiv">     
             <?php require_once ('header.php')?>
             <div id="content" tabindex="8">
-                <a href="logout.php">CLICCA QUI PER USCIRE</a>
-            </div>
+                <?php 
+                    $paginaHTML = file_get_contents('../html/scheda_utente.html');
+                    $connessione = new database_Manager();
+                    $connessioneOK = $connessione->connectToDatabase();
+                    $personaggi = ""; /* DATI  DAL DB */ 
+                    $listaPersonaggi = $paginaHTML; /* CODICE DI HTML DA DARE IN OUTPUT */
+
+                    if($connessioneOK){
+                        $personaggi = $connessione->getUserInfo($_SESSION['email']);
+                        $connessione->releaseDB();
+                        if($personaggi != null){
+                            foreach($personaggi as $personaggio){
+                                $listaPersonaggi = str_replace("{user_name}", $personaggio["nome"],$listaPersonaggi);
+                                $listaPersonaggi = str_replace("{user_surname}",$personaggio["cognome"],$listaPersonaggi);
+                                $listaPersonaggi = str_replace("{username}",$personaggio['username'],$listaPersonaggi);
+                                $listaPersonaggi = str_replace("{user_email}",$personaggio['Email'],$listaPersonaggi);
+                                $listaPersonaggi = str_replace("{user_birthday}",$personaggio['data_nascita'],$listaPersonaggi);
+                                $listaPersonaggi = str_replace("{user_reg_day}",$personaggio['data_Creazione'],$listaPersonaggi);
+                                $listaPersonaggi = str_replace("{user_img}",
+                                    '<img class="eventImg" src="../img/' .$personaggio['url_Immagine'] . '"/>',$listaPersonaggi);
+                            }
+                        }
+                        else{
+                            $listaPersonaggi = "<p> Non ci sono informazioni relative agli utenti </p>";
+                        }
+                    }
+                    else{
+                        $listaPersonaggi = "<p> I Sistemi sono Attualmente Fuori Uso </p>";
+                    }
+                    echo $listaPersonaggi;
+                    ?>
+
+                </div>
             <?php require_once ('../html/footer.html')?>
         </div>
     </body>

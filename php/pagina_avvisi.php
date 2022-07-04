@@ -1,13 +1,11 @@
 <?php
     require_once('page.php');
     require_once ('session_Manager.php');
-    $user = createSession();
     $page = new page();
-    
-    if (!$_SESSION['errorMsg'] && !$_SESSION['successMsg']){
-        header('Location: notfound.php');
-        exit();
-    }
+    $user = createSession ();
+    ini_set('display_errors', 1);
+    ini_set('display_startup_errors', 1);
+    error_reporting(E_ALL);
 ?>
 
 <!DOCTYPE html>

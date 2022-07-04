@@ -11,6 +11,7 @@ class utente_Non_Registrato extends utente{
 
         date_default_timezone_set("Europe/Rome");
         $current_date = date("Y-m-d");
+        $enc_pswd = md5($password);
 
         $this->getDB()->query(
             "INSERT INTO UTENTE (Email, nome, cognome, data_creazione, url_immagine, data_nascita)
@@ -19,7 +20,7 @@ class utente_Non_Registrato extends utente{
 
         $this->getDB()->query(
             "INSERT INTO ACCOUNT (id_Account, username, password, email, isAdmin)
-            VALUES (NULL,'$username','$password',
+            VALUES (NULL,'$username','$enc_pswd',
             (SELECT Email from UTENTE WHERE Utente.Email = '$email'),
             '$isAdmin');"
         );
@@ -29,6 +30,7 @@ class utente_Non_Registrato extends utente{
 
     public function setSessionVars() {
 		$_SESSION['ID'] = -1;
+        $_SESSION['email'] = -1;
 	}
 
     public function isReg(){

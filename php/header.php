@@ -6,16 +6,14 @@
     require_once 'page.php';
     $username = createSession();
     $page = new page();
-    
 ?>
 
 <header>
     <h1>AUTO ASTA</h1>
-    <form action="livesearch.php" id="searchForm" method="post">
-        <input type="text" placeholder="Digita qui quello che cerchi" name="search" tabindex="1" autocomplete="off">
-         <button id="btnSearchForm" type="submit" form="searchForm" tabindex="2" >CERCA</button> 
+    <form action="../php/search.php" id="searchForm" method="get">
+        <input id="search" type="text" placeholder="Digita qui quello che cerchi" name="search" tabindex="1" autocomplete="off">
+        <button id="btnSearchForm" type="submit" form="searchForm" tabindex="2" >CERCA</button>    
     </form>
-    </script>
 
     <div id="accesso" tabindex="3">
         <?php $page->printLogin(); ?>
