@@ -1,7 +1,7 @@
 <?php 
 class database_Manager{
     private $DB_HOST = "localhost";
-    private $DB_NAME = "AutoAsta2";
+    private $DB_NAME = "AutoAsta";
     private $USER = "root";
     private $PWD = "";
     private $connection;

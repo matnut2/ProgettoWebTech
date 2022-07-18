@@ -99,16 +99,17 @@ class utente_Registrato extends utente{
             VALUES ('$targa','$marca','$modello','$cilindrata','$anno','$posti','$cambio','$carburante','$colori_Esterni','$url_Immagine','$descrizione','$chilometri_Percorsi','$disponibile','$data_Aggiunta');"
         );
 
-        return $this->getDBError() == 0;
+        //return $this->getDBError() == 0;
     }
 
-    public function addEvento($id_Evento,$nome,$Capienza,$DataEvento,$Indirizzo,$Descrizione,$Prezzo,$url_immagine){
+    public function addEvento($id,$capienza,$dataEvento,$indirizzo,$nome,$descrizione,$prezzo,$url_immagine){
+        date_default_timezone_set("Europe/Rome");
+        $dataEvento = date("Y-m-d");
         $this->getDB()->query(
-            "INSERT INTO EVENTO (id_Evento,Capienza,DataEvento,Indirizzo, nome, Descrizione, Prezzo, url_immagine)
-            VALUES ('$id_Evento',$Capienza','$DataEvento','$Indirizzo','$nome','$Descrizione','$Prezzo',' ');"
+            "INSERT INTO EVENTO
+            VALUES ('$id','$capienza','$dataEvento','$indirizzo','$nome','$descrizione','$prezzo', '$url_immagine');"
         );
-
-        return $this->getDBError() == 0;
+        return 0;
     }
 
 

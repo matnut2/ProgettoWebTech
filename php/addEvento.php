@@ -15,15 +15,16 @@
     }
 
     if(!empty($_POST)){
-        $checkIns = $user->addEvento($_POST['id_Evento'],$_POST['nome'],$_POST['Capienza'],$_POST['Data'],$_POST['Indirizzo'],$_POST['Descrizione'],$_POST['Prezzo'],$_POST['url_immagine'],1);
-        if($checkIns){
+        $checkIns = $user->addEvento($_POST['id'],$_POST['capienza'],$_POST['dataEvento'],$_POST['indirizzo'],$_POST['nome'],$_POST['descrizione'],$_POST['prezzo'],$_POST['url_immagine']);
+        //if($checkIns == 0){
             $_SESSION['successMsg'] = "Evento aggiunto con successo";
-        }
-        $_SESSION['errorMsg'] = "Impossibile aggiungere l'evento";
+        //}
+        //$_SESSION['errorMsg'] = "Impossibile aggiungere l'evento";
         header('Location: ../php/pagina_avvisi.php');
         exit;
-    }
         
+    }
+    
 ?>
 <!DOCTYPE html>
  <html lang="it">
@@ -47,46 +48,47 @@
              <h2>Inserimento Evento</h2>
              <p>Compila i campi seguenti per inserire un nuovo evento</p>
              <hr>
-             <fieldset name="id_Evento" form="formAddEvento">
-                 <label for="id_Evento"><b>id_Evento</b></label>
-                 <input type="text" placeholder="Inserisci l'id_Evento" name="id_Evento" id="id_Evento">
+             
+             <fieldset name="id" form="formAddEvento">
+                 <label for="id"><b>id_Evento</b></label>
+                 <input type="number" placeholder="Inserisci l'id_Evento" name="id" id="id">
              </fieldset>
-            
+
              <fieldset name="nome" form="formAddEvento">
                  <label for="nome"><b>Nome</b></label>
-                 <input type="text" placeholder="Inserisci il nome" name="Nome" id="Nome">
+                 <input type="text" placeholder="Inserisci il nome" name="nome" id="nome">
              </fieldset>
             
-             <fieldset name="Capienza" form="formAddEvento">
-                <label for="Capienza"><b>Capienza</b></label>
-                <input type="text" placeholder="Inserisci la capienza" name="Capienza" id="Capienza">
+             <fieldset name="capienza" form="formAddEvento">
+                <label for="capienza"><b>Capienza</b></label>
+                <input type="number" placeholder="Inserisci la capienza" name="capienza" id="capienza">
              </fieldset>
 
-             <fieldset name="Data" form="formAddEvento">
-                 <label for="Data"><b>Data</b></label>
-                 <input type="date" placeholder="Inserisci la data" name="Data" id="Data">
+             <fieldset name="dataEvento" form="formAddEvento">
+                 <label for="dataEvento"><b>Data</b></label>
+                 <input type="date" placeholder="Inserisci la data" name="dataEvento" id="dataEvento">
              </fieldset>
 
-             <fieldset name="Indirizzo" form="formAddEvento">
-                 <label for="Indirizzo"><b>Indirizzo</b></label>
-                 <input type="text" placeholder="Inserisci l'indirizzo" name="Indirizzo" id="Indirizzo">
+             <fieldset name="indirizzo" form="formAddEvento">
+                 <label for="indirizzo"><b>Indirizzo</b></label>
+                 <input type="text" placeholder="Inserisci l'indirizzo" name="indirizzo" id="indirizzo">
              </fieldset>
             
-             <fieldset name="Descrizione" form="formAddEvento">
-                <label for="Descrizione"><b>Descrizione</b></label>
-                <input type="text" placeholder="Inserisci la descrizione" name="Descrizione" id="Descrizione">
+             <fieldset name="descrizione" form="formAddEvento">
+                <label for="descrizione"><b>Descrizione</b></label>
+                <input type="text" placeholder="Inserisci la descrizione" name="descrizione" id="descrizione">
              </fieldset>
 
-             <fieldset name="Prezzo" form="formAddEvento">
-                <label for="Prezzo"><b>Prezzo</b></label>
-                <input type="number" placeholder="Inserisci il prezzo del biglietto" name="Prezzo" id="Prezzo">
+             <fieldset name="prezzo" form="formAddEvento">
+                <label for="prezzo"><b>Prezzo</b></label>
+                <input type="number" placeholder="Inserisci il prezzo del biglietto" name="prezzo" id="prezzo">
              </fieldset>
 
-            <!--<fieldset name="url_immagine" form="formAddEvento">
+             <fieldset name="url_immagine" form="formAddEvento">
                 <label for="url_immagine"><b>url Immagine</b></label>
-                <input type="url" placeholder="Inserisci l'url dell'immagine" name="url_immagine" id="url_immagine">
+                <input type="text" placeholder="Inserisci l'url dell'immagine" name="url_immagine" id="url_immagine">
              </fieldset>
--->
+    
              <button type="submit" class="register_btn" name="submit">Inserisci Evento</button>
              <input type="reset" class="reset_btn">
              </div>

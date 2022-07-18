@@ -134,6 +134,11 @@ class page {
                 Aggiungi Veicolo
             ";
         }
+        else if($this->checkFileName("deleteVeicoli.php")){
+            echo"<p> <a href=\"index.php\" lang=\"en\">Home</a> &gt &gt
+                Elimina Veicoli
+            ";
+        }
         else if($this->checkFileName("pagina_avvisi.php")){
             echo"<p> <a href=\"index.php\" lang=\"en\">Home</a> &gt &gt
                 Pagina Avvisi
@@ -198,6 +203,13 @@ class page {
             }
             else {
                 echo "<li><a href=\"editorVeicoli.php\">Modifica veicolo</a></li>";
+            }
+             
+            if($this->checkFileName("deleteVeicoli.php")){
+                echo "<li>Elimina Veicoli</li>";
+            }
+            else {
+                echo "<li><a href=\"deleteVeicoli.php\">Elimina Veicoli</a></li>";
             }
         }
         if(isset($_SESSION['isAdmin']) && $_SESSION['isAdmin']==1){
