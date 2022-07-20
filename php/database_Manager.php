@@ -81,7 +81,7 @@ class database_Manager{
     }
 
     public function getVeicoliList(){
-        $query = "SELECT * FROM Veicolo, Asta Where Asta.targa_Veicolo = Veicolo.Targa";
+        $query = "SELECT * FROM Veicolo;";
         $queryResult = mysqli_query($this->connection, $query) or die("Errore in getVeicoliList:" . mysqli_error($this->connection));
 
         if(mysqli_num_rows($queryResult) == 0){

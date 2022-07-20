@@ -95,11 +95,11 @@ class utente_Registrato extends utente{
         $targa = strtoupper($targa);
 
         $this->getDB()->query(
-            "INSERT INTO VEICOLO (Targa, marca, modello, cilindrata, anno, posti, cambio,carburante, colore_Esterni, url_Immagine, descrizione, chilometri_Percorsi, disponibile, data_Aggiunta)
-            VALUES ('$targa','$marca','$modello','$cilindrata','$anno','$posti','$cambio','$carburante','$colori_Esterni','$url_Immagine','$descrizione','$chilometri_Percorsi','$disponibile','$data_Aggiunta');"
+            "INSERT INTO Veicolo (Veicolo.Targa, Veicolo.marca, Veicolo.modello, Veicolo.cilindrata, Veicolo.anno, Veicolo.posti, Veicolo.cambio,Veicolo.carburante, Veicolo.colore_Esterni, Veicolo.url_Immagine, Veicolo.descrizione, Veicolo.chilometri_Percorsi, Veicolo.disponibile)
+            VALUES ('$targa','$marca','$modello','$cilindrata','$anno','$posti','$cambio','$carburante','$colori_Esterni','$url_Immagine','$descrizione','$chilometri_Percorsi','$disponibile');"
         );
 
-        //return $this->getDBError() == 0;
+        return $this->getDBError() == 0;
     }
 
     public function addEvento($id,$capienza,$dataEvento,$indirizzo,$nome,$descrizione,$prezzo,$url_immagine){
@@ -108,6 +108,17 @@ class utente_Registrato extends utente{
         $this->getDB()->query(
             "INSERT INTO EVENTO
             VALUES ('$id','$capienza','$dataEvento','$indirizzo','$nome','$descrizione','$prezzo', '$url_immagine');"
+        );
+        return 0;
+    }
+
+    public function editEvento($id,$capienza,$dataEvento,$indirizzo,$nome,$descrizione,$prezzo,$url_immagine){
+        date_default_timezone_set("Europe/Rome");
+        $dataEvento = date("Y-m-d");
+        $this->getDB()->query(
+            "UPDATE EVENTO
+            SET EVENTO.capienza = '$capienza',EVENTO.data ='$dataEvento',EVENTO.indirizzo='$indirizzo',EVENTO.nome='$nome',EVENTO.descrizione ='$descrizione',EVENTO.prezzo ='$prezzo', EVENTO.url_immagine= '$url_immagine'
+            WHERE EVENTO.id_Evento = $id;"
         );
         return 0;
     }
@@ -137,6 +148,22 @@ class utente_Registrato extends utente{
             WHERE Asta.targa_Veicolo='$targa';"
             );
         return $this->getDBError() == 0;
+    }
+
+    public function deleteVeicolo($targa){
+      
+        $this->getDB()->query(
+            "DELETE FROM VEICOLO 
+            WHERE Veicolo.Targa='$targa';"
+            );
+       /* $this->getDB()->query(
+            "UPDATE Asta SET
+            Asta.base_Asta = '$prezzo'
+            WHERE Asta.targa_Veicolo='$targa';"
+            );
+            
+        return $this->getDBError() == 0;
+        */
     }
 
     public function buyTicket($email_user,$id_Evento){

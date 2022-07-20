@@ -65,7 +65,7 @@
 
              <fieldset name="modello" form="formAddVeicolo">
                  <label for="modello"><b>Modello</b></label>
-                 <input type="text" placeholder="Inserisci il modello" name="modello" id="modello"  onblur="return checkText('modello','Modello non valido',/^[a-zA-Z0-9]+$/)" >
+                 <input type="text" placeholder="Inserisci il modello" name="modello" id="modello" >
              </fieldset>
             
              <fieldset name="cilindrata" form="formAddVeicolo">

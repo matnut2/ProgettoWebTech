@@ -78,6 +78,14 @@ class page {
         else return false;
     }
 
+    public function deleteVeicolo($post, utente_Registrato $utente){
+        $utente->deleteVeicolo($post['targa']);
+        if($utente){
+            return true;
+        }
+        else return false;
+    }
+
     public function printBreadcrumb(){
         if($this->checkFileName("index.php")){
             echo "<p lang=\"en\">Home</p>";
@@ -218,6 +226,12 @@ class page {
             }
             else {
                 echo "<li><a href=\"addEvento.php\">Aggiungi eventi</a></li>";
+            }
+            if($this->checkFileName("addVeicolo.php")){
+                echo "<li>Modifica Evento</li>";
+            }
+            else {
+                echo "<li><a href=\"selectEventToEdit.php\">Modifica Evento</a></li>";
             }
         }
         if(isset($_SESSION['email']) && $_SESSION['email']!='-1'){

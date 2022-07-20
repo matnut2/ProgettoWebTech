@@ -15,7 +15,7 @@
     }
 
     if(!empty($_POST)){
-        $checkIns = $user->addEvento($_POST['id'],$_POST['capienza'],$_POST['dataEvento'],$_POST['indirizzo'],$_POST['nome'],$_POST['descrizione'],$_POST['prezzo'],$_POST['url_immagine']);
+        $checkIns = $user->addEvento($_POST['id_Evento'],$_POST['capienza'],$_POST['dataEvento'],$_POST['indirizzo'],$_POST['nome'],$_POST['descrizione'],$_POST['prezzo'],$_POST['url_immagine']);
         //if($checkIns == 0){
             $_SESSION['successMsg'] = "Evento aggiunto con successo";
         //}
