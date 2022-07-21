@@ -156,14 +156,6 @@ class utente_Registrato extends utente{
             "DELETE FROM VEICOLO 
             WHERE Veicolo.Targa='$targa';"
             );
-       /* $this->getDB()->query(
-            "UPDATE Asta SET
-            Asta.base_Asta = '$prezzo'
-            WHERE Asta.targa_Veicolo='$targa';"
-            );
-            
-        return $this->getDBError() == 0;
-        */
     }
 
     public function buyTicket($email_user,$id_Evento){

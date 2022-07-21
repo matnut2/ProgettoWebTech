@@ -99,7 +99,8 @@ class database_Manager{
     }
 
     public function getNewVeicoli(){
-        $query = "SELECT * FROM Veicolo ORDER BY data_Aggiunta ASC LIMIT 2";
+        //$query = "SELECT * FROM Veicolo ORDER BY data_Aggiunta ASC LIMIT 2";
+        $query = "SELECT * FROM Veicolo;";
         $queryResult = mysqli_query($this->connection, $query) or die("Errore in getNewVeicoli:" . mysqli_error($this->connection));
 
         if(mysqli_num_rows($queryResult) == 0){
@@ -175,7 +176,7 @@ class database_Manager{
 	}
 
     public function getInfoVeicolo($targa){
-        $query = "SELECT * FROM Veicolo,Asta WHERE Targa='$targa' AND Asta.targa_Veicolo='$targa'";
+        $query = "SELECT * FROM Veicolo,Asta WHERE Targa='$targa'";
         $queryResult = mysqli_query($this->connection, $query) or die("Errore nel recupero dei dati del veicolo:" . mysqli_error($this->connection));
         if(mysqli_num_rows($queryResult) == 0){
             return null;
