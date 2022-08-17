@@ -121,6 +121,21 @@ class utente_Registrato extends utente{
         return $this->getDBError() == 0;
     }
 
+    public function editEvento($id,$capienza,$dataEvento,$nome,$descrizione,$prezzo){
+        $this->getDB()->query(
+            "UPDATE Evento SET
+            Evento.capienza = '$capienza',
+            Evento.data ='$dataEvento',
+            Evento.nome='$nome',
+            Evento.descrizione ='$descrizione',
+            Evento.prezzo ='$prezzo'
+            WHERE Evento.id_Evento = '$id';"
+        );
+
+        return $this->getDBError() == 0;
+    }
+
+
     public function addEvento($Capienza,$DataEvento,$Indirizzo,$nome,$Descrizione,$Prezzo,$url_immagine){
         $this->getDB()->query(
             "INSERT INTO Evento (id_Evento,capienza,data,indirizzo,nome, descrizione, prezzo, url_immagine)

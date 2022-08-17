@@ -1,7 +1,6 @@
 <?php
     require_once "database_Manager.php";
 
-    // Leggere il risultato dal database e stamparlo a schermo (impaginandolo)
     if($_SESSION["isAdmin"] != 1){
         header('Location: index.php');
         exit;

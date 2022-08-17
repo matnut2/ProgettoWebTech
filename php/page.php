@@ -206,6 +206,14 @@ class page {
                 echo "<li><a href=\"editorVeicoli.php\">Modifica veicolo</a></li>";
             }
 
+            if($this->checkFileName("editorEventiPage.php")){
+                echo "<li>Modifica Evento</li>";
+            }
+            else {
+                echo "<li><a href=\"selectEventoToEdit.php\">Modifica evento</a></li>";
+            }
+
+
             if($this->checkFileName("addEvento.php")){
                 echo "<li>Aggiungi Evento</li>";
             }
