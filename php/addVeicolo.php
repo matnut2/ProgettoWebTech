@@ -19,7 +19,10 @@
         if($checkIns){
             $_SESSION['successMsg'] = "Veicolo aggiunto con successo con successo";
         }
-        $_SESSION['errorMsg'] = "Impossibile aggiungere il veicolo richiesto";
+        else $_SESSION['errorMsg'] = "Impossibile aggiungere il veicolo richiesto";
+
+        $checkIns = $user->addAstaEmpty($_POST['Prezzo'],$_POST['Targa']);
+
         header('Location: ../php/pagina_avvisi.php');
         exit;
     }
@@ -122,6 +125,11 @@
             <fieldset name="chilometri_Percorsi" form="formAddVeicolo">
                 <label for="chilometri_Percorsi"><b>Chilometraggio</b></label>
                 <input type="number" placeholder="Inserisci i chilometri percorsi" name="chilometri_Percorsi" id="chilometri_Percorsi"  value ="0" min="0">
+            </fieldset>
+
+            <fieldset name="prezzo" form="formAddVeicolo">
+                <label for="prezzo"><b>Prezzo base di vendita</b></label>
+                <input type="number" placeholder="Inserisci il prezzo base di vendita" name="Prezzo" id="Prezzo"  value ="0" min="0">
             </fieldset>
 
              <button type="submit" class="register_btn" name="submit">Inserisci Veicolo</button>
