@@ -102,6 +102,23 @@ class utente_Registrato extends utente{
         return $this->getDBError() == 0;
     }
 
+    public function addIndirizzo($via,$città,$cap,$num_Civico){
+        $this->getDB()->query(
+            "INSERT INTO Indirizzo (id_Indirizzo,via,citta,cap, num_Civico)
+            VALUES (NULL,'$via','$città','$cap','$num_Civico');"
+        );
+        return $this->getDBError() == 0;
+    }
+
+    public function addEvento($Capienza,$DataEvento,$Indirizzo,$nome,$Descrizione,$Prezzo,$url_immagine){
+        $this->getDB()->query(
+            "INSERT INTO Evento (id_Evento,capienza,data,indirizzo,nome, descrizione, prezzo, url_immagine)
+            VALUES (NULL,'$Capienza','$DataEvento','$Indirizzo','$nome','$Descrizione','$Prezzo','$url_immagine');"
+        );
+
+        return $this->getDBError() == 0;
+    }
+
     public function updateVeicolo($targa,$marca,$modello,$cilindrata,$anno,$posti,$cambio,$carburante,$colori_Esterni,$url_Immagine,$descrizione,$chilometri_Percorsi,$disponibile,$prezzo){
       
         $this->getDB()->query(

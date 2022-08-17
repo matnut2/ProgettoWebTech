@@ -134,6 +134,11 @@ class page {
                 Aggiungi Veicolo
             ";
         }
+        else if($this->checkFileName("addEvento.php")){
+            echo"<p> <a href=\"index.php\" lang=\"en\">Home</a> &gt &gt
+                Aggiungi Evento
+            ";
+        }
         else if($this->checkFileName("pagina_avvisi.php")){
             echo"<p> <a href=\"index.php\" lang=\"en\">Home</a> &gt &gt
                 Pagina Avvisi
@@ -186,6 +191,7 @@ class page {
         } 
 
         if(isset($_SESSION['isAdmin']) && $_SESSION['isAdmin']==1){
+            
             if($this->checkFileName("addVeicolo.php")){
                 echo "<li>Aggiungi Veicolo</li>";
             }
@@ -198,6 +204,13 @@ class page {
             }
             else {
                 echo "<li><a href=\"editorVeicoli.php\">Modifica veicolo</a></li>";
+            }
+
+            if($this->checkFileName("addEvento.php")){
+                echo "<li>Aggiungi Evento</li>";
+            }
+            else {
+                echo "<li><a href=\"addEvento.php\">Aggiungi evento</a></li>";
             }
         }
         if(isset($_SESSION['email']) && $_SESSION['email']!='-1'){

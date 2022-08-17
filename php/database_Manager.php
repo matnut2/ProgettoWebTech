@@ -98,8 +98,47 @@ class database_Manager{
         }
     }
 
+    public function getIdIndirizzo($via,$città,$cap,$num_Civico){
+        $query = 
+            "SELECT id_Indirizzo FROM Indirizzo 
+            WHERE via = '$via' AND citta = '$città'
+            AND cap = '$cap' AND num_Civico = '$num_Civico' LIMIT 1;";
+        
+        $queryResult = mysqli_query($this->connection, $query) or die("Errore in getIndirizzi:" . mysqli_error($this->connection));
+
+        if(mysqli_num_rows($queryResult) == 0){
+            return null;
+        }
+        else{
+            $result = array();
+            while($row = mysqli_fetch_assoc($queryResult)){
+                array_push($result, $row);
+            }
+            
+            $queryResult->free();
+            return $result;
+        }    }
+
+    public function getIndirizzi(){
+        $query = "SELECT * FROM Indirizzo";
+        $queryResult = mysqli_query($this->connection, $query) or die("Errore in getIndirizzi:" . mysqli_error($this->connection));
+
+        if(mysqli_num_rows($queryResult) == 0){
+            return null;
+        }
+        else{
+            $result = array();
+            while($row = mysqli_fetch_assoc($queryResult)){
+                array_push($result, $row);
+            }
+            
+            $queryResult->free();
+            return $result;
+        }
+    }
+
     public function getNewVeicoli(){
-        $query = "SELECT * FROM Veicolo ORDER BY data_Aggiunta ASC LIMIT 2";
+        $query = "SELECT * FROM Veicolo, Asta Where Asta.targa_Veicolo = Veicolo.Targa ORDER BY data_Aggiunta ASC LIMIT 2";
         $queryResult = mysqli_query($this->connection, $query) or die("Errore in getNewVeicoli:" . mysqli_error($this->connection));
 
         if(mysqli_num_rows($queryResult) == 0){
