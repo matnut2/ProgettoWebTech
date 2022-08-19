@@ -257,7 +257,12 @@ div .userProfileCard{
     align-self: flex-start;
     padding: 0.5em;
     max-width: 80%;
-    width: 15em;
+    width: 20em;
+}
+
+.eventParagraph{
+    padding: 1em;
+    align-self: center;
 }
 
 .eventDescription {
@@ -267,6 +272,7 @@ div .userProfileCard{
     display: flex;
     flex-flow: row;
 }
+
 .eventDescription ul {
     list-style: none;
     display: flex;
@@ -284,13 +290,9 @@ div .userProfileCard{
     color:#000;
     text-align: center;
     background-color: #D8D8D8;
-
 }
 
-.eventParagraph{
-    padding: 1em;
-    align-self: center;
-}
+
 
 .eventButton{
     background-color: #FFA500;
@@ -299,13 +301,16 @@ div .userProfileCard{
     border: 1px solid #fff;
     margin: 0.3em;
     align-self: center;
+    flex: 1;
+    text-align: center;
 }
 
 .notAvailable{
-    background-color: #ff0000;
-    padding: 0.5em;
-    border-radius: 5px;
-    border: 1px solid #fff;
+    background-color: #ff1111;
+    padding: 0.2em;
+    margin: 0 auto;
+    color:#000;
+    text-align: center;
 }
 
 /*
@@ -578,6 +583,20 @@ div .userProfileCard{
     flex-flow: column;
     border: 1px solid #000;
 }
+.schedaVeicolo h3{
+    font-size: 1.4em;
+    padding: 0.3em;
+    text-align: center;
+    background-color: #FFA500;
+    font-weight: bold;
+}
+
+.attributeVeicolo{
+    padding: 0.2em;
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
 .schedaVeicolo img{
     margin: auto;
     width: 100%;

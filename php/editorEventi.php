@@ -68,7 +68,7 @@
                         }
                     }
                     else{
-                        $listaVeicoli = "<p> Non ci sono informazioni relative agli utenti </p>";
+                        $listaVeicoli = "<p> Non ci sono informazioni relative agli eventi </p>";
                     }
                 }
                 else{

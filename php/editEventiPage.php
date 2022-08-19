@@ -24,7 +24,7 @@
                     <img class="eventImg" src="../img/' . $evento['url_immagine'] . '"/> 
                     <p class="eventParagraph"> ' . $evento['descrizione'] . '</p>'; 
                     if($checkDate[$index]){ 
-                        $listaEventi.= '<a class="notAvailable" >Evento già terminato, non è possibile modificarlo </a></dd>';  
+                        $listaEventi.= '</dd><p class="notAvailable" >Evento già terminato, non è possibile modificarlo </p>';  
                     } 
                     else { 
                         $listaEventi .= '<a class="eventButton" href="editorEventi.php?id_Evento='.$evento['id_Evento'].'">Modifica Evento</a> </dd>'; 

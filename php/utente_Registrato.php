@@ -135,6 +135,19 @@ class utente_Registrato extends utente{
         return $this->getDBError() == 0;
     }
 
+    public function deleteVeicolo($targa){
+        $this->getDB()->query(
+            "DELETE FROM Veicolo 
+            WHERE Veicolo.Targa = '$targa';"
+        );
+        
+        $this->getDB()->query(
+            "DELETE FROM Asta 
+            WHERE Asta.targa_Veicolo = '$targa';"
+        );
+
+        return $this->getDBError() == 0;
+    }
 
     public function addEvento($Capienza,$DataEvento,$Indirizzo,$nome,$Descrizione,$Prezzo,$url_immagine){
         $this->getDB()->query(
