@@ -2,12 +2,12 @@
 <html lang="it">
     <head>
         <link rel="icon" type="image/x-icon" href="../img/2061866.png"/>
-        <title>Home Page - Auto Asta</title>
+        <title>404 Not Found - Auto Asta</title>
         <link rel="stylesheet" type="text/css" media="screen" href="../css/styleAlternative.css"/>
         <link rel="stylesheet" type="text/css" media="screen and (max-width:1200px), only screen and (max-width:1200px)"  href="../css/mobile.css"/>
         <link rel="stylesheet" type="text/css" media="print" href="../css/print.css"/>
         <meta charset="UTF-8"/>
-        <meta name="description" content="Homepage di Auto Asta"/>
+        <meta name="description" content="404"/>
         <meta name="keywords" content="auto, asta, homepage, principale, veicoli"/>
         <meta name="author" content="Carlesso Niccolò, Pillon Matteo, Soldà Matteo, Veronese Andrea"/>       
     </head>

@@ -1,7 +1,7 @@
 <?php 
 class database_Manager{
     private $DB_HOST = "localhost";
-    private $DB_NAME = "AutoAsta";
+    private $DB_NAME = "AutoAsta_merge";
     private $USER = "root";
     private $PWD = "";
     private $connection;
@@ -50,7 +50,7 @@ class database_Manager{
     }
 
     public function getEventiList(){
-        $query = "SELECT * FROM Evento ORDER BY data ASC;";
+        $query = "SELECT * FROM Evento ORDER BY data DESC;";
         $queryResult = mysqli_query($this->connection, $query) or die("Errore in getEventiList:" . mysqli_error($this->connection));
 
         if(mysqli_num_rows($queryResult) == 0){
@@ -81,7 +81,7 @@ class database_Manager{
     }
 
     public function getVeicoliList(){
-        $query = "SELECT * FROM Veicolo;";
+        $query = "SELECT * FROM Veicolo, Asta Where Asta.targa_Veicolo = Veicolo.Targa";
         $queryResult = mysqli_query($this->connection, $query) or die("Errore in getVeicoliList:" . mysqli_error($this->connection));
 
         if(mysqli_num_rows($queryResult) == 0){
@@ -98,9 +98,47 @@ class database_Manager{
         }
     }
 
+    public function getIdIndirizzo($via,$città,$cap,$num_Civico){
+        $query = 
+            "SELECT id_Indirizzo FROM Indirizzo 
+            WHERE via = '$via' AND città = '$città'
+            AND cap = '$cap' AND num_Civico = '$num_Civico' LIMIT 1;";
+        
+        $queryResult = mysqli_query($this->connection, $query) or die("Errore in getIndirizzi:" . mysqli_error($this->connection));
+
+        if(mysqli_num_rows($queryResult) == 0){
+            return null;
+        }
+        else{
+            $result = array();
+            while($row = mysqli_fetch_assoc($queryResult)){
+                array_push($result, $row);
+            }
+            
+            $queryResult->free();
+            return $result;
+        }    }
+
+    public function getIndirizzi(){
+        $query = "SELECT * FROM Indirizzo";
+        $queryResult = mysqli_query($this->connection, $query) or die("Errore in getIndirizzi:" . mysqli_error($this->connection));
+
+        if(mysqli_num_rows($queryResult) == 0){
+            return null;
+        }
+        else{
+            $result = array();
+            while($row = mysqli_fetch_assoc($queryResult)){
+                array_push($result, $row);
+            }
+            
+            $queryResult->free();
+            return $result;
+        }
+    }
+
     public function getNewVeicoli(){
-        //$query = "SELECT * FROM Veicolo ORDER BY data_Aggiunta ASC LIMIT 2";
-        $query = "SELECT * FROM Veicolo;";
+        $query = "SELECT * FROM Veicolo, Asta Where Asta.targa_Veicolo = Veicolo.Targa ORDER BY data_Aggiunta ASC LIMIT 2";
         $queryResult = mysqli_query($this->connection, $query) or die("Errore in getNewVeicoli:" . mysqli_error($this->connection));
 
         if(mysqli_num_rows($queryResult) == 0){
@@ -176,7 +214,7 @@ class database_Manager{
 	}
 
     public function getInfoVeicolo($targa){
-        $query = "SELECT * FROM Veicolo,Asta WHERE Targa='$targa'";
+        $query = "SELECT * FROM Veicolo,Asta WHERE Targa='$targa' AND Asta.targa_Veicolo='$targa'";
         $queryResult = mysqli_query($this->connection, $query) or die("Errore nel recupero dei dati del veicolo:" . mysqli_error($this->connection));
         if(mysqli_num_rows($queryResult) == 0){
             return null;

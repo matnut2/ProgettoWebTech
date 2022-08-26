@@ -16,12 +16,12 @@
 <html lang="it">
     <head>
         <link rel="icon" type="image/x-icon" href="../img/2061866.png"/>
-        <title>Eventi - Auto Asta</title>
+        <title>Biglietti - Auto Asta</title>
         <link rel="stylesheet" type="text/css" media="screen" href="../css/styleAlternative.css"/>
         <link rel="stylesheet" type="text/css" media="screen and (max-width:1200px), only screen and (max-width:1200px)"  href="../css/mobile.css"/>
         <link rel="stylesheet" type="text/css" media="print" href="../css/print.css"/>
         <meta charset="UTF-8"/>
-        <meta name="description" content="Homepage di Auto Asta"/>
+        <meta name="description" content="Biglietti di Auto Asta"/>
         <meta name="keywords" content="auto, asta, homepage, principale, veicoli"/>
         <meta name="author" content="Carlesso Niccolò, Pillon Matteo, Soldà Matteo, Veronese Andrea"/>       
     </head>
@@ -63,7 +63,7 @@
                         $connessione->releaseDB();
                     }
                     else{
-                        $listaEventi = "<p> Non ci sono informazioni relative ai eventi </p>";
+                        $listaEventi = "<p> Non ci sono informazioni relative ai biglietti </p>";
                     }
                 }
                 else{

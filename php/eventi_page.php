@@ -24,10 +24,10 @@
                     <img class="eventImg" src="../img/' . $evento['url_immagine'] . '"/>
                     <p class="eventParagraph"> ' . $evento['descrizione'] . '</p>';
                     if($checkDate[$index]){
-                        $listaEventi.= '<a class="notAvailable" >EVENTO TRASCORSO </a></dd>'; 
+                        $listaEventi.= '</dd><p class="notAvailable" >PECCATO, QUESTO EVENTO &Egrave TRASCORSO BIGLIETTO NON DISPONIBILE </p>'; 
                     }
                     else {
-                        $listaEventi .= '<a class="eventButton" href="buy_Ticket.php?ID='.$evento['id_Evento'].'">COMPRA BIGLIETTO</a></dd>';
+                        $listaEventi .= '<a class="eventButton" href="buy_Ticket.php?ID='.$evento['id_Evento'].'">COMPRA BIGLIETTO</a> </dd>';
                     }
                 $index++;
             }

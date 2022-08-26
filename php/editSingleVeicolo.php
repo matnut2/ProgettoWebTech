@@ -71,8 +71,9 @@
                             $listaVeicoli = str_replace("{placeholder-colore}", $veicolo["colore_Esterni"],$listaVeicoli);
                             $listaVeicoli = str_replace("{placeholder-descrizione}", $veicolo["descrizione"],$listaVeicoli);
                             $listaVeicoli = str_replace("{placeholder-immagine}", $veicolo["url_Immagine"],$listaVeicoli);
-                            $listaVeicoli = str_replace("{placeholder-chilometri}", $veicolo["chilometri_Percorsi"],$listaVeicoli);
-                            $listaVeicoli = str_replace("{placeholder-prezzo}",$veicolo['base_Asta'],$listaVeicoli);
+                            //$listaVeicoli = str_replace("{placeholder-chilometri}", $veicolo["chilometri_Percorsi"],$listaVeicoli);
+                           // $listaVeicoli = str_replace("{placeholder-disponibile}", $veicolo["disponibile"],$listaVeicoli);
+                            //$listaVeicoli = str_replace("{placeholder-data_Aggiunta}", $veicolo["data_Aggiunta"],$listaVeicoli);
                         }
                     }
                     else{
