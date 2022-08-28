@@ -100,7 +100,7 @@
 
             <fieldset name="url_immagine" form="formAddEvento"> 
              <label for="url_immagine"><b>url Immagine</b></label> 
-             <input type="url" placeholder="Inserisci l'url dell'immagine" name="url_immagine" id="url_immagine"> 
+             <input type="file" placeholder="Inserisci l'url dell'immagine" name="url_immagine" id="url_immagine"> 
             </fieldset> 
         
             <button type="submit" class="register_btn" name="submit">Inserisci Evento</button> 
