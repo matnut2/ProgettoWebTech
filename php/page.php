@@ -82,76 +82,79 @@ class page {
         if($this->checkFileName("index.php")){
             echo "<p lang=\"en\">Home</p>";
         }
-        else if($this->checkFileName("chisiamo.php")){
-            echo "<p> <a href=\"index.php\" lang=\"en\">Home</a> &gt &gt Chi Siamo </p>";
+        else{
+            echo "<p> <a href=\"index.php\" tabindex=\"4\" lang=\"en\">Home</a>  &gt &gt ";
+        }
+        if($this->checkFileName("chisiamo.php")){
+            echo " Chi Siamo </p>";
         }
         else if($this->checkFileName("eventi.php")){
-            echo "<p> <a href=\"index.php\" lang=\"en\">Home</a> &gt &gt Eventi </p>";
+            echo " Eventi </p>";
         }
         else if($this->checkFileName("veicoli.php")){
-            echo "<p> <a href=\"index.php\" lang=\"en\">Home</a> &gt &gt Veicoli </p>";
+            echo "Veicoli </p>";
         }
         else if($this->checkFileName("login_page.php")){
-            echo "<p> <a href=\"index.php\" lang=\"en\">Home</a> &gt &gt
+            echo "<p> <a href=\"index.php\" lang=\"en\" tabindex=\"4\">Home</a> &gt &gt
                     <a href=\"registrazione.php\">Registrazione Utente</a> &gt &gt
                 <span lang=\"en\">Login </span> </p>";
         }
         else if($this->checkFileName("registrazione.php")){
-            echo"<p> <a href=\"index.php\" lang=\"en\">Home</a> &gt &gt
+            echo"<p> <a href=\"index.php\" lang=\"en\" tabindex=\"4\">Home</a> &gt &gt
                 Registrazione Utente </p>
             ";
         }
         else if($this->checkFileName("scheda_utente.php")){
-            echo"<p> <a href=\"index.php\" lang=\"en\">Home</a> &gt &gt
+            echo"<p> <a href=\"index.php\" lang=\"en\" tabindex=\"4\">Home</a> &gt &gt
                 Scheda Utente </p>
             "; 
         }
         else if($this->checkFileName("edit_profile.php")){
-            echo"<p> <a href=\"index.php\" lang=\"en\">Home</a> &gt &gt
+            echo"<p> <a href=\"index.php\" lang=\"en\" tabindex=\"4\">Home</a> &gt &gt
                 <a href=\"scheda_utente.php\">Scheda Utente</a> &gt &gt
                 Modifica Profilo </p>
             ";
         }
         else if($this->checkFileName("scheda_veicolo.php")){
-            echo"<p> <a href=\"index.php\" lang=\"en\">Home</a> &gt &gt
+            echo"<p> <a href=\"index.php\" lang=\"en\" tabindex=\"4\">Home</a> &gt &gt
                 <a href=\"veicoli.php\">Veicoli</a> &gt &gt
                 Scheda Veicolo </p>
             ";
         }
         else if($this->checkFileName("editorVeicoli.php")){
-            echo"<p> <a href=\"index.php\" lang=\"en\">Home</a> &gt &gt
+            echo"<p> <a href=\"index.php\" lang=\"en\" tabindex=\"4\">Home</a> &gt &gt
                 Modifica Veicoli </p>
             ";
         }
         else if($this->checkFileName("editSingleVeicolo.php")){
-            echo"<p> <a href=\"index.php\" lang=\"en\">Home</a> &gt &gt
+            echo"<p> <a href=\"index.php\" lang=\"en\" tabindex=\"4\">Home</a> &gt &gt
                  <a href=\"editorVeicoli.php\">Modifica Veicoli</a> &gt &gt
                 Veicolo Da Modificare </p>
             ";
         }
         else if($this->checkFileName("addVeicolo.php")){
-            echo"<p> <a href=\"index.php\" lang=\"en\">Home</a> &gt &gt
+            echo"<p> <a href=\"index.php\" lang=\"en\" tabindex=\"4\" >Home</a> &gt &gt
                 Aggiungi Veicolo </p>
             ";
         }
         else if($this->checkFileName("addEvento.php")){
-            echo"<p> <a href=\"index.php\" lang=\"en\">Home</a> &gt &gt
+            echo"<p> <a href=\"index.php\" lang=\"en\" tabindex=\"4\">Home</a> &gt &gt
                 Aggiungi Evento </p>
             ";
         }
         else if($this->checkFileName("pagina_avvisi.php")){
-            echo"<p> <a href=\"index.php\" lang=\"en\">Home</a> &gt &gt
+            echo"<p> <a href=\"index.php\" lang=\"en\" tabindex=\"4\">Home</a> &gt &gt
                 Pagina Avvisi </p>
             ";
         }
 	    
 	    else if($this->checkFileName("listaBiglietti.php")){
-            echo"<p> <a href=\"index.php\" lang=\"en\">Home</a> &gt &gt
+            echo"<p> <a href=\"index.php\" lang=\"en\" tabindex=\"4\">Home</a> &gt &gt
                 Lista Biglietti </p>
             ";
         }
         else if($this->checkFileName("selectEventoToEdit.php")){
-            echo"<p> <a href=\"index.php\" lang=\"en\">Home</a> &gt &gt
+            echo"<p> <a href=\"index.php\" lang=\"en\" tabindex=\"4\">Home</a> &gt &gt
             Modifica Evento </p>
             ";
         }
@@ -171,9 +174,9 @@ class page {
     public function printMenu() {
         if ($this->checkFileName("index.php")){
             echo "<li class='shome' id='active' lang=\"en\">Home</li>";
-            echo "<li class='schisiamo'><a href=\"chisiamo.php\">Chi Siamo</a></li>";
-            echo "<li class='seventi'><a href=\"eventi.php\">Eventi</a></li>";
-            echo "<li class='sveicoli'><a href=\"veicoli.php\">Veicoli</a></li>";
+            echo "<li class='schisiamo'><a href=\"chisiamo.php\" tabindex=\"0\">Chi Siamo</a></li>";
+            echo "<li class='seventi'><a href=\"eventi.php\" tabindex=\"0\">Eventi</a></li>";
+            echo "<li class='sveicoli'><a href=\"veicoli.php\" tabindex=\"0\">Veicoli</a></li>";
         } 
         else if ($this->checkFileName("chisiamo.php")){
             echo "<li class='shome'><a href=\"index.php\" lang=\"en\">Home</a></li>";
@@ -217,7 +220,7 @@ class page {
                 echo "<li><a href=\"editorVeicoli.php\">Modifica Veicolo</a></li>";
             }
 
-            if($this->checkFileName("editorEventiPage.php")){
+            if($this->checkFileName("selectEventoToEdit.php")){
                 echo "<li>Modifica Evento</li>";
             }
             else {
@@ -260,11 +263,11 @@ class page {
                 if($this->checkFileName("registrazione.php")){
                     echo "<a>ACCEDI/REGISTRATI</a>";
                 } else        
-                    echo "<a href=\"registrazione.php\">ACCEDI/REGISTRATI</a>";
+                    echo "<a href=\"registrazione.php\" tabindex=\"3\">ACCEDI/REGISTRATI</a>";
 
             }
             else{
-                echo "<a href=\"scheda_utente.php\">VISITA IL TUO PROFILO</a>";
+                echo "<a href=\"scheda_utente.php\" tabindex=\"3\">VISITA IL TUO PROFILO</a>";
             }
         }
         else {
