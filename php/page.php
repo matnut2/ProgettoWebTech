@@ -95,79 +95,53 @@ class page {
             echo "Veicoli </p>";
         }
         else if($this->checkFileName("login_page.php")){
-            echo "<p> <a href=\"index.php\" lang=\"en\" tabindex=\"4\">Home</a> &gt &gt
-                    <a href=\"registrazione.php\">Registrazione Utente</a> &gt &gt
+            echo "<a href=\"registrazione.php\">Registrazione Utente</a> &gt &gt
                 <span lang=\"en\">Login </span> </p>";
         }
         else if($this->checkFileName("registrazione.php")){
-            echo"<p> <a href=\"index.php\" lang=\"en\" tabindex=\"4\">Home</a> &gt &gt
-                Registrazione Utente </p>
-            ";
+            echo" Registrazione Utente </p>";
         }
         else if($this->checkFileName("scheda_utente.php")){
-            echo"<p> <a href=\"index.php\" lang=\"en\" tabindex=\"4\">Home</a> &gt &gt
-                Scheda Utente </p>
-            "; 
+            echo"Scheda Utente </p>"; 
         }
         else if($this->checkFileName("edit_profile.php")){
-            echo"<p> <a href=\"index.php\" lang=\"en\" tabindex=\"4\">Home</a> &gt &gt
-                <a href=\"scheda_utente.php\">Scheda Utente</a> &gt &gt
-                Modifica Profilo </p>
-            ";
+            echo"<a href=\"scheda_utente.php\">Scheda Utente</a> &gt &gt
+                Modifica Profilo </p>";
         }
         else if($this->checkFileName("scheda_veicolo.php")){
-            echo"<p> <a href=\"index.php\" lang=\"en\" tabindex=\"4\">Home</a> &gt &gt
-                <a href=\"veicoli.php\">Veicoli</a> &gt &gt
-                Scheda Veicolo </p>
-            ";
+            echo"<a href=\"veicoli.php\">Veicoli</a> &gt &gt
+                Scheda Veicolo </p>";
         }
         else if($this->checkFileName("editorVeicoli.php")){
-            echo"<p> <a href=\"index.php\" lang=\"en\" tabindex=\"4\">Home</a> &gt &gt
-                Modifica Veicoli </p>
-            ";
+            echo"Modifica Veicoli </p>";
         }
         else if($this->checkFileName("editSingleVeicolo.php")){
-            echo"<p> <a href=\"index.php\" lang=\"en\" tabindex=\"4\">Home</a> &gt &gt
-                 <a href=\"editorVeicoli.php\">Modifica Veicoli</a> &gt &gt
-                Veicolo Da Modificare </p>
-            ";
+            echo"<a href=\"editorVeicoli.php\">Modifica Veicoli</a> &gt &gt
+                Veicolo Da Modificare </p>";
         }
         else if($this->checkFileName("addVeicolo.php")){
-            echo"<p> <a href=\"index.php\" lang=\"en\" tabindex=\"4\" >Home</a> &gt &gt
-                Aggiungi Veicolo </p>
-            ";
+            echo"Aggiungi Veicolo </p>";
         }
         else if($this->checkFileName("addEvento.php")){
-            echo"<p> <a href=\"index.php\" lang=\"en\" tabindex=\"4\">Home</a> &gt &gt
-                Aggiungi Evento </p>
-            ";
+            echo"Aggiungi Evento </p>";
         }
         else if($this->checkFileName("pagina_avvisi.php")){
-            echo"<p> <a href=\"index.php\" lang=\"en\" tabindex=\"4\">Home</a> &gt &gt
-                Pagina Avvisi </p>
-            ";
+            echo"Pagina Avvisi </p>";
         }
 	    
 	    else if($this->checkFileName("listaBiglietti.php")){
-            echo"<p> <a href=\"index.php\" lang=\"en\" tabindex=\"4\">Home</a> &gt &gt
-                Lista Biglietti </p>
-            ";
+            echo"Lista Biglietti </p>";
         }
         else if($this->checkFileName("selectEventoToEdit.php")){
-            echo"<p> <a href=\"index.php\" lang=\"en\" tabindex=\"4\">Home</a> &gt &gt
-            Modifica Evento </p>
-            ";
+            echo"Modifica Evento </p>";
         }
         else if($this->checkFileName("editorEventi.php")){
-            echo"<p> <a href=\"index.php\" lang=\"en\">Home</a> &gt &gt
-            <a href=\"selectEventoToEdit.php\">Modifica evento</a> &gt &gt
+            echo"<a href=\"selectEventoToEdit.php\">Modifica evento</a> &gt &gt
             Modifica Singolo Evento </p>
             ";
         }
         else if($this->checkFileName("404.php")){
-            echo"<p> <a href=\"index.php\" lang=\"en\">Home</a> &gt &gt
-                Errore 404 </p>
-            ";
+            echo"Errore 404 </p>";
         }
     }
 
