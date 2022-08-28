@@ -34,7 +34,7 @@
             <?php
                 require_once "database_Manager.php";
                 
-                $paginaHTML= file_get_contents("../html/eventi.html");
+                $paginaHTML= file_get_contents("../html/biglietti.html");
                 $connessione = new database_Manager();
                 $connessioneOK = $connessione->connectToDatabase();
                 $eventi = ""; /* DATI FREZZI DAL DB */ 
@@ -55,7 +55,7 @@
                                 <li>INTESTATO A: ' . $biglietto['utente'] . '</li>
                                 <li>ACQUISTATO IL GIORNO: <p>' . $dataAcquisto->format('d-m-Y').'</p></li>
                                 <li>VALIDO IL GIORNO: <p>' . $dataEvento->format('d-m-Y'). '</p></li>
-                                <li>LUOGO SVOLGIMENTO: <p>' . $evento[0]['via'] .' '. $evento[0]['citta'] .' '. $evento[0]['num_Civico'] .' '.$evento[0]['cap'].'</p></li>
+                                <li>LUOGO SVOLGIMENTO: <p>' . $evento[0]['via'] .' '. $evento[0]['num_Civico'] .' '.$evento[0]['cap'].'</p></li>
                                 </ul>';
                             $listaEventi .='<a class="eventButton" href="../php/delete_Ticket.php?Id_Biglietto='.$biglietto['Id_Biglietto'].'">Elimina Biglietto</a></dd>';
                             $listaEventi .='<p class="idBiglietto">IDENTIFICATIVO BIGLIETTO: '. $biglietto['Id_Biglietto'].'</p>';
@@ -63,7 +63,7 @@
                         $connessione->releaseDB();
                     }
                     else{
-                        $listaEventi = "<p> Non ci sono informazioni relative ai biglietti </p>";
+                        $listaEventi = "<p> Non hai biglietti per i nostri eventi </p>";
                     }
                 }
                 else{
