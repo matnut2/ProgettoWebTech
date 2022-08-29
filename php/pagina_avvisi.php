@@ -25,7 +25,7 @@
 
         <?php require_once ('header.php')?>
 
-            <div id="content">
+            <div id="content" tabindex="8">
                 <?php
                     if (isset($_SESSION['errorMsg']))
                         $page->printMessagge($_SESSION['errorMsg'],false);

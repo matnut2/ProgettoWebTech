@@ -100,23 +100,29 @@ class utente_Registrato extends utente{
         return $this->getDBError() == 0;
     }
 
-    public function addVeicolo($targa,$marca,$modello,$cilindrata,$anno,$posti,$cambio,$carburante,$colori_Esterni,$url_Immagine,$descrizione,$chilometri_Percorsi,$disponibile){
+    public function addVeicolo($targa,$marca,$modello,$cilindrata,$anno,$posti,$cambio,$carburante,$colori_Esterni,$url_Immagine,$descrizione,$chilometri_Percorsi,$disponibile,$base_Asta, $data_Aggiunta){
         date_default_timezone_set("Europe/Rome");
         $data_Aggiunta = date("Y-m-d");
         $targa = strtoupper($targa);
 
         $this->getDB()->query(
             "INSERT INTO Veicolo (Targa, marca, modello, cilindrata, anno, posti, cambio,carburante, colore_Esterni, url_Immagine, descrizione, chilometri_Percorsi, disponibile, data_Aggiunta)
-            VALUES ('$targa','$marca','$modello','$cilindrata','$anno','$posti','$cambio','$carburante','$colori_Esterni','$url_Immagine','$descrizione','$chilometri_Percorsi','$disponibile','$data_Aggiunta');"
+            VALUES ('$targa','$marca','$modello','$cilindrata','$anno','$posti','$cambio','$carburante','$colori_Esterni','$url_Immagine','$descrizione','$chilometri_Percorsi','$disponibile', '$data_Aggiunta');"
         );
+
+        $this->getDB()->query(
+            "UPDATE Asta SET
+            Asta.base_Asta = '$base_Asta'
+            WHERE Asta.targa_Veicolo='$targa';"
+            );
 
         return $this->getDBError() == 0;
     }
 
-    public function addIndirizzo($via,$città,$cap,$num_Civico){
+    public function addIndirizzo($via,$citta,$cap,$num_Civico){
         $this->getDB()->query(
-            "INSERT INTO Indirizzo (id_Indirizzo,via,citta,cap, num_Civico)
-            VALUES (NULL,'$via','$città','$cap','$num_Civico');"
+            "INSERT INTO Indirizzo (id_Indirizzo,via,città,cap, num_Civico)
+            VALUES (NULL,'$via','$citta','$cap','$num_Civico');"
         );
         return $this->getDBError() == 0;
     }
@@ -158,7 +164,7 @@ class utente_Registrato extends utente{
         return $this->getDBError() == 0;
     }
 
-    public function updateVeicolo($targa,$marca,$modello,$cilindrata,$anno,$posti,$cambio,$carburante,$colori_Esterni,$url_Immagine,$descrizione,$chilometri_Percorsi,$disponibile,$prezzo){
+    public function updateVeicolo($targa,$marca,$modello,$cilindrata,$anno,$posti,$cambio,$carburante,$colori_Esterni,$url_Immagine,$descrizione,$disponibile){
       
         $this->getDB()->query(
             "UPDATE VEICOLO SET
@@ -172,15 +178,15 @@ class utente_Registrato extends utente{
             Veicolo.colore_Esterni = '$colori_Esterni',
             Veicolo.url_Immagine = '$url_Immagine',
             Veicolo.descrizione = '$descrizione',
-            Veicolo.chilometri_Percorsi = '$chilometri_Percorsi',
-            Veicolo.disponibile = '$disponibile'
-            WHERE Veicolo.Targa='$targa';"
+            Veicolo.disponibile = 1
+            WHERE Targa='$targa';"
             );
-        $this->getDB()->query(
+       /* $this->getDB()->query(
             "UPDATE Asta SET
-            Asta.base_Asta = '$prezzo'
-            WHERE Asta.targa_Veicolo='$targa';"
+            Asta.base_Asta = '$base_Asta'
+            WHERE Asta.targa_Veicolo='$Targa';"
             );
+            */
         return $this->getDBError() == 0;
     }
 

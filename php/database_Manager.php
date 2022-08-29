@@ -1,9 +1,9 @@
 <?php 
 class database_Manager{
     private $DB_HOST = "localhost";
-    private $DB_NAME = "AutoAsta";
-    private $USER = "AutoAsta";
-    private $PWD = "AutoAsta";
+    private $DB_NAME = "AutoAsta_merge";
+    private $USER = "root";
+    private $PWD = "";
     private $connection;
 
     public function __construct(){
@@ -50,7 +50,7 @@ class database_Manager{
     }
 
     public function getEventiList(){
-        $query = "SELECT * FROM Evento ORDER BY data ASC;";
+        $query = "SELECT * FROM Evento ORDER BY data DESC;";
         $queryResult = mysqli_query($this->connection, $query) or die("Errore in getEventiList:" . mysqli_error($this->connection));
 
         if(mysqli_num_rows($queryResult) == 0){
@@ -101,7 +101,7 @@ class database_Manager{
     public function getIdIndirizzo($via,$città,$cap,$num_Civico){
         $query = 
             "SELECT id_Indirizzo FROM Indirizzo 
-            WHERE via = '$via' AND citta = '$città'
+            WHERE via = '$via' AND città = '$città'
             AND cap = '$cap' AND num_Civico = '$num_Civico' LIMIT 1;";
         
         $queryResult = mysqli_query($this->connection, $query) or die("Errore in getIndirizzi:" . mysqli_error($this->connection));

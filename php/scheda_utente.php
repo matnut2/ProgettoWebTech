@@ -39,7 +39,7 @@
     <body>
         <div class="globalDiv">     
             <?php require_once ('header.php')?>
-            <div id="content">
+            <div id="content" tabindex="8">
                 <?php 
                     $paginaHTML = file_get_contents('../html/scheda_utente.html');
                     $connessione = new database_Manager();
