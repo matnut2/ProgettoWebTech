@@ -33,7 +33,8 @@
                         $page->printMessagge($_SESSION['successMsg'],true);
                     unset($_SESSION['errorMsg']);
                     unset($_SESSION['successMsg']);
-                ?>    
+                ?>  
+                <a id ="homeButton" class="WarningPageElement" href="../php/index.php">TORNA ALLA PAGINA INIZIALE</a>  
             </div>   
         <?php require_once ('../html/footer.html')?>
         </div>
