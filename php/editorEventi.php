@@ -7,6 +7,7 @@
     error_reporting(E_ALL); 
  
     $user = createSession(); 
+    $checkIns = new page();
  
     if($_SESSION["isAdmin"] != 1){ 
         $_SESSION['errorMsg'] = "Devi essere un amministratore per accedere alla funzionalit&agrave; di aggiunta veicolo"; 
@@ -16,7 +17,7 @@
 
     if($_GET['id_Evento']){
         if(!empty($_POST)){ 
-            $checkIns = $user->editEvento($_GET['id_Evento'],$_POST['capienza'],$_POST['data'],$_POST['nome'],$_POST['descrizione'],$_POST['prezzo']); 
+            $checkIns = $checkIns->editEvento($_POST['id_Evento'],$_POST['capienza'],$_POST['data'],$_POST['nome'],$_POST['descrizione'],$_POST['prezzo']); 
             if($checkIns){ 
                 $_SESSION['successMsg'] = "Evento modificato con successo"; 
             } 

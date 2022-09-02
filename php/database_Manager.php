@@ -101,7 +101,7 @@ class database_Manager{
     public function getIdIndirizzo($via,$città,$cap,$num_Civico){
         $query = 
             "SELECT id_Indirizzo FROM Indirizzo 
-            WHERE via = '$via' AND città = '$città'
+            WHERE via = '$via' AND citta = '$città'
             AND cap = '$cap' AND num_Civico = '$num_Civico' LIMIT 1;";
         
         $queryResult = mysqli_query($this->connection, $query) or die("Errore in getIndirizzi:" . mysqli_error($this->connection));

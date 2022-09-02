@@ -3,8 +3,7 @@ if(!empty($_GET)){
     $input = $_GET['search'];
     strtolower($input);
     $wordsAuto = array('auto','veicoli','veicolo','moto',
-    'motocicletta','motociclette','automobile','vettura','autovettura','mezzo','quad','motorino', 'audi',
-'volkswagen', 'volvo','cadillac','opel','ferrari', 'pagani', 'mercedes', 'toyota');
+    'motocicletta','motociclette','automobile','vettura','autovettura','mezzo','quad','motorino');
 
     $wordsEventi  = array('eventi','evento','asta','manifestazione',
                     'aste','prossimi');
