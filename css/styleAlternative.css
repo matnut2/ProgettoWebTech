@@ -627,7 +627,12 @@ fieldset{
 }
 
 .success-msg{
-    background-color: green;
+    border:green;
+    border-style: solid;
+    border-width: thick;
+    margin-bottom: 1.5em;
+    text-align: center;
+    font-size: 2em;
 }
 
 .success-msg p{
@@ -635,10 +640,19 @@ fieldset{
 }
 
 .failed-msg{
-    background-color: red;
-    margin-bottom: 15em;
+    border:red;
+    border-style: solid;
+    border-width: thick;
+    margin-bottom: 1.5em;
+    text-align: center;
+    font-size: 2em;
 }
 .failed-msg p{
     padding: 0.5em;
+}
+
+.WarningPageElement{
+    display: block;
+    text-align: center;
 }
 
