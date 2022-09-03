@@ -32,7 +32,7 @@ class database_Manager{
     }
     
     public function getEventoInfo($id_Evento){
-        $query = "SELECT * FROM Evento,Indirizzo WHERE Evento.id_Evento=$id_Evento AND Indirizzo.id_Indirizzo=Evento.indirizzo;";
+        $query = "SELECT * FROM Evento,Indirizzo WHERE Evento.id_Evento='$id_Evento' AND Indirizzo.id_Indirizzo=Evento.indirizzo;";
         $queryResult = mysqli_query($this->connection, $query) or die("Errore in getEventoInfo:" . mysqli_error($this->connection));
 
         if(mysqli_num_rows($queryResult) == 0){
