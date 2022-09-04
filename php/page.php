@@ -86,7 +86,7 @@ class page {
     
 
     private static function checkFileName($name){
-        return ($_SERVER['SCRIPT_NAME'] == "/progettowebtech/php/". $name);
+        return ($_SERVER['SCRIPT_NAME'] == "/AutoAsta/php/". $name);
     }
 
     private function checkUserLog(){
@@ -139,7 +139,7 @@ class page {
             echo "<p lang=\"en\">Home</p>";
         }
         else{
-            echo "<p> <a href=\"index.php\" tabindex=\"4\" lang=\"en\">Home</a>  &gt &gt ";
+            echo "<p> <a href=\"index.php\" tabindex=\"4\" lang=\"en\">Home</a>  &gt; &gt; ";
         }
         if($this->checkFileName("chisiamo.php")){
             echo " Chi Siamo </p>";
@@ -151,7 +151,7 @@ class page {
             echo "Veicoli </p>";
         }
         else if($this->checkFileName("login_page.php")){
-            echo "<a href=\"registrazione.php\">Registrazione Utente</a> &gt &gt
+            echo "<a href=\"registrazione.php\">Registrazione Utente</a> &gt; &gt;
                 <span lang=\"en\">Login </span> </p>";
         }
         else if($this->checkFileName("registrazione.php")){
@@ -161,18 +161,18 @@ class page {
             echo"Scheda Utente </p>"; 
         }
         else if($this->checkFileName("edit_profile.php")){
-            echo"<a href=\"scheda_utente.php\">Scheda Utente</a> &gt &gt
+            echo"<a href=\"scheda_utente.php\">Scheda Utente</a> &gt; &gt;
                 Modifica Profilo </p>";
         }
         else if($this->checkFileName("scheda_veicolo.php")){
-            echo"<a href=\"veicoli.php\">Veicoli</a> &gt &gt
+            echo"<a href=\"veicoli.php\">Veicoli</a> &gt; &gt;
                 Scheda Veicolo </p>";
         }
         else if($this->checkFileName("editorVeicoli.php")){
             echo"Modifica Veicoli </p>";
         }
         else if($this->checkFileName("editSingleVeicolo.php")){
-            echo"<a href=\"editorVeicoli.php\">Modifica Veicoli</a> &gt &gt
+            echo"<a href=\"editorVeicoli.php\">Modifica Veicoli</a> &gt; &gt;
                 Veicolo Da Modificare </p>";
         }
         else if($this->checkFileName("addVeicolo.php")){
@@ -192,7 +192,7 @@ class page {
             echo"Modifica Evento </p>";
         }
         else if($this->checkFileName("editorEventi.php")){
-            echo"<a href=\"selectEventoToEdit.php\">Modifica evento</a> &gt &gt
+            echo"<a href=\"selectEventoToEdit.php\">Modifica evento</a> &gt; &gt;
             Modifica Singolo Evento </p>
             ";
         }
