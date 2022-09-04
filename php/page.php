@@ -155,34 +155,34 @@ class page {
     public function printMenu() {
         if ($this->checkFileName("index.php")){
             echo "<li class='shome' id='active' lang=\"en\">Home</li>";
-            echo "<li class='schisiamo'><a href=\"chisiamo.php\" tabindex=\"0\">Chi Siamo</a></li>";
-            echo "<li class='seventi'><a href=\"eventi.php\" tabindex=\"0\">Eventi</a></li>";
-            echo "<li class='sveicoli'><a href=\"veicoli.php\" tabindex=\"0\">Veicoli</a></li>";
+            echo "<li class='schisiamo'><a href=\"chisiamo.php\" tabindex=\"0\" role=\"menuitem\">Chi Siamo</a></li>";
+            echo "<li class='seventi'><a href=\"eventi.php\" tabindex=\"0\" role=\"menuitem\">Eventi</a></li>";
+            echo "<li class='sveicoli'><a href=\"veicoli.php\" tabindex=\"0\" role=\"menuitem\">Veicoli</a></li>";
         } 
         else if ($this->checkFileName("chisiamo.php")){
-            echo "<li class='shome'><a href=\"index.php\" lang=\"en\">Home</a></li>";
+            echo "<li class='shome'><a href=\"index.php\" lang=\"en\" role=\"menuitem\">Home</a></li>";
             echo "<li class='schisiamo' id='active'>Chi Siamo</li>";
-            echo "<li class='seventi'><a href=\"eventi.php\">Eventi</a></li>";
-            echo "<li class='sveicoli'><a href=\"veicoli.php\">Veicoli</a></li>";
+            echo "<li class='seventi'><a href=\"eventi.php\" role=\"menuitem\">Eventi</a></li>";
+            echo "<li class='sveicoli'><a href=\"veicoli.php\" role=\"menuitem\">Veicoli</a></li>";
         } 
         else if ($this->checkFileName("eventi.php")){
-            echo "<li class='shome'><a href=\"index.php\" lang=\"en\">Home</a></li>";
-            echo "<li class='schisiamo'><a href=\"chisiamo.php\">Chi Siamo</a></li>";
+            echo "<li class='shome'><a href=\"index.php\" lang=\"en\" role=\"menuitem\">Home</a></li>";
+            echo "<li class='schisiamo'><a href=\"chisiamo.php\" role=\"menuitem\">Chi Siamo</a></li>";
             echo "<li class='seventi' id='active'>Eventi</li>";
-            echo "<li class='sveicoli'><a href=\"veicoli.php\">Veicoli</a></li>";
+            echo "<li class='sveicoli'><a href=\"veicoli.php\" role=\"menuitem\">Veicoli</a></li>";
         } 
        else if ($this->checkFileName("veicoli.php")){
-            echo "<li class='shome'><a href=\"index.php\" lang=\"en\">Home</a></li>";
-            echo "<li class='schisiamo'><a href=\"chisiamo.php\">Chi Siamo</a></li>";
-            echo "<li class='seventi'><a href=\"eventi.php\">Eventi</a></li>";
+            echo "<li class='shome'><a href=\"index.php\" lang=\"en\" role=\"menuitem\">Home</a></li>";
+            echo "<li class='schisiamo'><a href=\"chisiamo.php\" role=\"menuitem\">Chi Siamo</a></li>";
+            echo "<li class='seventi'><a href=\"eventi.php\" role=\"menuitem\">Eventi</a></li>";
             echo "<li class='sveicoli' id='active'>Veicoli</li>";
         }
 
         else{
-            echo "<li class='shome'><a href=\"index.php\" lang=\"en\">Home</a></li>";
-            echo "<li class='schisiamo'><a href=\"chisiamo.php\">Chi Siamo</a></li>";
-            echo "<li class='sevento'><a href=\"eventi.php\">Eventi</a></li>";
-            echo "<li class='sveicoli'><a href=\"veicoli.php\">Veicoli</a></li>";
+            echo "<li class='shome'><a href=\"index.php\" lang=\"en\" role=\"menuitem\">Home</a></li>";
+            echo "<li class='schisiamo'><a href=\"chisiamo.php\" role=\"menuitem\">Chi Siamo</a></li>";
+            echo "<li class='sevento'><a href=\"eventi.php\" role=\"menuitem\">Eventi</a></li>";
+            echo "<li class='sveicoli'><a href=\"veicoli.php\" role=\"menuitem\">Veicoli</a></li>";
         } 
 
         if(isset($_SESSION['isAdmin']) && $_SESSION['isAdmin']==1){
@@ -191,21 +191,21 @@ class page {
                 echo "<li>Aggiungi Veicolo</li>";
             }
             else {
-                echo "<li><a href=\"addVeicolo.php\">Aggiungi veicolo</a></li>";
+                echo "<li><a href=\"addVeicolo.php\" role=\"menuitem\" >Aggiungi veicolo</a></li>";
             }
             
             if($this->checkFileName("editorVeicoli.php")){
                 echo "<li>Modifica Veicolo</li>";
             }
             else {
-                echo "<li><a href=\"editorVeicoli.php\">Modifica Veicolo</a></li>";
+                echo "<li><a href=\"editorVeicoli.php\" role=\"menuitem\">Modifica Veicolo</a></li>";
             }
 
             if($this->checkFileName("selectEventoToEdit.php")){
                 echo "<li>Modifica Evento</li>";
             }
             else {
-                echo "<li><a href=\"selectEventoToEdit.php\">Modifica Evento</a></li>";
+                echo "<li><a href=\"selectEventoToEdit.php\" role=\"menuitem\">Modifica Evento</a></li>";
             }
 
 
@@ -213,7 +213,7 @@ class page {
                 echo "<li>Aggiungi Evento</li>";
             }
             else {
-                echo "<li><a href=\"addEvento.php\">Aggiungi Evento</a></li>";
+                echo "<li><a href=\"addEvento.php\" role=\"menuitem\">Aggiungi Evento</a></li>";
             }
         }
         if(isset($_SESSION['email']) && $_SESSION['email']!='-1'){
@@ -221,7 +221,7 @@ class page {
                 echo "<li>Lista Biglietti</li>";
             }
             else {
-                echo "<li><a href=\"listaBiglietti.php\">Lista Biglietti</a></li>";
+                echo "<li><a href=\"listaBiglietti.php\" role=\"menuitem\">Lista Biglietti</a></li>";
             }
         }
     }
