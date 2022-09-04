@@ -24,7 +24,7 @@
     <?php $page->printBreadcrumb();?>
 </nav>
 
-<div id="menu">
+<div id="menu" role="navigation">
     <ul>
         <?php $page->printMenu(); ?>
     </ul>

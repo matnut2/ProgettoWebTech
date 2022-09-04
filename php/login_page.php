@@ -44,11 +44,11 @@
         
             <fieldset form="registrazione" name="email">
                 <label for="email"><b>Email</b></label>
-                <input type="text" placeholder="Inserisci la tua email" name="email" id="email" onblur="return checkEmail()" required>
+                <input type="text" placeholder="Inserisci la tua email" name="email" id="email" onblur="return checkEmail()" aria-required="true"  required>
             </fieldset>
 
             <label for="psw"><b>Password</b></label>
-            <input type="password" placeholder="Inserisci la tua  password" name="psw" id="psw" required>
+            <input type="password" placeholder="Inserisci la tua  password" name="psw" id="psw"  aria-required="true" required>
 
             <?php 
                     if($user)
@@ -56,7 +56,7 @@
                         if($page->hasErrors()) $page->printMessagge('Username o password errati',false);
             ?>
         
-            <button type="submit" class="register_btn">ACCEDI</button>
+            <button type="submit" class="register_btn" aria-label="Accedi" >ACCEDI</button>
             </div>
         </form>
         </div>

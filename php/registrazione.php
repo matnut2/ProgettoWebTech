@@ -56,34 +56,34 @@
 
                     <fieldset form="registrazione" name="email">
                         <label for="email"><b>Email</b></label>
-                        <input type="text" placeholder="Inserisci la tua email" name="email" id="email" onblur="return checkEmail()" required>
+                        <input type="text" placeholder="Inserisci la tua email" name="email" id="email" onblur="return checkEmail()" aria-required="true" required>
                     </fieldset>
 
                     <fieldset form="registrazione" name="password">
                         <label for="psw"><b>Password</b></label>
-                        <input type="password" placeholder="Inserisci la tua  password" name="psw" id="psw" required>  
-                        <label for="psw-repeat"><b>Conferma Password</b></label>
-                      <input type="password" placeholder="Ripeti la password scelta" name="password-repeat" id="password-repeat" onblur="return checkPassword()"required>
+                        <input type="password" placeholder="Inserisci la tua  password" name="psw" id="psw" aria-required="true" required>  
+                        <label for="psw-repeat"><b>Conferma Password</b></label> 
+                      <input type="password" placeholder="Ripeti la password scelta" name="password-repeat" id="password-repeat" onblur="return checkPassword() "aria-required="true" required>
                     </fieldset>
 
                     <fieldset form="registrazione" name="username">
                     <label for="name"><b>Username</b></label>
-                    <input type="text" placeholder="Inserisci il tuo username" name="username" id="username"  onblur="return checkText('username','Username non valido',/^[a-zA-Z0-9]+$/)" required">
+                    <input type="text" placeholder="Inserisci il tuo username" name="username" id="username"  onblur="return checkText('username','Username non valido',/^[a-zA-Z0-9]+$/)" aria-required="true" required">
                     </fieldset>
 
                     <fieldset form="registrazione" name="nome">
                         <label for="name"><b>Nome</b></label>
-                        <input type="text" placeholder="Inserisci il tuo nome" name="nome" id="nome" onblur="return checkText('nome','Nome non valido',/^[a-zA-Z]+$/)" required>
+                        <input type="text" placeholder="Inserisci il tuo nome" name="nome" id="nome" onblur="return checkText('nome','Nome non valido',/^[a-zA-Z]+$/)" aria-required="true" required>
                     </fieldset>
 
                     <fieldset form="registrazione" name="cognome">
                         <label for="cognome"><b>Cognome</b></label>
-                        <input type="text" placeholder="Inserisci il tuo cognome" name="cognome" id="cognome" onblur="return checkText('cognome','Cognome non valido',/^[a-zA-Z]+$/)" required>
+                        <input type="text" placeholder="Inserisci il tuo cognome" name="cognome" id="cognome" onblur="return checkText('cognome','Cognome non valido',/^[a-zA-Z]+$/)" aria-required="true"  required>
                     </fieldset>
 
                     <fieldset form="registrazione" name="data_nascita">
                         <label for="birthday"><b>Data nascita</b></label>
-                        <input type="date" name="data_nascita" id="data_nascita" onblur="return checkDateProfile()" required>
+                        <input type="date" name="data_nascita" id="data_nascita" onblur="return checkDateProfile()" aria-required="true"  required>
                     </fieldset>
 
                     <fieldset form="registrazione" name="user_profile_picture">
@@ -93,11 +93,11 @@
                     
                     <p>Creando un account accetti i nostri <a href="">Termini e Condizioni</a>.</p>
                     <input type="reset" class="reset_btn" value="CANCELLA DATI">
-                    <button type="submit" class="register_btn">REGISTRATI</button>
+                    <button type="submit" class="register_btn" aria-label="Registrati" >REGISTRATI</button>
                     </div>
 
                     <div class="login_form_section">
-                    <p>Hai già un tuo account? <a href="../php/login_page.php">ACCEDI QUI</a>.</p>
+                    <p>Hai già un tuo account? <a href="../php/login_page.php" aria-label="Accedi" >ACCEDI</a>.</p>
                     </div>
                 </form>
             </div>

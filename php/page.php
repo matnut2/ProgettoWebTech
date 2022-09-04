@@ -77,8 +77,8 @@ class page {
         }
         else return false;
     }
-    public function updateEventoInfo($post, utente_Registrato $utente){
-        $utente->editEvento($post['id_Evento'],$post['capienza'],$post['data'],$post['nome'],$post['descrizione'],$post['prezzo']);
+    public function updateEventoInfo($id_Evento,$post, utente_Registrato $utente){
+        $utente->editEvento($id_Evento,$post['capienza'],$post['data'],$post['nome'],$post['descrizione'],$post['prezzo']);
         if($utente){
             return true;
         }

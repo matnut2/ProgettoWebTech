@@ -17,11 +17,11 @@
     if(!empty($_SESSION)){
         //$user = getLoggedUser($_SESSION['email']);
         if(!empty($_POST)){
-            $checkUpdate = $gestione_Update->updateEventoInfo($_POST,$user);
+            $checkUpdate = $gestione_Update->updateEventoInfo($_GET['id_Evento'],$_POST,$user);
             if($checkUpdate){
             $_SESSION['successMsg'] = "Evento modificato con successo";
             //UPDATE AVVENUTO CON SUCCESSO
-            header("Location: selectEventoToEdit.php");
+            header("Location: ../php/pagina_avvisi.php");
             exit();
             }else {
                 $_SESSION['errorMsg'] = "Impossibile modificare l'evento"; 
@@ -57,7 +57,7 @@
                 $listaVeicoli = $paginaHTML; /* CODICE DI HTML DA DARE IN OUTPUT */
 
                 if($connessioneOK){
-                    $personaggi = $connessione->getEventoInfo('1');
+                    $personaggi = $connessione->getEventoInfo($_GET['id_Evento']);
                     $connessione->releaseDB();
                     if($personaggi != null){
                         foreach($personaggi as $veicolo){

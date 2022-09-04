@@ -3,7 +3,7 @@ class database_Manager{
     private $DB_HOST = "localhost";
     private $DB_NAME = "AutoAsta_merge";
     private $USER = "root";
-    private $PWD = "";
+    private $PWD = "root";
     private $connection;
 
     public function __construct(){
