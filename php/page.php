@@ -21,6 +21,55 @@ class page {
 		}
 	}
 
+    public function upload ($post,$file){
+        $target_dir = "../img/";
+        $target_file = $target_dir . basename($file["url_immagine"]["name"]);
+        $uploadOk = 1;
+        $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+        
+        // Check if image file is a actual image or fake image
+        if(isset($post["submit"])) {
+          $check = getimagesize($file["url_immagine"]["tmp_name"]);
+          if($check !== false) {
+            echo "File is an image - " . $check["mime"] . ".";
+            $uploadOk = 1;
+          } else {
+            $_SESSION["errorMsg"] =  "File is not an image.";
+            $uploadOk = 0;
+          }
+        }
+        
+        // Check if file already exists
+        if (file_exists($target_file)) {
+          $_SESSION["errorMsg"] =  "Sorry, file already exists.";
+          $uploadOk = 0;
+        }
+        
+        // Check file size
+        if ($file["url_immagine"]["size"] > 5000000) {
+          $_SESSION["errorMsg"] =  "Sorry, your file is too large.";
+          $uploadOk = 0;
+        }
+        
+        // Allow certain file formats
+        if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg" && $imageFileType != "gif" ) {
+          $_SESSION["errorMsg"] =  "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
+          $uploadOk = 0;
+        }
+        
+        // Check if $uploadOk is set to 0 by an error
+        if ($uploadOk == 0) {
+            $_SESSION["errorMsg"] =  "Sorry, your file was not uploaded.";
+        // if everything is ok, try to upload file
+        } else {
+          if (move_uploaded_file($file["url_immagine"]["tmp_name"], $target_file)) {
+            $_SESSION["succesMsg"] =  "The file ".  basename( $file["url_immagine"]["name"]). " has been uploaded.";
+          } else {
+            $_SESSION["errorMsg"] =  "Sorry, there was an error uploading your file.";
+          }
+        }
+    }
+
     public function setErrors($errors){
         $this->errors = $errors;
     }

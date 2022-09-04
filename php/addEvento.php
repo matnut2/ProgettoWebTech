@@ -7,6 +7,7 @@
     error_reporting(E_ALL); 
  
     $user = createSession(); 
+    $page = new page();
  
     if($_SESSION["isAdmin"] != 1){ 
         $_SESSION['errorMsg'] = "Devi essere un amministratore per accedere alla funzionalit&agrave; di aggiunta veicolo"; 
@@ -21,7 +22,8 @@
             $connessioneOK = $connessione->connectToDatabase();
             $indirizzo = $connessione->getIdIndirizzo($_POST['via'],$_POST['citta'],$_POST['cap'],$_POST['num_Civico']);
             $connessione->releaseDB();
-            $checkIns = $user->addEvento($_POST['Capienza'],$_POST['Data'],$indirizzo[0]['id_Indirizzo'],$_POST['nome'],$_POST['Descrizione'],$_POST['Prezzo'],'ciao'); 
+            $page->upload($_POST,$_FILES);
+            $checkIns = $user->addEvento($_POST['Capienza'],$_POST['Data'],$indirizzo[0]['id_Indirizzo'],$_POST['nome'],$_POST['Descrizione'],$_POST['Prezzo'],basename($_FILES["url_immagine"]["name"])); 
             if($checkIns){ 
                 $_SESSION['successMsg'] = "Evento aggiunto con successo"; 
             } 
@@ -51,7 +53,7 @@
          <div class="globalDiv"> 
          <?php require_once ('header.php')?> 
          <div id="content"> 
-         <form action="../php/addEvento.php" method="post" id="formAddEvento"> 
+         <form action="../php/addEvento.php" method="post" id="formAddEvento" enctype="multipart/form-data"> 
             <div class="registration_form"> 
             <h2>Inserimento Evento</h2> 
             <p>Compila i campi seguenti per inserire un nuovo evento</p> 
