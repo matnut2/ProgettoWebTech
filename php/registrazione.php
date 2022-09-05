@@ -63,12 +63,12 @@
                         <label for="psw"><b>Password</b></label>
                         <input type="password" placeholder="Inserisci la tua  password" name="psw" id="psw" aria-required="true" required>  
                         <label for="psw-repeat"><b>Conferma Password</b></label> 
-                      <input type="password" placeholder="Ripeti la password scelta" name="password-repeat" id="password-repeat" onblur="return checkPassword() "aria-required="true" required>
+                      <input type="password" placeholder="Ripeti la password scelta" name="password-repeat" id="password-repeat" onblur="return checkPassword()" aria-required="true" required>
                     </fieldset>
 
                     <fieldset form="registrazione" name="username">
                     <label for="name"><b>Username</b></label>
-                    <input type="text" placeholder="Inserisci il tuo username" name="username" id="username"  onblur="return checkText('username','Username non valido',/^[a-zA-Z0-9]+$/)" aria-required="true" required">
+                    <input type="text" placeholder="Inserisci il tuo username" name="username" id="username"  onblur="return checkText('username','Username non valido',/^[a-zA-Z0-9]+$/)" aria-required="true" required>
                     </fieldset>
 
                     <fieldset form="registrazione" name="nome">
