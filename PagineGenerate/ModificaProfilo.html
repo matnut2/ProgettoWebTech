@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="it">
+    <head>
+        <link rel="icon" type="image/x-icon" href="../img/2061866.png"/>
+        <title>Aggiorna informazioni Utente - Auto Asta</title>
+        <link rel="stylesheet" type="text/css" media="screen" href="../css/styleAlternative.css"/>
+        <link rel="stylesheet" type="text/css" media="screen and (max-width:1200px), only screen and (max-width:1200px)"  href="../css/mobile.css"/>
+        <meta charset="UTF-8"/>
+        <meta name="description" content="Registrazione Utente di Auto Asta"/>
+        <meta name="keywords" content="auto, asta, homepage, principale, veicoli"/>
+        <meta name="author" content="Carlesso Niccolò, Pillon Matteo, Soldà Matteo, Veronese Andrea"/>   
+        <script src="../JS/script.js"></script>    
+    </head>
+    <body>
+        <div class="globalDiv">
+        
+<header>
+    <h1>AUTO ASTA</h1>
+    <form action="../php/search.php" id="searchForm" method="get">
+        <input id="search" type="text" placeholder="Digita qui quello che cerchi" name="search" tabindex="1" autocomplete="off">
+        <button id="btnSearchForm" type="submit" form="searchForm" tabindex="2" >CERCA</button>    
+    </form>
+
+    <div id="accesso">
+        <a href="registrazione.php" tabindex="3">ACCEDI/REGISTRATI</a>    </div>
+</header>  
+
+<nav id="breadcrumb">
+    <p> <a href="index.php" tabindex="4" lang="en">Home</a>  &gt; &gt; <a href="scheda_utente.php">Scheda Utente</a> &gt; &gt;
+                Modifica Profilo </p></nav>
+
+<nav id="menu">
+    <ul role="menu">
+        <li class='shome'><a href="index.php" lang="en" role="menuitem">Home</a></li><li class='schisiamo'><a href="chisiamo.php" role="menuitem">Chi Siamo</a></li><li class='sevento'><a href="eventi.php" role="menuitem">Eventi</a></li><li class='sveicoli'><a href="veicoli.php" role="menuitem">Veicoli</a></li>    </ul>
+</nav>            <div id="content">
+                <form action="../php/edit_profile.php" method="post">
+                    <div class="registration_form">
+                    <h2>FORM MODIFICA DATI UTENTE </h2>
+                    <p>Compila solamente i campi dati che vuoi modificare </p>
+                    <hr>
+                    <fieldset name="password">
+                        <label for="psw"><b>Nuova Password</b></label>
+                        <input type="password" placeholder="Inserisci la tua nuova password" name="psw" id="psw" onblur="return checkPassword()" required >  
+                        <label for="password-repeat"><b>Ripeti Nuova Password</b></label>
+                        <input type="password" placeholder="Ripeti la nuova password scelta" name="password-repeat" id="password-repeat" onblur="return checkPassword()"  required>
+                    </fieldset>
+
+                    <fieldset name="username" >
+                        <label for="username"><b>Username</b></label>
+                        <input type="text" placeholder="Inserisci il tuo nuovo username" name="username" id="username" onblur="return checkText('username','Username non valido',/^[a-zA-Z0-9]+$/)">
+                    </fieldset>
+                 
+                    <label for="url_immagine"><b>Cambia la tua foto profilo</b></label>
+                    <input type="file" name="url_immagine" id="url_immagine" accept=".jpg,.png,.jpeg">
+
+                    <button type="submit" class="register_btn">AGGIORNA DATI</button>
+                    </div>
+                </form>
+            </div>
+            <footer>
+    <address>
+        <p>AUTO ASTA</p>
+        <p>Carlesso Niccol&ograve;, Pillon Matteo, Sold&agrave; Matteo, Veronese Andrea</p>
+        <p>Universit&agrave; degli Studi di Padova - Dipartimento di Matematica</p>
+    </address>               
+</footer>      </div>
+    </body>
+</html>
