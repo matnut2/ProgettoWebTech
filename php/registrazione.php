@@ -54,40 +54,40 @@
                     <p>Compila i campi seguenti per poterti registrare </p>
                     <hr>
 
-                    <fieldset form="registrazione" name="email">
+                    <fieldset  name="email">
                         <label for="email"><b>Email</b></label>
                         <input type="text" placeholder="Inserisci la tua email" name="email" id="email" onblur="return checkEmail()" aria-required="true" required>
                     </fieldset>
 
-                    <fieldset form="registrazione" name="password">
+                    <fieldset  name="password">
                         <label for="psw"><b>Password</b></label>
                         <input type="password" placeholder="Inserisci la tua  password" name="psw" id="psw" aria-required="true" required>  
-                        <label for="psw-repeat"><b>Conferma Password</b></label> 
+                        <label for="password-repeat"><b>Conferma Password</b></label> 
                       <input type="password" placeholder="Ripeti la password scelta" name="password-repeat" id="password-repeat" onblur="return checkPassword()" aria-required="true" required>
                     </fieldset>
 
-                    <fieldset form="registrazione" name="username">
-                    <label for="name"><b>Username</b></label>
+                    <fieldset  name="username">
+                    <label for="username"><b>Username</b></label>
                     <input type="text" placeholder="Inserisci il tuo username" name="username" id="username"  onblur="return checkText('username','Username non valido',/^[a-zA-Z0-9]+$/)" aria-required="true" required>
                     </fieldset>
 
-                    <fieldset form="registrazione" name="nome">
-                        <label for="name"><b>Nome</b></label>
+                    <fieldset  name="nome">
+                        <label for="nome"><b>Nome</b></label>
                         <input type="text" placeholder="Inserisci il tuo nome" name="nome" id="nome" onblur="return checkText('nome','Nome non valido',/^[a-zA-Z]+$/)" aria-required="true" required>
                     </fieldset>
 
-                    <fieldset form="registrazione" name="cognome">
+                    <fieldset  name="cognome">
                         <label for="cognome"><b>Cognome</b></label>
                         <input type="text" placeholder="Inserisci il tuo cognome" name="cognome" id="cognome" onblur="return checkText('cognome','Cognome non valido',/^[a-zA-Z]+$/)" aria-required="true"  required>
                     </fieldset>
 
-                    <fieldset form="registrazione" name="data_nascita">
-                        <label for="birthday"><b>Data nascita</b></label>
+                    <fieldset  name="data_nascita">
+                        <label for="data_nascita"><b>Data nascita</b></label>
                         <input type="date" name="data_nascita" id="data_nascita" onblur="return checkDateProfile()" aria-required="true"  required>
                     </fieldset>
 
-                    <fieldset form="registrazione" name="user_profile_picture">
-                        <label for="profile_image"><b>Carica foto profilo</b></label>
+                    <fieldset  name="user_profile_picture">
+                        <label for="url_immagine"><b>Carica foto profilo</b></label>
                         <input type="file" name="url_immagine" id="url_immagine" accept=".jpg,.png,.jpeg">
                     </fieldset>
                     
