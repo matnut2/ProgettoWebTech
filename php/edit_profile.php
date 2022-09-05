@@ -47,19 +47,19 @@
                     <h2>FORM MODIFICA DATI UTENTE </h2>
                     <p>Compila solamente i campi dati che vuoi modificare </p>
                     <hr>
-                    <fieldset name="password" form = "registration_form">
+                    <fieldset name="password">
                         <label for="psw"><b>Nuova Password</b></label>
                         <input type="password" placeholder="Inserisci la tua nuova password" name="psw" id="psw" onblur="return checkPassword()" required >  
-                        <label for="psw-repeat"><b>Ripeti Nuova Password</b></label>
+                        <label for="password-repeat"><b>Ripeti Nuova Password</b></label>
                         <input type="password" placeholder="Ripeti la nuova password scelta" name="password-repeat" id="password-repeat" onblur="return checkPassword()"  required>
                     </fieldset>
 
-                    <fieldset name="username" form="registration_form">
-                        <label for="name"><b>Username</b></label>
+                    <fieldset name="username" >
+                        <label for="username"><b>Username</b></label>
                         <input type="text" placeholder="Inserisci il tuo nuovo username" name="username" id="username" onblur="return checkText('username','Username non valido',/^[a-zA-Z0-9]+$/)">
                     </fieldset>
                  
-                    <label for="profile_image"><b>Cambia la tua foto profilo</b></label>
+                    <label for="url_immagine"><b>Cambia la tua foto profilo</b></label>
                     <input type="file" name="url_immagine" id="url_immagine" accept=".jpg,.png,.jpeg">
 
                     <button type="submit" class="register_btn">AGGIORNA DATI</button>
