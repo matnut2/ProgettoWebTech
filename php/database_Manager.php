@@ -138,7 +138,7 @@ class database_Manager{
     }
 
     public function getNewVeicoli(){
-        $query = "SELECT * FROM Veicolo, Asta Where Asta.targa_Veicolo = Veicolo.Targa ORDER BY veicolo.data_Aggiunta ASC LIMIT 2";
+        $query = "SELECT * FROM Veicolo, Asta Where Asta.targa_Veicolo = Veicolo.Targa ORDER BY veicolo.data_Aggiunta DESC LIMIT 2";
         $queryResult = mysqli_query($this->connection, $query) or die("Errore in getNewVeicoli:" . mysqli_error($this->connection));
 
         if(mysqli_num_rows($queryResult) == 0){
