@@ -35,7 +35,7 @@
     <body>
         <div class="globalDiv">
             <?php require_once ('header.php')?>
-            <div id="content">
+            <main id="content">
                 <form name="login" action="../php/login_page.php" method="post">
                     <div class="login_form">
                         <h2>FORM LOGIN</h2>
@@ -51,17 +51,17 @@
                         <input type="password" placeholder="Inserisci la tua  password" name="psw" id="psw"  aria-required="true" required>
 
                         <?php 
-                            /*
+                            
                                 if($user)
                                     $page->setErrors(!$user->isReg());
                                     if($page->hasErrors()) $page->printMessagge('Username o password errati',false);
-                            */
+                            
                         ?>
         
                         <button type="submit" class="register_btn" aria-label="Accedi" >ACCEDI</button>
                     </div>
                 </form>
-            </div>
+            </main>
             <?php require_once ('../html/footer.html')?>
         </div >
     </body>

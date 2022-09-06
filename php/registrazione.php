@@ -51,7 +51,7 @@
     <body>
         <div class="globalDiv">
         <?php require_once ('header.php')?>
-            <div id="content">
+            <main id="content">
                 <form name="registrazione" action="../php/registrazione.php" method="post" enctype="multipart/form-data">
                     <div class="registration_form">
                     <h2>FORM REGISTRAZIONE</h2>
@@ -104,7 +104,7 @@
                     <p>Hai già un tuo account? <a href="../php/login_page.php" aria-label="Accedi" >ACCEDI</a>.</p>
                     </div>
                 </form>
-            </div>
+            </main>
             <?php require_once ('../html/footer.html')?>
         </div>
     </body>

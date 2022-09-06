@@ -88,7 +88,7 @@ class page {
     
 
     private static function checkFileName($name){
-        return ($_SERVER['SCRIPT_NAME'] == "/progettowebtech/php/". $name);
+        return ($_SERVER['SCRIPT_NAME'] == "/AutoAsta/php/". $name);
     }
 
     private function checkUserLog(){
@@ -141,7 +141,7 @@ class page {
             echo "<p lang=\"en\">Home</p>";
         }
         else{
-            echo "<p> <a href=\"index.php\" tabindex=\"4\" lang=\"en\">Home</a>  &gt; &gt; ";
+            echo "<p> <a href=\"index.php\" tabindex=\"0\" lang=\"en\">Home</a>  &gt; &gt; ";
         }
         if($this->checkFileName("chisiamo.php")){
             echo " Chi Siamo </p>";
@@ -205,74 +205,74 @@ class page {
 
     public function printMenu() {
         if ($this->checkFileName("index.php")){
-            echo "<li class='shome' id='active' lang=\"en\">Home</li>";
-            echo "<li class='schisiamo'><a href=\"chisiamo.php\" tabindex=\"0\" role=\"menuitem\">Chi Siamo</a></li>";
-            echo "<li class='seventi'><a href=\"eventi.php\" tabindex=\"0\" role=\"menuitem\">Eventi</a></li>";
-            echo "<li class='sveicoli'><a href=\"veicoli.php\" tabindex=\"0\" role=\"menuitem\">Veicoli</a></li>";
+            echo "<li role='menuitem' class='shome' id='active' lang=\"en\">Home</li>";
+            echo "<li role='none' class='schisiamo'><a   href=\"chisiamo.php\" tabindex=\"0\" role=\"menuitem\">Chi Siamo</a></li>";
+            echo "<li role='none' class='seventi'><a   href=\"eventi.php\" tabindex=\"0\" role=\"menuitem\">Eventi</a></li>";
+            echo "<li role='none' class='sveicoli'><a  href=\"veicoli.php\" tabindex=\"0\" role=\"menuitem\">Veicoli</a></li>";
         } 
         else if ($this->checkFileName("chisiamo.php")){
-            echo "<li class='shome'><a href=\"index.php\" lang=\"en\" role=\"menuitem\">Home</a></li>";
-            echo "<li class='schisiamo' id='active'>Chi Siamo</li>";
-            echo "<li class='seventi'><a href=\"eventi.php\" role=\"menuitem\">Eventi</a></li>";
-            echo "<li class='sveicoli'><a href=\"veicoli.php\" role=\"menuitem\">Veicoli</a></li>";
+            echo "<li role='none' class='shome'><a   href=\"index.php\" lang=\"en\" role=\"menuitem\">Home</a></li>";
+            echo "<li role='menuitem' class='schisiamo' id='active'>Chi Siamo</li>";
+            echo "<li role='none' class='seventi'><a  href=\"eventi.php\" role=\"menuitem\">Eventi</a></li>";
+            echo "<li role='none' class='sveicoli'><a  href=\"veicoli.php\" role=\"menuitem\">Veicoli</a></li>";
         } 
         else if ($this->checkFileName("eventi.php")){
-            echo "<li class='shome'><a href=\"index.php\" lang=\"en\" role=\"menuitem\">Home</a></li>";
-            echo "<li class='schisiamo'><a href=\"chisiamo.php\" role=\"menuitem\">Chi Siamo</a></li>";
-            echo "<li class='seventi' id='active'>Eventi</li>";
-            echo "<li class='sveicoli'><a href=\"veicoli.php\" role=\"menuitem\">Veicoli</a></li>";
+            echo "<li role='none' class='shome'><a  href=\"index.php\" lang=\"en\" role=\"menuitem\">Home</a></li>";
+            echo "<li role='none' class='schisiamo'><a  href=\"chisiamo.php\" role=\"menuitem\">Chi Siamo</a></li>";
+            echo "<li role='menuitem' class='seventi' id='active'>Eventi</li>";
+            echo "<li role='none' class='sveicoli'><a  href=\"veicoli.php\" role=\"menuitem\">Veicoli</a></li>";
         } 
        else if ($this->checkFileName("veicoli.php")){
-            echo "<li class='shome'><a href=\"index.php\" lang=\"en\" role=\"menuitem\">Home</a></li>";
-            echo "<li class='schisiamo'><a href=\"chisiamo.php\" role=\"menuitem\">Chi Siamo</a></li>";
-            echo "<li class='seventi'><a href=\"eventi.php\" role=\"menuitem\">Eventi</a></li>";
-            echo "<li class='sveicoli' id='active'>Veicoli</li>";
+            echo "<li role='none' class='shome'><a  href=\"index.php\" lang=\"en\" role=\"menuitem\">Home</a></li>";
+            echo "<li role='none' class='schisiamo'><a  href=\"chisiamo.php\" role=\"menuitem\">Chi Siamo</a></li>";
+            echo "<li role='none' class='seventi'><a  href=\"eventi.php\" role=\"menuitem\">Eventi</a></li>";
+            echo "<li role='menuitem' class='sveicoli' id='active'>Veicoli</li>";
         }
 
         else{
-            echo "<li class='shome'><a href=\"index.php\" lang=\"en\" role=\"menuitem\">Home</a></li>";
-            echo "<li class='schisiamo'><a href=\"chisiamo.php\" role=\"menuitem\">Chi Siamo</a></li>";
-            echo "<li class='sevento'><a href=\"eventi.php\" role=\"menuitem\">Eventi</a></li>";
-            echo "<li class='sveicoli'><a href=\"veicoli.php\" role=\"menuitem\">Veicoli</a></li>";
+            echo "<li role='none' class='shome'><a  href=\"index.php\" lang=\"en\" role=\"menuitem\">Home</a></li>";
+            echo "<li role='none' class='schisiamo'><a  href=\"chisiamo.php\" role=\"menuitem\">Chi Siamo</a></li>";
+            echo "<li role='none' class='sevento'><a  href=\"eventi.php\" role=\"menuitem\">Eventi</a></li>";
+            echo "<li role='none' class='sveicoli'><a  href=\"veicoli.php\" role=\"menuitem\">Veicoli</a></li>";
         } 
 
         if(isset($_SESSION['isAdmin']) && $_SESSION['isAdmin']==1){
             
             if($this->checkFileName("addVeicolo.php")){
-                echo "<li>Aggiungi Veicolo</li>";
+                echo "<li role='menuitem' >Aggiungi Veicolo</li>";
             }
             else {
-                echo "<li><a href=\"addVeicolo.php\" role=\"menuitem\" >Aggiungi veicolo</a></li>";
+                echo "<li role='none' ><a  href=\"addVeicolo.php\" role=\"menuitem\" >Aggiungi veicolo</a></li>";
             }
             
             if($this->checkFileName("editorVeicoli.php")){
-                echo "<li>Modifica Veicolo</li>";
+                echo "<li role='menuitem'>Modifica Veicolo</li>";
             }
             else {
-                echo "<li><a href=\"editorVeicoli.php\" role=\"menuitem\">Modifica Veicolo</a></li>";
+                echo "<li role='none' ><a  href=\"editorVeicoli.php\" role=\"menuitem\">Modifica Veicolo</a></li>";
             }
 
             if($this->checkFileName("selectEventoToEdit.php")){
-                echo "<li>Modifica Evento</li>";
+                echo "<li role='menuitem' >Modifica Evento</li>";
             }
             else {
-                echo "<li><a href=\"selectEventoToEdit.php\" role=\"menuitem\">Modifica Evento</a></li>";
+                echo "<li role='none' ><a  href=\"selectEventoToEdit.php\" role=\"menuitem\">Modifica Evento</a></li>";
             }
 
 
             if($this->checkFileName("addEvento.php")){
-                echo "<li>Aggiungi Evento</li>";
+                echo "<li role='menuitem' >Aggiungi Evento</li>";
             }
             else {
-                echo "<li><a href=\"addEvento.php\" role=\"menuitem\">Aggiungi Evento</a></li>";
+                echo "<li role='none' ><a  href=\"addEvento.php\" role=\"menuitem\">Aggiungi Evento</a></li>";
             }
         }
         if(isset($_SESSION['email']) && $_SESSION['email']!='-1'){
             if($this->checkFileName("listaBiglietti.php")){
-                echo "<li>Lista Biglietti</li>";
+                echo "<li role='menuitem' >Lista Biglietti</li>";
             }
             else {
-                echo "<li><a href=\"listaBiglietti.php\" role=\"menuitem\">Lista Biglietti</a></li>";
+                echo "<li role='none' ><a  href=\"listaBiglietti.php\" role=\"menuitem\">Lista Biglietti</a></li>";
             }
         }
     }
@@ -295,11 +295,11 @@ class page {
                 if($this->checkFileName("registrazione.php")){
                     echo "<a>ACCEDI/REGISTRATI</a>";
                 } else        
-                    echo "<a href=\"registrazione.php\" tabindex=\"3\">ACCEDI/REGISTRATI</a>";
+                    echo "<a href=\"registrazione.php\" tabindex=\"0\">ACCEDI/REGISTRATI</a>";
 
             }
             else{
-                echo "<a href=\"scheda_utente.php\" tabindex=\"3\">VISITA IL TUO PROFILO</a>";
+                echo "<a href=\"scheda_utente.php\" tabindex=\"0\">VISITA IL TUO PROFILO</a>";
             }
         }
         else {
