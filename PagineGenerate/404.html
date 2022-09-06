@@ -18,22 +18,22 @@
 <header>
     <h1>AUTO ASTA</h1>
     <form action="../php/search.php" id="searchForm" method="get">
-        <input id="search" type="text" placeholder="Digita qui quello che cerchi" name="search" tabindex="1" autocomplete="off">
-        <button id="btnSearchForm" type="submit" form="searchForm" tabindex="2" >CERCA</button>    
+        <input id="search" type="text" placeholder="Digita qui quello che cerchi" name="search" tabindex="0" autocomplete="off">
+        <button id="btnSearchForm" type="submit" form="searchForm" tabindex="0" >CERCA</button>    
     </form>
 
     <div id="accesso">
-        <a href="registrazione.php" tabindex="3">ACCEDI/REGISTRATI</a>    </div>
+        <a href="registrazione.php" tabindex="0">ACCEDI/REGISTRATI</a>    </div>
 </header>  
 
-<nav id="breadcrumb">
-    <p> <a href="index.php" tabindex="4" lang="en">Home</a>  &gt; &gt; Errore 404 </p></nav>
+<nav id="breadcrumb" aria-label="breadcrumb">
+    <p> <a href="index.php" tabindex="0" lang="en">Home</a>  &gt; &gt; Errore 404 </p></nav>
 
-<nav id="menu">
+<nav id="menu" aria-label="Lista delle Pagine di AutoAsta">
     <ul role="menu">
-        <li class='shome'><a href="index.php" lang="en" role="menuitem">Home</a></li><li class='schisiamo'><a href="chisiamo.php" role="menuitem">Chi Siamo</a></li><li class='sevento'><a href="eventi.php" role="menuitem">Eventi</a></li><li class='sveicoli'><a href="veicoli.php" role="menuitem">Veicoli</a></li>    </ul>
+        <li role='none' class='shome'><a  href="index.php" lang="en" role="menuitem">Home</a></li><li role='none' class='schisiamo'><a  href="chisiamo.php" role="menuitem">Chi Siamo</a></li><li role='none' class='sevento'><a  href="eventi.php" role="menuitem">Eventi</a></li><li role='none' class='sveicoli'><a  href="veicoli.php" role="menuitem">Veicoli</a></li>    </ul>
 </nav>
-            <div id="content">
+            <main id="content">
                    <h2>PAGINA ERRORE 404</h2>
    <div class = "errorPage">
         <h3>AMANTE DEL FUORISTRADA&#63;</h3>
@@ -43,7 +43,7 @@
         <a id ="homeButton" href="../php/index.php">TORNA ALLA PAGINA INIZIALE</a>
     </div>
     
-            </div>   
+            </main>   
         <footer>
     <address>
         <p>AUTO ASTA</p>

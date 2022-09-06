@@ -17,21 +17,21 @@
 <header>
     <h1>AUTO ASTA</h1>
     <form action="../php/search.php" id="searchForm" method="get">
-        <input id="search" type="text" placeholder="Digita qui quello che cerchi" name="search" tabindex="1" autocomplete="off">
-        <button id="btnSearchForm" type="submit" form="searchForm" tabindex="2" >CERCA</button>    
+        <input id="search" type="text" placeholder="Digita qui quello che cerchi" name="search" tabindex="0" autocomplete="off">
+        <button id="btnSearchForm" type="submit" form="searchForm" tabindex="0" >CERCA</button>    
     </form>
 
     <div id="accesso">
         <a>ACCEDI/REGISTRATI</a>    </div>
 </header>  
 
-<nav id="breadcrumb">
-    <p> <a href="index.php" tabindex="4" lang="en">Home</a>  &gt; &gt;  Registrazione Utente </p></nav>
+<nav id="breadcrumb" aria-label="breadcrumb">
+    <p> <a href="index.php" tabindex="0" lang="en">Home</a>  &gt; &gt;  Registrazione Utente </p></nav>
 
-<nav id="menu">
+<nav id="menu" aria-label="Lista delle Pagine di AutoAsta">
     <ul role="menu">
-        <li class='shome'><a href="index.php" lang="en" role="menuitem">Home</a></li><li class='schisiamo'><a href="chisiamo.php" role="menuitem">Chi Siamo</a></li><li class='sevento'><a href="eventi.php" role="menuitem">Eventi</a></li><li class='sveicoli'><a href="veicoli.php" role="menuitem">Veicoli</a></li>    </ul>
-</nav>            <div id="content">
+        <li role='none' class='shome'><a  href="index.php" lang="en" role="menuitem">Home</a></li><li role='none' class='schisiamo'><a  href="chisiamo.php" role="menuitem">Chi Siamo</a></li><li role='none' class='sevento'><a  href="eventi.php" role="menuitem">Eventi</a></li><li role='none' class='sveicoli'><a  href="veicoli.php" role="menuitem">Veicoli</a></li>    </ul>
+</nav>            <main id="content">
                 <form name="registrazione" action="../php/registrazione.php" method="post" enctype="multipart/form-data">
                     <div class="registration_form">
                     <h2>FORM REGISTRAZIONE</h2>
@@ -84,7 +84,7 @@
                     <p>Hai già un tuo account? <a href="../php/login_page.php" aria-label="Accedi" >ACCEDI</a>.</p>
                     </div>
                 </form>
-            </div>
+            </main>
             <footer>
     <address>
         <p>AUTO ASTA</p>
