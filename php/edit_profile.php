@@ -12,16 +12,20 @@
     if(!empty($_POST)){
         $user = getLoggedUser($_SESSION['email']);
         if(!empty($_POST)){
-            $checkUpdate = $gestione_Update->updateUserInfo($_POST,$user);
-            if($checkUpdate){
-               header("Location: scheda_utente.php");
-               exit();
-            }else{
-                $_SESSION['errorMsg'] = "Impossibile aggiornare le informazioni, ti preghiamo di riprovare.";
-                header("Location: pagina_avvisi.php");
-                exit();
+            $checkIMG = $gestione_Update->upload($_POST,$_FILES);
+            if($checkIMG){
+                $checkUpdate = $gestione_Update->updateUserInfo($_POST,$user,$_FILES);
+                if($checkUpdate){
+                    header("Location: scheda_utente.php");
+                    exit();
+                }else{
+                    $_SESSION['errorMsg'] = "Impossibile aggiornare le informazioni, ti preghiamo di riprovare.";
+                    
+                }
             }
         }
+        header("Location: pagina_avvisi.php");
+        exit();
     }
 
 ?>
@@ -42,16 +46,16 @@
         <div class="globalDiv">
         <?php require_once ('header.php')?>
             <div id="content">
-                <form action="../php/edit_profile.php" method="post">
+                <form action="../php/edit_profile.php" method="post" enctype="multipart/form-data">
                     <div class="registration_form">
                     <h2>FORM MODIFICA DATI UTENTE </h2>
                     <p>Compila solamente i campi dati che vuoi modificare </p>
                     <hr>
                     <fieldset name="password">
                         <label for="psw"><b>Nuova Password</b></label>
-                        <input type="password" placeholder="Inserisci la tua nuova password" name="psw" id="psw" onblur="return checkPassword()" required >  
+                        <input type="password" placeholder="Inserisci la tua nuova password" name="psw" id="psw" onblur="return checkPassword()">  
                         <label for="password-repeat"><b>Ripeti Nuova Password</b></label>
-                        <input type="password" placeholder="Ripeti la nuova password scelta" name="password-repeat" id="password-repeat" onblur="return checkPassword()"  required>
+                        <input type="password" placeholder="Ripeti la nuova password scelta" name="password-repeat" id="password-repeat" onblur="return checkPassword()">
                     </fieldset>
 
                     <fieldset name="username" >
