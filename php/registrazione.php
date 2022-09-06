@@ -10,19 +10,23 @@
     $gestione_accessi = new  page();
 
     if(!empty($_POST)){
-        $checkIns = $gestione_accessi->inserimentoNuovoUtente($_POST,$user);
-        if($checkIns){
-           $user = createSession();
-           $enc_pswd = md5($_POST['psw']);
-           $user = login($_POST['email'], $enc_pswd);
-           header("Location: scheda_utente.php");
-            exit();
+        $checkIMG = $gestione_accessi->upload($_POST,$_FILES);
+        if($checkIMG){
+            $checkIns = $gestione_accessi->inserimentoNuovoUtente($_POST,$user,$_FILES);
+            if($checkIns){
+            $user = createSession();
+            $enc_pswd = md5($_POST['psw']);
+            $user = login($_POST['email'], $enc_pswd);
+            header("Location: scheda_utente.php");
+                exit();
+            }
+            else{
+                $_SESSION['errorMsg'] = "Impossibile completare la registrazione";
+                
+            }
         }
-        else{
-            $_SESSION['errorMsg'] = "Impossibile completare la registrazione";
-            header("Location: pagina_avvisi.php");
+    header("Location: pagina_avvisi.php");
             exit();
-        }
     }
 
     if ($user->isReg()){
@@ -48,7 +52,7 @@
         <div class="globalDiv">
         <?php require_once ('header.php')?>
             <div id="content">
-                <form name="registrazione" action="../php/registrazione.php" method="post">
+                <form name="registrazione" action="../php/registrazione.php" method="post" enctype="multipart/form-data">
                     <div class="registration_form">
                     <h2>FORM REGISTRAZIONE</h2>
                     <p>Compila i campi seguenti per poterti registrare </p>
