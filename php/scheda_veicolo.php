@@ -38,7 +38,7 @@
                         if($personaggi != null){
                             foreach($personaggi as $veicolo){
                                 $listaVeicoli = str_replace("{veicolo_targa}", $veicolo["Targa"],$listaVeicoli);
-                                $listaVeicoli = str_replace("{veicolo-img}", '<img class="eventImg" src="../img/' .$veicolo['url_Immagine'] . '"/>',$listaVeicoli);
+                                $listaVeicoli = str_replace("{veicolo-img}", '<img class="eventImg" alt="Immagine del veicolo su strada" src="../img/' .$veicolo['url_Immagine'] . '"/>',$listaVeicoli);
                                 $listaVeicoli = str_replace("{marca}", $veicolo["marca"],$listaVeicoli);
                                 $listaVeicoli = str_replace("{modello}", $veicolo["modello"],$listaVeicoli);
                                 $listaVeicoli = str_replace("{cilindrata}", $veicolo["cilindrata"],$listaVeicoli);
