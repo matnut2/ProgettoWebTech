@@ -22,12 +22,14 @@
             $connessioneOK = $connessione->connectToDatabase();
             $indirizzo = $connessione->getIdIndirizzo($_POST['via'],$_POST['citta'],$_POST['cap'],$_POST['num_Civico']);
             $connessione->releaseDB();
-            $page->upload($_POST,$_FILES);
-            $checkIns = $user->addEvento($_POST['Capienza'],$_POST['Data'],$indirizzo[0]['id_Indirizzo'],$_POST['nome'],$_POST['Descrizione'],$_POST['Prezzo'],basename($_FILES["url_immagine"]["name"])); 
-            if($checkIns){ 
-                $_SESSION['successMsg'] = "Evento aggiunto con successo"; 
-            } 
-            else $_SESSION['errorMsg'] = "Impossibile aggiungere l'evento"; 
+            $checkIMG = $page->upload($_POST,$_FILES);
+            if($checkIMG == 1){
+                $checkIns = $user->addEvento($_POST['Capienza'],$_POST['Data'],$indirizzo[0]['id_Indirizzo'],$_POST['nome'],$_POST['Descrizione'],$_POST['Prezzo'],basename($_FILES["url_immagine"]["name"])); 
+                if($checkIns){ 
+                    $_SESSION['successMsg'] = "Evento aggiunto con successo"; 
+                } 
+                else $_SESSION['errorMsg'] = "Impossibile aggiungere l'evento"; 
+            }            
         } 
         else $_SESSION['errorMsg'] = "Impossibile aggiungere l'indirizzo"; 
 

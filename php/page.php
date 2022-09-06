@@ -27,47 +27,49 @@ class page {
         $uploadOk = 1;
         $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
         
-        // Check if image file is a actual image or fake image
+        // Controllo se l'immagine è una vera immagine 
         if(isset($post["submit"])) {
           $check = getimagesize($file["url_immagine"]["tmp_name"]);
           if($check !== false) {
             echo "File is an image - " . $check["mime"] . ".";
             $uploadOk = 1;
           } else {
-            $_SESSION["errorMsg"] =  "File is not an image.";
+            $_SESSION["errorMsg"] =  "Il file che hai caricato non è un'immagine.";
             $uploadOk = 0;
           }
         }
         
-        // Check if file already exists
+        // Controllo se il file esiste già
         if (file_exists($target_file)) {
-          $_SESSION["errorMsg"] =  "Sorry, file already exists.";
+          $_SESSION["errorMsg"] =  "Scusa, il file è già presente.";
           $uploadOk = 0;
         }
         
-        // Check file size
+        // Controllo la dimensione dell'immagine
         if ($file["url_immagine"]["size"] > 5000000) {
-          $_SESSION["errorMsg"] =  "Sorry, your file is too large.";
+          $_SESSION["errorMsg"] =  "Scusa, il file caricato è troppo grande.";
           $uploadOk = 0;
         }
         
-        // Allow certain file formats
-        if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg" && $imageFileType != "gif" ) {
-          $_SESSION["errorMsg"] =  "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
+        // Controllo che il formato rispetti i formati accettati
+        if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg") {
+          $_SESSION["errorMsg"] =  "Scusa, sono accettati solo i seguenti formati: JPG, JPEG, PNG.";
           $uploadOk = 0;
         }
         
-        // Check if $uploadOk is set to 0 by an error
+        // Controllo se $uploadOk è uguale 0 significa che si è verificato un errrore
         if ($uploadOk == 0) {
-            $_SESSION["errorMsg"] =  "Sorry, your file was not uploaded.";
-        // if everything is ok, try to upload file
+             //$_SESSION["errorMsg"] =  "Scusa, il tuo file non è stato caricato.";
+        // Se non si sono verificati errori in precedenza provo a caricare il file
         } else {
           if (move_uploaded_file($file["url_immagine"]["tmp_name"], $target_file)) {
-            $_SESSION["succesMsg"] =  "The file ".  basename( $file["url_immagine"]["name"]). " has been uploaded.";
+            $_SESSION["succesMsg"] =  "Il file ".  basename( $file["url_immagine"]["name"]). " è stato caricato con successo.";
+            $uploadOk = 1;
           } else {
-            $_SESSION["errorMsg"] =  "Sorry, there was an error uploading your file.";
+            $_SESSION["errorMsg"] =  "Scusa, si è verificato un errore durante il caricamento del tuo file, riprova.";
           }
         }
+        return $uploadOk;
     }
 
     public function setErrors($errors){
@@ -86,7 +88,7 @@ class page {
     
 
     private static function checkFileName($name){
-        return ($_SERVER['SCRIPT_NAME'] == "/AutoAsta/php/". $name);
+        return ($_SERVER['SCRIPT_NAME'] == "/progettowebtech/php/". $name);
     }
 
     private function checkUserLog(){

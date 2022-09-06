@@ -7,6 +7,7 @@
     error_reporting(E_ALL);
 
     $user = createSession();
+    $page = new page();
 
     if($_SESSION["isAdmin"] != 1){
         $_SESSION['errorMsg'] = "Devi essere un amministratore per accedere alla funzionalit&agrave; di aggiunta veicolo";
@@ -15,14 +16,18 @@
     }
 
     if(!empty($_POST)){
-        $checkIns = $user->addVeicolo($_POST['Targa'],$_POST['marca'],$_POST['modello'],$_POST['cilindrata'],$_POST['anno'],$_POST['posti'],$_POST['cambio'],$_POST['carburante'],$_POST['colore_esterni'],$_POST['url_immagine'],$_POST['descrizione'],$_POST['chilometri_Percorsi'],1);
-        if($checkIns){
-            $_SESSION['successMsg'] = "Veicolo aggiunto con successo con successo";
+        $checkIMG = $page->upload($_POST,$_FILES);
+        if($checkIMG){
+            $checkIns = $user->addVeicolo($_POST['Targa'],$_POST['marca'],$_POST['modello'],$_POST['cilindrata'],$_POST['anno'],$_POST['posti'],$_POST['cambio'],$_POST['carburante'],$_POST['colore_esterni'],basename($_FILES["url_immagine"]["name"]),$_POST['descrizione'],$_POST['chilometri_Percorsi'],1);
+            if($checkIns){
+                $_SESSION['successMsg'] = "Veicolo aggiunto con successo";
+                $checkIns = $user->addAstaEmpty($_POST['Prezzo'],$_POST['Targa']);
+            }
+            else {
+                $_SESSION['errorMsg'] = "Impossibile aggiungere il veicolo richiesto";
+            }
         }
-        else $_SESSION['errorMsg'] = "Impossibile aggiungere il veicolo richiesto";
-
-        $checkIns = $user->addAstaEmpty($_POST['Prezzo'],$_POST['Targa']);
-
+        
         header('Location: ../php/pagina_avvisi.php');
         exit;
     }
@@ -32,7 +37,7 @@
  <html lang="it">
      <head>
          <link rel="icon" type="image/x-icon" href="../img/2061866.png"/>
-         <title>Login Utente - Auto Asta</title>
+         <title>Aggiungi Veicolo - Auto Asta</title>
          <link rel="stylesheet" type="text/css" media="screen" href="../css/styleAlternative.css"/>
          <link rel="stylesheet" type="text/css" media="screen and (max-width:1200px), only screen and (max-width:1200px)"  href="../css/mobile.css"/>
          <meta charset="UTF-8"/>
@@ -45,7 +50,7 @@
          <div class="globalDiv">
          <?php require_once ('header.php')?>
          <div id="content">
-         <form action="../php/addVeicolo.php" method="post" id="formAddVeicolo">
+         <form action="../php/addVeicolo.php" method="post" id="formAddVeicolo" enctype="multipart/form-data">
              <div class="registration_form">
              <h2>Inserimento Veicolo</h2>
              <p>Compila i campi seguenti per inserire un nuovo veicolo</p>
