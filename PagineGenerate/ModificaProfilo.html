@@ -33,16 +33,16 @@
     <ul role="menu">
         <li class='shome'><a href="index.php" lang="en" role="menuitem">Home</a></li><li class='schisiamo'><a href="chisiamo.php" role="menuitem">Chi Siamo</a></li><li class='sevento'><a href="eventi.php" role="menuitem">Eventi</a></li><li class='sveicoli'><a href="veicoli.php" role="menuitem">Veicoli</a></li>    </ul>
 </nav>            <div id="content">
-                <form action="../php/edit_profile.php" method="post">
+                <form action="../php/edit_profile.php" method="post" enctype="multipart/form-data">
                     <div class="registration_form">
                     <h2>FORM MODIFICA DATI UTENTE </h2>
                     <p>Compila solamente i campi dati che vuoi modificare </p>
                     <hr>
                     <fieldset name="password">
                         <label for="psw"><b>Nuova Password</b></label>
-                        <input type="password" placeholder="Inserisci la tua nuova password" name="psw" id="psw" onblur="return checkPassword()" required >  
+                        <input type="password" placeholder="Inserisci la tua nuova password" name="psw" id="psw" onblur="return checkPassword()">  
                         <label for="password-repeat"><b>Ripeti Nuova Password</b></label>
-                        <input type="password" placeholder="Ripeti la nuova password scelta" name="password-repeat" id="password-repeat" onblur="return checkPassword()"  required>
+                        <input type="password" placeholder="Ripeti la nuova password scelta" name="password-repeat" id="password-repeat" onblur="return checkPassword()">
                     </fieldset>
 
                     <fieldset name="username" >
