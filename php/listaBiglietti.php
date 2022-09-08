@@ -49,7 +49,7 @@
                             $dataEvento = new DateTime($evento[0]['data']);
                             $dataAcquisto = new DateTime($biglietto['data_Acquisto']);
                             $listaEventi .= '<dt class = "eventTitle" > Biglietto valido per la fiera di: ' . $evento[0]['nome'] .'</dt>';
-                            $listaEventi .= '<dd class= "eventDescription">';
+                            $listaEventi .= '<dd class= "ticketDescription">';
                             $listaEventi .= '<img class="eventImg" alt="Immagine panoramica della citt&agrave; di '. basename($evento[0]['url_immagine'], ".jpg") .'" src="../img/' . $evento[0]['url_immagine'] . '"/>' . 
                                 /*<ul class="eventParagraph">
                                 <li>INTESTATO A: ' . $biglietto['utente'] . '</li>

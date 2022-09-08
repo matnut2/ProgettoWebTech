@@ -273,11 +273,21 @@ div .userProfileCard{
     flex-flow: row;
 }
 
+.ticketDescription{
+    background-color: #000;
+    color: #fff;
+    min-height: 200px;
+    display: flex;
+    flex-flow: row;
+    flex-wrap: wrap;
+}
+
 
 .idBiglietto{
     /*padding: 0.2em;*/
     /*margin: 0 auto;*/
     color:#000;
+    flex:1;
     text-align: center;
     background-color: #D8D8D8;
 }

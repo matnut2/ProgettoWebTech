@@ -88,7 +88,7 @@ class page {
     
 
     private static function checkFileName($name){
-        return ($_SERVER['SCRIPT_NAME'] == "/AutoAsta/php/". $name);
+        return ($_SERVER['SCRIPT_NAME'] == "/progettowebtech/php/". $name);
     }
 
     private function checkUserLog(){
@@ -103,8 +103,16 @@ class page {
     }
 
     public function inserimentoNuovoUtente ($post, utente_Non_Registrato $utente,$file){
+
+        $url_img = "";
+        if ($_FILES['url_immagine']['size'] != 0){
+            $url_img = basename($file["url_immagine"]["name"]);
+        }
+        else{
+            $url_img = "default_user_img.png";
+        }
         $utente -> iscrizione($post['email'],$post['username'], $post['psw'], 0,$post['nome'],$post['cognome']
-        ,basename($file["url_immagine"]["name"]),$post['data_nascita']);
+        ,$url_img,$post['data_nascita']);
         if($utente){
             return true;
         }

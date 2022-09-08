@@ -10,25 +10,40 @@
     $gestione_accessi = new  page();
 
     if(!empty($_POST)){
-        $checkIMG = $gestione_accessi->upload($_POST,$_FILES);
-        if($checkIMG){
-            $checkIns = $gestione_accessi->inserimentoNuovoUtente($_POST,$user,$_FILES);
-            if($checkIns){
-            $user = createSession();
-            $enc_pswd = md5($_POST['psw']);
-            $user = login($_POST['email'], $enc_pswd);
-            header("Location: scheda_utente.php");
-                exit();
-            }
-            else{
-                $_SESSION['errorMsg'] = "Impossibile completare la registrazione";
-                
+        if($_FILES['url_immagine']['size'] != 0){
+            $checkIMG = $gestione_accessi->upload($_POST,$_FILES);
+            if($checkIMG){
+                $checkIns = $gestione_accessi->inserimentoNuovoUtente($_POST,$user,$_FILES);
+                if($checkIns){
+                $user = createSession();
+                $enc_pswd = md5($_POST['psw']);
+                $user = login($_POST['email'], $enc_pswd);
+                header("Location: scheda_utente.php");
+                    exit();
+                }
+                else{
+                    $_SESSION['errorMsg'] = "Impossibile completare la registrazione";
+                }
             }
         }
-    header("Location: pagina_avvisi.php");
-            exit();
+        else{
+            $checkIns = $gestione_accessi->inserimentoNuovoUtente($_POST,$user,$_FILES);
+                if($checkIns){
+                    $user = createSession();
+                    $enc_pswd = md5($_POST['psw']);
+                    $user = login($_POST['email'], $enc_pswd);
+                    header("Location: scheda_utente.php");
+                    exit();
+                }
+                else{
+                    $_SESSION['errorMsg'] = "Impossibile completare la registrazione";
+                    
+                }
+        }
+        header("Location: pagina_avvisi.php");
+        exit();
     }
-
+    
     if ($user->isReg()){
         header("Location: index.php");
         exit();
