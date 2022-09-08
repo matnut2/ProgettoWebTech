@@ -45,7 +45,7 @@
     <body>
         <div class="globalDiv">
         <?php require_once ('header.php')?>
-            <div id="content">
+            <main>
                 <form action="../php/edit_profile.php" method="post" enctype="multipart/form-data">
                     <div class="registration_form">
                     <h2>FORM MODIFICA DATI UTENTE </h2>
@@ -69,7 +69,7 @@
                     <button type="submit" class="register_btn">AGGIORNA DATI</button>
                     </div>
                 </form>
-            </div>
+</main>
             <?php require_once ('../html/footer.html')?>
       </div>
     </body>

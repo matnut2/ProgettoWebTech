@@ -49,7 +49,7 @@
      <body>
          <div class="globalDiv">
          <?php require_once ('header.php')?>
-         <div id="content">
+         <main>
          <form action="../php/addVeicolo.php" method="post" id="formAddVeicolo" enctype="multipart/form-data">
              <div class="registration_form">
              <h2>Inserimento Veicolo</h2>
@@ -119,7 +119,7 @@
             
             <fieldset name="url_immagine" form="formAddVeicolo">
                 <label for="url_immagine"><b>Inserisci l'Immagine</b></label>
-                <input type="file" placeholder="Inserisci l'url dell'immagine" name="url_immagine" id="url_immagine">
+                <input type="file" name="url_immagine" id="url_immagine">
             </fieldset>
 
             <fieldset name="descrizione" form="formAddVeicolo">
@@ -133,7 +133,7 @@
             </fieldset>
 
             <fieldset name="prezzo" form="formAddVeicolo">
-                <label for="prezzo"><b>Prezzo base di vendita</b></label>
+                <label for="Prezzo"><b>Prezzo base di vendita</b></label>
                 <input type="number" placeholder="Inserisci il prezzo base di vendita" name="Prezzo" id="Prezzo"  value ="0" min="0">
             </fieldset>
 
@@ -141,7 +141,7 @@
              <input type="reset" class="reset_btn">
              </div>
          </form>
-         </div>
+</main>
          <?php require_once ('../html/footer.html')?>
         </div>
      </body>

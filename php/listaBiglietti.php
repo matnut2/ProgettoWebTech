@@ -30,7 +30,7 @@
 
         <?php require_once ('header.php')?>
 
-            <div id="content">
+            <main>
             <?php
                 require_once "database_Manager.php";
                 
@@ -50,24 +50,29 @@
                             $dataAcquisto = new DateTime($biglietto['data_Acquisto']);
                             $listaEventi .= '<dt class = "eventTitle" > Biglietto valido per la fiera di: ' . $evento[0]['nome'] .'</dt>';
                             $listaEventi .= '<dd class= "eventDescription">';
-                            $listaEventi .= '<img class="eventImg" src="../img/' . $evento[0]['url_immagine'] . '"/>
-                                <ul class="eventParagraph">
+                            $listaEventi .= '<img class="eventImg" src="../img/' . $evento[0]['url_immagine'] . '"/>' . 
+                                /*<ul class="eventParagraph">
                                 <li>INTESTATO A: ' . $biglietto['utente'] . '</li>
                                 <li>ACQUISTATO IL GIORNO: <p>' . $dataAcquisto->format('d-m-Y').'</p></li>
                                 <li>VALIDO IL GIORNO: <p>' . $dataEvento->format('d-m-Y'). '</p></li>
                                 <li>LUOGO SVOLGIMENTO: <p>' . $evento[0]['via'] .' '. $evento[0]['citta'] .' '. $evento[0]['num_Civico'] .' '.$evento[0]['cap'].'</p></li>
-                                </ul>';
-                            $listaEventi .='<a class="eventButton" href="../php/delete_Ticket.php?Id_Biglietto='.$biglietto['Id_Biglietto'].'">Elimina Biglietto</a></dd>';
-                            $listaEventi .='<p class="idBiglietto">IDENTIFICATIVO BIGLIETTO: '. $biglietto['Id_Biglietto'].'</p>';
+                                </ul>';*/
+
+                                '<div class="eventParagraph"> INTESTATO A: ' .$biglietto['utente'] .
+                                '<br><br> ACQUISTATO IL GIORNO: ' . $dataAcquisto->format('d-m-Y') . 
+                                '<br><br> VALIDO IL GIORNO: ' . $dataEvento->format('d-m-Y'). 
+                                '<br><br> LUOGO SVOLGIMENTO:<br> ' .  $evento[0]['via'] .' '. $evento[0]['citta'] .' '. $evento[0]['num_Civico'] .' '.$evento[0]['cap']. '</div>';
+                            $listaEventi .='<div class="idBiglietto">IDENTIFICATIVO BIGLIETTO: '. $biglietto['Id_Biglietto'].'</div></dd>';
+                            $listaEventi .='<a class="eventButton" href="../php/delete_Ticket.php?Id_Biglietto='.$biglietto['Id_Biglietto'].'">Elimina Biglietto</a>';
                         }
                         $connessione->releaseDB();
                     }
                     else{
-                        $listaEventi = "<p> Non ci sono informazioni relative ai eventi </p>";
+                        $listaEventi =  "<div>Non ci sono informazioni relative agli eventi</div>";
                     }
                 }
                 else{
-                    $listaEventi = "<p> I Sistemi sono Attualmente Fuori Uso </p>";
+                    $listaEventi = "I Sistemi sono Attualmente Fuori Uso";
                 }
                 echo str_replace("{event-list}", $listaEventi, $paginaHTML);
             ?>

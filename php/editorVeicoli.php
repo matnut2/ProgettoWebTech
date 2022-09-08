@@ -46,9 +46,9 @@
     <body>
         <div class="globalDiv">     
         <?php require_once ('header.php')?>
-        <div id='content'>
+        <main id='content'>
             <?php require_once ('editor_page.php')?>
-        </div>
+        </main>
         <?php require_once ('../html/footer.html')?>
         </div>
     </body>

@@ -53,66 +53,66 @@
      </head> 
      <body> 
          <div class="globalDiv"> 
-         <?php require_once ('header.php')?> 
-         <div id="content"> 
-         <form action="../php/addEvento.php" method="post" id="formAddEvento" enctype="multipart/form-data"> 
-            <div class="registration_form"> 
-            <h2>Inserimento Evento</h2> 
-            <p>Compila i campi seguenti per inserire un nuovo evento</p> 
-            <hr> 
+            <?php require_once ('header.php')?> 
+            <main> 
+                <form action="../php/addEvento.php" method="post" id="formAddEvento" enctype="multipart/form-data"> 
+                    <div class="registration_form"> 
+                        <h2>Inserimento Evento</h2> 
+                        <p>Compila i campi seguenti per inserire un nuovo evento</p> 
+                        <hr> 
 
-            <fieldset name="nome" form="formAddEvento"> 
-                <label for="nome"><b>Nome</b></label> 
-                <input type="text" placeholder="Inserisci il nome dell'evento" name="nome" id="nome"> 
-            </fieldset> 
-            
-            <fieldset name="Capienza" form="formAddEvento"> 
-            <label for="Capienza"><b>Capienza</b></label> 
-            <input type="text" placeholder="Inserisci la capienza dell'evento" name="Capienza" id="Capienza"> 
-            </fieldset> 
+                        <fieldset name="nome" form="formAddEvento"> 
+                            <label for="nome"><b>Nome</b></label> 
+                            <input type="text" placeholder="Inserisci il nome dell'evento" name="nome" id="nome"> 
+                        </fieldset> 
+                        
+                        <fieldset name="Capienza" form="formAddEvento"> 
+                            <label for="Capienza"><b>Capienza</b></label> 
+                            <input type="text" placeholder="Inserisci la capienza dell'evento" name="Capienza" id="Capienza"> 
+                        </fieldset> 
 
-            <fieldset name="Data" form="formAddEvento"> 
-                <label for="Data"><b>Data svolgimento</b></label> 
-                <input type="date" placeholder="Inserisci la data" name="Data" id="Data"> 
-            </fieldset> 
+                        <fieldset name="Data" form="formAddEvento"> 
+                            <label for="Data"><b>Data svolgimento</b></label> 
+                            <input type="date" name="Data" id="Data"> 
+                        </fieldset> 
 
-            <fieldset name="Indirizzo">
-                <label for="Citta"><b>Citt&agrave;</b></label> 
-                <input type="text" placeholder="Inserisci la città" name="citta" id="citta"> 
+                        <fieldset name="Indirizzo">
+                            <label for="citta"><b>Citt&agrave;</b></label> 
+                            <input type="text" placeholder="Inserisci la città" name="citta" id="citta"> 
 
-                <label for="Via"><b>Via</b></label> 
-                <input type="text" placeholder="Inserisci la via" name="via" id="via"> 
+                            <label for="via"><b>Via</b></label> 
+                            <input type="text" placeholder="Inserisci la via" name="via" id="via"> 
 
-                <label for="num_Civico"><b>Numero civico</b></label> 
-                <input type="number" placeholder="Inserisci il numero civico" name="num_Civico" id="num_Civico"> 
+                            <label for="num_Civico"><b>Numero civico</b></label> 
+                            <input type="number" placeholder="Inserisci il numero civico" name="num_Civico" id="num_Civico"> 
 
-                <label for="Cap"><b><abbr title="Codice di Avviamento Postale">CAP</abbr></b></label> 
-                <input type="number" placeholder="Inserisci il CAP" name="cap" id="cap"> 
-                
-           
-            </fieldset>
-            
-            <fieldset name="Descrizione" form="formAddEvento"> 
-            <label for="Descrizione"><b>Descrizione</b></label> 
-            <input type="text" placeholder="Inserisci la descrizione" name="Descrizione" id="Descrizione"> 
-            </fieldset> 
+                            <label for="cap"><b><abbr title="Codice di Avviamento Postale">CAP</abbr></b></label> 
+                            <input type="number" placeholder="Inserisci il CAP" name="cap" id="cap"> 
+                            
+                    
+                        </fieldset>
+                        
+                        <fieldset name="Descrizione" form="formAddEvento"> 
+                            <label for="Descrizione"><b>Descrizione</b></label> 
+                            <input type="text" placeholder="Inserisci la descrizione" name="Descrizione" id="Descrizione"> 
+                        </fieldset> 
 
-            <fieldset name="Prezzo" form="formAddEvento"> 
-            <label for="Prezzo"><b>Prezzo del biglietto</b></label> 
-            <input type="number" placeholder="Inserisci il prezzo del biglietto" name="Prezzo" id="Prezzo"> 
-            </fieldset> 
+                        <fieldset name="Prezzo" form="formAddEvento"> 
+                            <label for="Prezzo"><b>Prezzo del biglietto</b></label> 
+                            <input type="number" placeholder="Inserisci il prezzo del biglietto" name="Prezzo" id="Prezzo"> 
+                        </fieldset> 
 
-            <fieldset name="url_immagine" form="formAddEvento"> 
-             <label for="url_immagine"><b>url Immagine</b></label> 
-             <input type="file" placeholder="Inserisci l'url dell'immagine" name="url_immagine" id="url_immagine"> 
-            </fieldset> 
-        
-            <button type="submit" class="register_btn" name="submit">Inserisci Evento</button> 
-            <input type="reset" class="reset_btn"> 
-            </div> 
-        </form> 
-          </div> 
-         <?php require_once ('../html/footer.html')?> 
+                        <fieldset name="url_immagine" form="formAddEvento"> 
+                            <label for="url_immagine"><b>url Immagine</b></label> 
+                            <input type="file" name="url_immagine" id="url_immagine"> 
+                        </fieldset> 
+                    
+                        <button type="submit" class="register_btn" name="submit">Inserisci Evento</button> 
+                        <input type="reset" class="reset_btn"/> 
+                    </div> 
+                </form> 
+            </main> 
+            <?php require_once ('../html/footer.html')?> 
         </div> 
-     </body> 
- </html>
+    </body> 
+</html>

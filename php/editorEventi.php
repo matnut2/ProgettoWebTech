@@ -48,7 +48,7 @@
      <body> 
          <div class="globalDiv">   
         <?php require_once ('header.php')?>
-        <div id='content'>
+        <main>
             <?php 
                 $paginaHTML= file_get_contents("../html/editSingleEvento.html");
                 $connessione = new database_Manager();
@@ -78,7 +78,7 @@
                 }
                 echo $listaVeicoli;
             ?>    
-        </div>   
+        </main>   
         <?php require_once ('../html/footer.html')?>
         </div>
     </body>
