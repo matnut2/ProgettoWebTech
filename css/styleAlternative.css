@@ -273,20 +273,10 @@ div .userProfileCard{
     flex-flow: row;
 }
 
-.eventDescription ul {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-}
-
-.eventDescription ul li{
-    padding: 0.5em;
-}
 
 .idBiglietto{
-    padding: 0.2em;
-    margin: 0 auto;
+    /*padding: 0.2em;*/
+    /*margin: 0 auto;*/
     color:#000;
     text-align: center;
     background-color: #D8D8D8;
