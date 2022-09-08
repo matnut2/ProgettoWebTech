@@ -1,48 +1,104 @@
 
-<!DOCTYPE html>
-<html lang="it">
-    <head>
-        <link rel="icon" type="image/x-icon" href="../img/2061866.png"/>
-        <title>Avviso - Auto Asta</title>
-        <link rel="stylesheet" type="text/css" media="screen" href="../css/styleAlternative.css"/>
-        <link rel="stylesheet" type="text/css" media="screen and (max-width:1200px), only screen and (max-width:1200px)"  href="../css/mobile.css"/>
-        <meta charset="UTF-8"/>
-        <meta name="description" content="Homepage di Auto Asta"/>
-        <meta name="keywords" content="auto, asta, homepage, principale, veicoli"/>
-        <meta name="author" content="Carlesso Niccolò, Pillon Matteo, Soldà Matteo, Veronese Andrea"/>       
-    </head>
-    <body>
-        <div class="globalDiv">     
-
-        
+ 
+<!DOCTYPE html> 
+ <html lang="it"> 
+     <head> 
+         <link rel="icon" type="image/x-icon" href="../img/2061866.png"/> 
+         <title>Login Utente - Auto Asta</title> 
+         <link rel="stylesheet" type="text/css" media="screen" href="../css/styleAlternative.css"/> 
+         <link rel="stylesheet" type="text/css" media="screen and (max-width:1200px), only screen and (max-width:1200px)"  href="../css/mobile.css"/> 
+         <meta charset="UTF-8"/> 
+         <meta name="description" content="Login Utente di Auto Asta"/> 
+         <meta name="keywords" content="auto, asta, homepage, principale, veicoli"/> 
+         <meta name="author" content="Carlesso Niccolò, Pillon Matteo, Soldà Matteo, Veronese Andrea"/>   
+         <script src="../JS/script.js"></script>      
+     </head> 
+     <body> 
+         <div class="globalDiv"> 
+            
 <header>
     <h1>AUTO ASTA</h1>
     <form action="../php/search.php" id="searchForm" method="get">
-        <input id="search" type="text" placeholder="Digita qui quello che cerchi" name="search" tabindex="1" autocomplete="off">
-        <button id="btnSearchForm" type="submit" form="searchForm" tabindex="2" >CERCA</button>    
+        <input id="search" type="text" placeholder="Digita qui quello che cerchi" name="search" tabindex="0" autocomplete="off">
+        <button id="btnSearchForm" type="submit" form="searchForm" tabindex="0" >CERCA</button>    
     </form>
 
     <div id="accesso">
-        <a href="registrazione.php" tabindex="3">ACCEDI/REGISTRATI</a>    </div>
+        <a href="scheda_utente.php" tabindex="0">VISITA IL TUO PROFILO</a>    </div>
 </header>  
 
-<nav id="breadcrumb">
-    <p> <a href="index.php" tabindex="4" lang="en">Home</a>  &gt; &gt; Pagina Avvisi </p></nav>
+<nav id="breadcrumb" aria-label="breadcrumb">
+    <p> <a href="index.php" tabindex="0" lang="en">Home</a>  &gt; &gt; Aggiungi Evento </p></nav>
 
-<nav id="menu">
+<nav id="menu" aria-label="Lista delle Pagine di AutoAsta">
     <ul role="menu">
-        <li class='shome'><a href="index.php" lang="en" role="menuitem">Home</a></li><li class='schisiamo'><a href="chisiamo.php" role="menuitem">Chi Siamo</a></li><li class='sevento'><a href="eventi.php" role="menuitem">Eventi</a></li><li class='sveicoli'><a href="veicoli.php" role="menuitem">Veicoli</a></li>    </ul>
-</nav>
-            <div id="content">
-                  
-                <a id ="homeButton" class="WarningPageElement" href="../php/index.php">TORNA ALLA PAGINA INIZIALE</a>  
-            </div>   
-        <footer>
+        <li role='none' class='shome'><a  href="index.php" lang="en" role="menuitem">Home</a></li><li role='none' class='schisiamo'><a  href="chisiamo.php" role="menuitem">Chi Siamo</a></li><li role='none' class='sevento'><a  href="eventi.php" role="menuitem">Eventi</a></li><li role='none' class='sveicoli'><a  href="veicoli.php" role="menuitem">Veicoli</a></li><li role='none' ><a  href="addVeicolo.php" role="menuitem" >Aggiungi veicolo</a></li><li role='none' ><a  href="editorVeicoli.php" role="menuitem">Modifica Veicolo</a></li><li role='none' ><a  href="selectEventoToEdit.php" role="menuitem">Modifica Evento</a></li><li role='menuitem' >Aggiungi Evento</li><li role='none' ><a  href="listaBiglietti.php" role="menuitem">Lista Biglietti</a></li>    </ul>
+</nav> 
+            <main> 
+                <form action="../php/addEvento.php" method="post" id="formAddEvento" enctype="multipart/form-data"> 
+                    <div class="registration_form"> 
+                        <h2>Inserimento Evento</h2> 
+                        <p>Compila i campi seguenti per inserire un nuovo evento</p> 
+                        <hr> 
+
+                        <fieldset name="nome" form="formAddEvento"> 
+                            <label for="nome"><b>Nome</b></label> 
+                            <input type="text" placeholder="Inserisci il nome dell'evento" name="nome" id="nome"> 
+                        </fieldset> 
+                        
+                        <fieldset name="Capienza" form="formAddEvento"> 
+                            <label for="Capienza"><b>Capienza</b></label> 
+                            <input type="text" placeholder="Inserisci la capienza dell'evento" name="Capienza" id="Capienza"> 
+                        </fieldset> 
+
+                        <fieldset name="Data" form="formAddEvento"> 
+                            <label for="Data"><b>Data svolgimento</b></label> 
+                            <input type="date" name="Data" id="Data"> 
+                        </fieldset> 
+
+                        <fieldset name="Indirizzo">
+                            <label for="citta"><b>Citt&agrave;</b></label> 
+                            <input type="text" placeholder="Inserisci la città" name="citta" id="citta"> 
+
+                            <label for="via"><b>Via</b></label> 
+                            <input type="text" placeholder="Inserisci la via" name="via" id="via"> 
+
+                            <label for="num_Civico"><b>Numero civico</b></label> 
+                            <input type="number" placeholder="Inserisci il numero civico" name="num_Civico" id="num_Civico"> 
+
+                            <label for="cap"><b><abbr title="Codice di Avviamento Postale">CAP</abbr></b></label> 
+                            <input type="number" placeholder="Inserisci il CAP" name="cap" id="cap"> 
+                            
+                    
+                        </fieldset>
+                        
+                        <fieldset name="Descrizione" form="formAddEvento"> 
+                            <label for="Descrizione"><b>Descrizione</b></label> 
+                            <input type="text" placeholder="Inserisci la descrizione" name="Descrizione" id="Descrizione"> 
+                        </fieldset> 
+
+                        <fieldset name="Prezzo" form="formAddEvento"> 
+                            <label for="Prezzo"><b>Prezzo del biglietto</b></label> 
+                            <input type="number" placeholder="Inserisci il prezzo del biglietto" name="Prezzo" id="Prezzo"> 
+                        </fieldset> 
+
+                        <fieldset name="url_immagine" form="formAddEvento"> 
+                            <label for="url_immagine"><b>url Immagine</b></label> 
+                            <input type="file" name="url_immagine" id="url_immagine"> 
+                        </fieldset> 
+                    
+                        <button type="submit" class="register_btn" name="submit">Inserisci Evento</button> 
+                        <input type="reset" class="reset_btn"/> 
+                    </div> 
+                </form> 
+            </main> 
+            <footer>
     <address>
         <p>AUTO ASTA</p>
         <p>Carlesso Niccol&ograve;, Pillon Matteo, Sold&agrave; Matteo, Veronese Andrea</p>
         <p>Universit&agrave; degli Studi di Padova - Dipartimento di Matematica</p>
     </address>               
-</footer>        </div>
-    </body>
+</footer> 
+        </div> 
+    </body> 
 </html>
