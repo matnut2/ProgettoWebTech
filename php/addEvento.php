@@ -42,7 +42,7 @@
  <html lang="it"> 
      <head> 
          <link rel="icon" type="image/x-icon" href="../img/2061866.png"/> 
-         <title>Login Utente - Auto Asta</title> 
+         <title>Aggiungi Evento - Auto Asta</title> 
          <link rel="stylesheet" type="text/css" media="screen" href="../css/styleAlternative.css"/> 
          <link rel="stylesheet" type="text/css" media="screen and (max-width:1200px), only screen and (max-width:1200px)"  href="../css/mobile.css"/> 
          <meta charset="UTF-8"/> 
