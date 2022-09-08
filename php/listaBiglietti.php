@@ -50,7 +50,7 @@
                             $dataAcquisto = new DateTime($biglietto['data_Acquisto']);
                             $listaEventi .= '<dt class = "eventTitle" > Biglietto valido per la fiera di: ' . $evento[0]['nome'] .'</dt>';
                             $listaEventi .= '<dd class= "eventDescription">';
-                            $listaEventi .= '<img class="eventImg" src="../img/' . $evento[0]['url_immagine'] . '"/>' . 
+                            $listaEventi .= '<img class="eventImg" alt="Immagine panoramica della citt&agrave; di '. basename($evento[0]['url_immagine'], ".jpg") .'" src="../img/' . $evento[0]['url_immagine'] . '"/>' . 
                                 /*<ul class="eventParagraph">
                                 <li>INTESTATO A: ' . $biglietto['utente'] . '</li>
                                 <li>ACQUISTATO IL GIORNO: <p>' . $dataAcquisto->format('d-m-Y').'</p></li>
@@ -62,13 +62,14 @@
                                 '<br><br> ACQUISTATO IL GIORNO: ' . $dataAcquisto->format('d-m-Y') . 
                                 '<br><br> VALIDO IL GIORNO: ' . $dataEvento->format('d-m-Y'). 
                                 '<br><br> LUOGO SVOLGIMENTO:<br> ' .  $evento[0]['via'] .' '. $evento[0]['citta'] .' '. $evento[0]['num_Civico'] .' '.$evento[0]['cap']. '</div>';
-                            $listaEventi .='<div class="idBiglietto">IDENTIFICATIVO BIGLIETTO: '. $biglietto['Id_Biglietto'].'</div></dd>';
-                            $listaEventi .='<a class="eventButton" href="../php/delete_Ticket.php?Id_Biglietto='.$biglietto['Id_Biglietto'].'">Elimina Biglietto</a>';
+                                $listaEventi .='<a class="eventButton" href="../php/delete_Ticket.php?Id_Biglietto='.$biglietto['Id_Biglietto'].'">Elimina Biglietto</a>';
+                                $listaEventi .='<div class="idBiglietto">IDENTIFICATIVO BIGLIETTO: '. $biglietto['Id_Biglietto'].'</div></dd>';
+                            
                         }
                         $connessione->releaseDB();
                     }
                     else{
-                        $listaEventi =  "<div>Non ci sono informazioni relative agli eventi</div>";
+                        $listaEventi =  '<dt>SEMBRA CHE TU NON ABBIA COMPRATO NESSUN BIGLIETTO</dt><dd>Passa alla <a href="eventi.php">Pagina Eventi</a> per prenotare il posto</dd>';
                     }
                 }
                 else{
@@ -76,7 +77,7 @@
                 }
                 echo str_replace("{event-list}", $listaEventi, $paginaHTML);
             ?>
-            </div>   
+            </main>   
         <?php require_once ('../html/footer.html')?>
         </div>
     </body>
